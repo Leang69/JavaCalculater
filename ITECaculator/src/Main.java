@@ -393,27 +393,27 @@ public class Main {
 		    case 1:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.mb2Byte(l) + " KB");
+			System.out.println(l + " Megabyte = " + storage_converter.mb2Byte(l) + " KB");
 			break;
 		    case 2:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.mb2KB(l) + " KB");
+			System.out.println(l + " Megabyte = " + storage_converter.mb2KB(l) + " KB");
 			break;
 		    case 3:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.mb2GB(l) + " GB");
+			System.out.println(l + " Megabyte = " + storage_converter.mb2GB(l) + " GB");
 			break;
 		    case 4:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.mb2TB(l) + " TB");
+			System.out.println(l + " Megabyte = " + storage_converter.mb2TB(l) + " TB");
 			break;
 		    case 5:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.mb2PB(l) + " PB");
+			System.out.println(l + " Megabyte = " + storage_converter.mb2PB(l) + " PB");
 			break;
 		    case 0:
 			break;
@@ -444,27 +444,27 @@ public class Main {
 		    case 1:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.gb2Byte(l) + " Byte");
+			System.out.println(l + " Gigabyte = " + storage_converter.gb2Byte(l) + " Byte");
 			break;
 		    case 2:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.gb2KB(l) + " KB");
+			System.out.println(l + " Gigabyte = " + storage_converter.gb2KB(l) + " KB");
 			break;
 		    case 3:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.gb2MB(l) + " MB");
+			System.out.println(l + " Gigabyte = " + storage_converter.gb2MB(l) + " MB");
 			break;
 		    case 4:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.gb2TB(l) + " TB");
+			System.out.println(l + " Gigabyte = " + storage_converter.gb2TB(l) + " TB");
 			break;
 		    case 5:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.gb2PB(l)+ " PB");
+			System.out.println(l + " Gigabyte = " + storage_converter.gb2PB(l)+ " PB");
 			break;
 		    case 0:
 			break;
@@ -494,27 +494,27 @@ public class Main {
 		    case 1:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.tb2Byte(l) + " Byte");
+			System.out.println(l + " Terabyte = " + storage_converter.tb2Byte(l) + " Byte");
 			break;
 		    case 2:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.tb2KB(l) + " KB");
+			System.out.println(l + " Terabyte = " + storage_converter.tb2KB(l) + " KB");
 			break;
 		    case 3:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.tb2MB(l) + " MB");
+			System.out.println(l + " Terabyte = " + storage_converter.tb2MB(l) + " MB");
 			break;
 		    case 4:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.tb2GB(l) + " GB");
+			System.out.println(l + " Terabyte = " + storage_converter.tb2GB(l) + " GB");
 			break;
 		    case 5:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.tb2PB(l)+ " PB");
+			System.out.println(l + " Terabyte = " + storage_converter.tb2PB(l)+ " PB");
 			break;
 		    case 0:
 			break;
@@ -544,27 +544,27 @@ public class Main {
 		    case 1:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.pb2Byte(l) + " B");
+			System.out.println(l + " Petabyte = " + storage_converter.pb2Byte(l) + " B");
 			break;
 		    case 2:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.pb2KB(l) + " KB");
+			System.out.println(l + " Petabyte = " + storage_converter.pb2KB(l) + " KB");
 			break;
 		    case 3:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.pb2MB(l) + " MB");
+			System.out.println(l + " Petabyte = " + storage_converter.pb2MB(l) + " MB");
 			break;
 		    case 4:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.pb2GB(l) + " GB");
+			System.out.println(l + " Petabyte = " + storage_converter.pb2GB(l) + " GB");
 			break;
 		    case 5:
 			System.out.print("Input Storage :");
 			l = input.nextLong();
-			System.out.println(l + " Kilobyte = " + storage_converter.pb2TB(l)+ " TB");
+			System.out.println(l + " Petabyte = " + storage_converter.pb2TB(l)+ " TB");
 			break;
 		    case 0:
 			break;

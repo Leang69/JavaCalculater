@@ -6,7 +6,7 @@ public class StorageConverter {
 /////////////////--------------------///////////////
 
     double byte2KB(long numByte) {
-	return numByte / 1024.0;
+	return (double)numByte / 1024.0;
     }
 
     double byte2MB(long numByte) {
@@ -31,7 +31,7 @@ public class StorageConverter {
     }
 
     double kb2MB(long kilobyte) {
-	return kilobyte / 1024;
+	return (double)kilobyte / 1024;
     }
 
     double kb2GB(long kilobyte) {
@@ -56,7 +56,7 @@ public class StorageConverter {
     }
 
     double mb2GB(long megabyte) {
-	return megabyte / 1024;
+	return (double)megabyte / 1024;
     }
 
     double mb2TB(long megabyte) {
@@ -81,7 +81,7 @@ public class StorageConverter {
     }
 
     double gb2TB(long gigabyte) {
-	return gigabyte / 1024;
+	return (double)gigabyte / 1024;
     }
 
     double gb2PB(long gigabyte) {
@@ -90,23 +90,23 @@ public class StorageConverter {
 
 /////////////////--------------------///////////////
     long tb2Byte(long terabyte) {
-	return tb2KB(terabyte) / 1024;
+	return tb2KB(terabyte) * 1024;
     }
 
     long tb2KB(long terabyte) {
-	return tb2MB(terabyte) / 1024;
+	return tb2MB(terabyte) * 1024;
     }
 
     long tb2MB(long terabyte) {
-	return tb2GB(terabyte) / 1024;
+	return tb2GB(terabyte) * 1024;
     }
 
     long tb2GB(long terabyte) {
-	return terabyte / 1024;
+	return terabyte * 1024;
     }
 
     double tb2PB(long terabyte) {
-	return terabyte * 1024;
+	return (double)terabyte / 1024;
     }
 
 /////////////////--------------------///////////////

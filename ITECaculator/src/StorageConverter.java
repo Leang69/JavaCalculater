@@ -6,23 +6,23 @@ public class StorageConverter {
 /////////////////--------------------///////////////
 
     double byte2KB(long numByte) {
-	return numByte / 1024;
+	return numByte / 1024.0;
     }
 
     double byte2MB(long numByte) {
-	return byte2KB(numByte) / 1024;
+	return byte2KB(numByte) / 1024.0;
     }
 
     double byte2GB(long numByte) {
-	return byte2MB(numByte) / 1024;
+	return byte2MB(numByte) / 1024.0;
     }
 
     double byte2TB(long numByte) {
-	return byte2GB(numByte) / 1024;
+	return byte2GB(numByte) / 1024.0;
     }
 
     double byte2PB(long numByte) {
-	return byte2TB(numByte) / 1024;
+	return byte2TB(numByte) / 1024.0;
     }
 
 /////////////////--------------------///////////////

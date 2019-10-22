@@ -22,6 +22,7 @@ public class Main {
 	int Menu;
 	while (true) {
 	    System.out.println("Menu");
+	    System.out.println("Menu");
 	    System.out.println("1  : Arithmetic Operators");
 	    System.out.println("2  : Trigonometric Operators");
 	    System.out.println("3  : Bitwise Operators");

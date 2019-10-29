@@ -5,43 +5,94 @@ import sun.util.logging.resources.logging;
 public class StorageConverter {
 /////////////////--------------------///////////////
 
+    /**
+     * covert B to KB
+     * @param numByte in long
+     * @return KB
+     */
     double byte2KB(long numByte) {
 	return (double)numByte / 1024.0;
     }
 
+    /**
+     * convert Byte to MB
+     * @param numByte in long
+     * @return MB
+     */
     double byte2MB(long numByte) {
 	return byte2KB(numByte) / 1024.0;
     }
 
+    /**
+     * convert Byte to GB
+     * @param numByte
+     * @return GB
+     */
     double byte2GB(long numByte) {
 	return byte2MB(numByte) / 1024.0;
     }
 
+    /**
+     * convert Byte to Tb
+     * @param numByte
+     * @return TB
+     */
     double byte2TB(long numByte) {
 	return byte2GB(numByte) / 1024.0;
     }
 
+    /**
+     * covert Byte to PB
+     * @param numByte
+     * @return PB
+     */
     double byte2PB(long numByte) {
 	return byte2TB(numByte) / 1024.0;
     }
 
 /////////////////--------------------///////////////
+
+    /**
+     *
+     * @param kilobyte
+     * @return byte
+     */
     long kb2Byte(long kilobyte) {
 	return kilobyte * 1024;
     }
 
+    /**
+     *
+     * @param kilobyte
+     * @return MB
+     */
     double kb2MB(long kilobyte) {
 	return (double)kilobyte / 1024;
     }
 
+    /**
+     *
+     * @param kilobyte
+     * @return GB
+     */
     double kb2GB(long kilobyte) {
 	return kb2MB(kilobyte) / 1024;
     }
 
+    /**
+     *
+     * @param kilobyte
+     * @return TB
+     */
     double kb2TB(long kilobyte) {
 	return kb2GB(kilobyte) / 1024;
     }
 
+    /**
+     *
+     * @param kilobyte
+     * @return PB
+     */
     double kb2PB(long kilobyte) {
 	return kb2TB(kilobyte) / 1024;
     }

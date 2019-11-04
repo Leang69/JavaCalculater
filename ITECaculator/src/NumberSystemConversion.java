@@ -15,10 +15,21 @@ class NumberSystemConversion {
 
 	}
 
-	String binary2HexString(long binary) {
+	String binary2Hex(long binary) {
 		int decimal = Integer.parseInt(binary2Decimal(binary));
 		String hex = "" + Integer.toHexString(decimal);
 		return hex;
+	}
+
+	Boolean verifyBinary(long a)
+	{
+		try {
+			Integer.parseInt(""+a, 2);
+		}catch (Exception e){
+			System.out.println("This is not Binary");
+			return false;
+		}
+		return true;
 	}
 	
 	String octal2Decimal(long octal) {
@@ -38,6 +49,17 @@ class NumberSystemConversion {
 		String binary = "" + Integer.toHexString(decimal);
 		return binary;
 
+	}
+
+	Boolean verifyOctal(long a)
+	{
+		try {
+			Integer.parseInt(""+a, 8);
+		}catch (Exception e){
+			System.out.println("This is not Octal");
+			return false;
+		}
+		return true;
 	}
 
 }

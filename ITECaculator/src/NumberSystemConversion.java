@@ -18,7 +18,7 @@ class NumberSystemConversion {
 	String binary2Hex(long binary) {
 		int decimal = Integer.parseInt(binary2Decimal(binary));
 		String hex = "" + Integer.toHexString(decimal);
-		return hex;
+		return hex.toUpperCase();
 	}
 
 	Boolean verifyBinary(long a)
@@ -39,15 +39,16 @@ class NumberSystemConversion {
 	}
 	
 	String octal2Binary(long octal) {
-		int decimal = Integer.parseInt(binary2Decimal(octal));
+		int decimal = Integer.parseInt(""+octal,8);
 		String binary = "" + Integer.toBinaryString(decimal);
 		return binary;
 
 	}
+
 	String octal2Hex(long octal) {
-		int decimal = Integer.parseInt(binary2Decimal(octal));
-		String binary = "" + Integer.toHexString(decimal);
-		return binary;
+		int decimal = Integer.parseInt(""+octal,8);
+		String Hex = "" + Integer.toHexString(decimal);
+		return Hex.toUpperCase();
 
 	}
 

@@ -595,10 +595,12 @@ public class Main {
 	{
 		NumberSystemConversion numberSystemConversion = new NumberSystemConversion();
 		int menu , subMenu;
-		long number;
+		long number ;
+		int Decimal;
 		while (true) {
 			System.out.println("1 : Binary");
 			System.out.println("2 : Octal");
+			System.out.println("3 : Decimal");
 			System.out.print("Please input menu : ");
 			menu = input.nextInt();
 			switch (menu) {
@@ -686,6 +688,54 @@ public class Main {
 									break;
 								}
 								System.out.println("In Hexadecimal : "+numberSystemConversion.octal2Hex(number));
+								System.out.println();
+								break;
+							case 0:
+								break;
+							default:
+								System.out.println("Please input again");
+
+						}
+						if (subMenu == 0) {
+							break;
+						}
+					}
+					break;
+
+				case 3:
+					while (true) {
+						System.out.println("1 : Decimal to Binary");
+						System.out.println("2 : Decimal to Octal");
+						System.out.println("3 : Decimal to Hexadecimal");
+						System.out.println("0 : Back");
+						System.out.print("Please input menu : ");
+						subMenu = input.nextInt();
+						switch (subMenu) {
+							case 1:
+								System.out.print("Please input Decimal : ");
+								Decimal = input.nextInt();
+								if (!numberSystemConversion.verifyDecimal(Decimal)) {
+									break;
+								}
+								System.out.println("In Binary : "+numberSystemConversion.decimal2Binary(Decimal));
+								System.out.println();
+								break;
+							case 2:
+								System.out.print("Please input Decimal : ");
+								Decimal = input.nextInt();
+								if (!numberSystemConversion.verifyDecimal(Decimal)) {
+									break;
+								}
+								System.out.println("In Octal : "+numberSystemConversion.decimal2Octal(Decimal));
+								System.out.println();
+								break;
+							case 3:
+								System.out.print("Please input Decimal : ");
+								Decimal = input.nextInt();
+								if (!numberSystemConversion.verifyOctal(Decimal)) {
+									break;
+								}
+								System.out.println("In Hexadecimal : "+numberSystemConversion.decimal2Hex(Decimal));
 								System.out.println();
 								break;
 							case 0:

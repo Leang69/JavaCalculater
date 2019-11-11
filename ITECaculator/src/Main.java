@@ -596,7 +596,6 @@ public class Main {
 		NumberSystemConversion numberSystemConversion = new NumberSystemConversion();
 		int menu , subMenu;
 		long number ;
-		int Decimal;
 		while (true) {
 			System.out.println("1 : Binary");
 			System.out.println("2 : Octal");
@@ -713,29 +712,29 @@ public class Main {
 						switch (subMenu) {
 							case 1:
 								System.out.print("Please input Decimal : ");
-								Decimal = input.nextInt();
-								if (!numberSystemConversion.verifyDecimal(Decimal)) {
+								number = input.nextLong();
+								if (!numberSystemConversion.verifyDecimal(number)) {
 									break;
 								}
-								System.out.println("In Binary : "+numberSystemConversion.decimal2Binary(Decimal));
+								System.out.println("In Binary : "+numberSystemConversion.decimal2Binary(number));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Decimal : ");
-								Decimal = input.nextInt();
-								if (!numberSystemConversion.verifyDecimal(Decimal)) {
+								number = input.nextLong();
+								if (!numberSystemConversion.verifyDecimal(number)) {
 									break;
 								}
-								System.out.println("In Octal : "+numberSystemConversion.decimal2Octal(Decimal));
+								System.out.println("In Octal : "+numberSystemConversion.decimal2Octal(number));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Decimal : ");
-								Decimal = input.nextInt();
-								if (!numberSystemConversion.verifyOctal(Decimal)) {
+								number = input.nextLong();
+								if (!numberSystemConversion.verifyOctal(number)) {
 									break;
 								}
-								System.out.println("In Hexadecimal : "+numberSystemConversion.decimal2Hex(Decimal));
+								System.out.println("In Hexadecimal : "+numberSystemConversion.decimal2Hex(number));
 								System.out.println();
 								break;
 							case 0:

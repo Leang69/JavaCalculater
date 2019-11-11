@@ -7,10 +7,18 @@ class NumberSystemConversion {
 	 * @return Decimal value
 	 */
 	String binary2Decimal(long binary) {
-		String binaryString = "" + binary;
-		String decimal ;
-		decimal = "" + Integer.parseInt(binaryString, 2);
-		return decimal;
+		long last_digit;
+		int decimal = 0;
+		int base = 1;
+		while (binary > 0) {
+			last_digit = binary % 10;
+			binary = binary / 10;
+
+			decimal += last_digit * base;
+
+			base = base * 2;
+		}
+		return ""+decimal;
 	}
 
 	/**
@@ -20,9 +28,8 @@ class NumberSystemConversion {
 	 */
 	String binary2Octal(long binary) {
 		int decimal = Integer.parseInt(binary2Decimal(binary));
-		String octal = "" + Integer.toOctalString(decimal);
+		String octal = decimal2Octal(decimal);
 		return octal;
-
 	}
 
 	/**
@@ -32,8 +39,8 @@ class NumberSystemConversion {
 	 */
 	String binary2Hex(long binary) {
 		int decimal = Integer.parseInt(binary2Decimal(binary));
-		String hex = "" + Integer.toHexString(decimal);
-		return hex.toUpperCase();
+		String Hex = decimal2Hex(decimal);
+		return Hex;
 	}
 
 	/**
@@ -58,9 +65,18 @@ class NumberSystemConversion {
 	 * @return Decimal
 	 */
 	String octal2Decimal(long octal) {
-		String octalString = ""+octal;
-		String decimal = "" + Integer.parseInt(octalString, 8);
-		return decimal;
+		int last_digit;
+		int decimal = 0;
+		int base = 1;
+		while (octal > 0) {
+			last_digit = (int) (octal % 10);
+			octal = octal / 10;
+
+			decimal += last_digit * base;
+
+			base = base * 8;
+		}
+		return ""+decimal;
 	}
 
 	/**
@@ -69,8 +85,9 @@ class NumberSystemConversion {
 	 * @return Binary
 	 */
 	String octal2Binary(long octal) {
-		int decimal = Integer.parseInt(""+octal,8);
-		String binary = "" + Integer.toBinaryString(decimal);
+		long decimal = Long.parseLong(octal2Decimal(octal));
+		System.out.println(decimal);
+		String binary = decimal2Binary(decimal);
 		return binary;
 
 	}
@@ -81,9 +98,9 @@ class NumberSystemConversion {
 	 * @return Hex
 	 */
 	String octal2Hex(long octal) {
-		int decimal = Integer.parseInt(""+octal,8);
-		String Hex = "" + Integer.toHexString(decimal);
-		return Hex.toUpperCase();
+		long decimal = Long.parseLong(octal2Decimal(octal));
+		String hex = decimal2Hex(decimal);
+		return hex;
 
 	}
 
@@ -103,7 +120,7 @@ class NumberSystemConversion {
 		return true;
 	}
 
-	String decimal2Binary(int decimal)
+	String decimal2Binary(long decimal)
 	{
 		StringBuffer binary = new StringBuffer(); ;
 		while (decimal > 0)
@@ -115,7 +132,7 @@ class NumberSystemConversion {
 		return binary.reverse().toString();
 	}
 
-	String decimal2Octal(int decimal)
+	String decimal2Octal(long decimal)
 	{
 		StringBuffer octal = new StringBuffer(); ;
 		while (decimal > 0)
@@ -127,14 +144,14 @@ class NumberSystemConversion {
 		return octal.reverse().toString();
 	}
 
-	String decimal2Hex(int decimal)
+	String decimal2Hex(long decimal)
 	{
 		StringBuffer hex = new StringBuffer();
-		int preInput;
+		int preInput = 0;
 		while (decimal > 0)
 		{
 			// storing remainder in binary array
-			preInput = decimal % 16;
+			preInput = (int)(decimal % 16);
 			switch (preInput)
 			{
 				case 10:
@@ -164,7 +181,7 @@ class NumberSystemConversion {
 		return hex.reverse().toString();
 	}
 
-	Boolean verifyDecimal(int a)
+	Boolean verifyDecimal(long a)
 	{
 		try {
 			Integer.parseInt(""+a);

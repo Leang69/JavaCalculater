@@ -192,4 +192,74 @@ class NumberSystemConversion {
 		return true;
 	}
 
+	String Hex2decimal (String hex)
+	{
+		long decimal = 0;
+		int power = 1;
+
+		for (int i = 0 ; i < hex.length() ; i++)
+		{
+
+			switch (hex.charAt(i))
+			{
+				case '0':
+					decimal = decimal + 0*power;
+					break;
+				case '1':
+					decimal = decimal + 1*power;
+					break;
+				case '2':
+					decimal = decimal + 2*power;
+					break;
+				case '3':
+					decimal = decimal + 3*power;
+					break;
+				case '4':
+					decimal = decimal + 4*power;
+					break;
+				case '5':
+					decimal = decimal + 5*power;
+					break;
+				case '6':
+					decimal = decimal + 6*power;
+					break;
+				case '7':
+					decimal = decimal + 7*power;
+					break;
+				case '8':
+					decimal = decimal + 8*power;
+					break;
+				case '9':
+					decimal = decimal + 9*power;
+					break;
+				case 'a':
+				case 'A':
+					decimal = decimal + 10*power;
+					break;
+				case 'b':
+				case 'B':
+					decimal = decimal + 11*power;
+					break;
+				case 'c':
+				case 'C':
+					decimal = decimal + 12*power;
+					break;
+				case 'd':
+				case 'D':
+					decimal = decimal + 13*power;
+					break;
+				case 'e':
+				case 'E':
+					decimal = decimal + 14*power;
+					break;
+				case 'f':
+				case 'F':
+					decimal = decimal + 15*power;
+					break;
+			}
+			power = power * 16;
+		}
+		return ""+decimal;
+	}
+
 }

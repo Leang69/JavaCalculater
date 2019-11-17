@@ -600,6 +600,7 @@ public class Main {
 			System.out.println("1 : Binary");
 			System.out.println("2 : Octal");
 			System.out.println("3 : Decimal");
+			System.out.println("4 : Hexadecimal");
 			System.out.print("Please input menu : ");
 			menu = input.nextInt();
 			switch (menu) {
@@ -748,7 +749,11 @@ public class Main {
 						}
 					}
 					break;
-
+				case 4:
+					String hex;
+					hex = input.next();
+					System.out.println(numberSystemConversion.Hex2decimal(hex));
+					break;
 
 				default:
 					System.out.println("Please input again");

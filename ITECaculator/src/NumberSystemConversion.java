@@ -200,7 +200,7 @@ class NumberSystemConversion {
 		for (int i = 0 ; i < hex.length() ; i++)
 		{
 
-			switch (hex.charAt(i))
+			switch (hex.charAt(hex.length()-1-i))
 			{
 				case '0':
 					decimal = decimal + 0*power;

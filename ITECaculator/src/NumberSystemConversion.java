@@ -48,16 +48,7 @@ class NumberSystemConversion {
 	 * @param a
 	 * @return true of false
 	 */
-	Boolean verifyBinary(long a)
-	{
-		try {
-			Integer.parseInt(""+a, 2);
-		}catch (Exception e){
-			System.out.println("This is not Binary");
-			return false;
-		}
-		return true;
-	}
+
 
 	/**
 	 *
@@ -109,16 +100,7 @@ class NumberSystemConversion {
 	 * @param a
 	 * @return true or false
 	 */
-	Boolean verifyOctal(long a)
-	{
-		try {
-			Integer.parseInt(""+a, 8);
-		}catch (Exception e){
-			System.out.println("This is not Octal");
-			return false;
-		}
-		return true;
-	}
+
 
 	String decimal2Binary(long decimal)
 	{
@@ -181,16 +163,7 @@ class NumberSystemConversion {
 		return hex.reverse().toString();
 	}
 
-	Boolean verifyDecimal(long a)
-	{
-		try {
-			Integer.parseInt(""+a);
-		}catch (Exception e){
-			System.out.println("This is not decimal");
-			return false;
-		}
-		return true;
-	}
+
 
 	String Hex2decimal (String hex)
 	{
@@ -261,5 +234,62 @@ class NumberSystemConversion {
 		}
 		return ""+decimal;
 	}
+
+	String Hex2binary(String hex)
+	{
+		long decimal = Long.parseLong(Hex2decimal(hex));
+		return decimal2Binary(decimal);
+	}
+
+	String Hex2octal(String hex)
+	{
+		long decimal = Long.parseLong(Hex2decimal(hex));
+		return decimal2Octal(decimal);
+	}
+
+	boolean HexChecker(String a)
+	{
+		boolean c = true;
+		for (int i = 0 ; i < a.length() ; i++)
+		{
+
+			switch (a.charAt(a.length()-1-i))
+			{
+				case '0':
+				case '1':
+				case '2':
+				case '3':
+				case '4':
+				case '5':
+				case '6':
+				case '7':
+				case '8':
+				case '9':
+				case 'a':
+				case 'A':
+				case 'b':
+				case 'B':
+				case 'c':
+				case 'C':
+				case 'd':
+				case 'D':
+				case 'e':
+				case 'E':
+				case 'f':
+				case 'F':
+					break;
+				default:
+					c = false;
+			}
+
+			if (!c)
+			{
+				break;
+			}
+
+		}
+		return c;
+	}
+
 
 }

@@ -1,4 +1,5 @@
 
+import javax.swing.*;
 import java.util.Scanner;
 
 /**
@@ -596,6 +597,7 @@ public class Main {
 		NumberSystemConversion numberSystemConversion = new NumberSystemConversion();
 		int menu , subMenu;
 		long number ;
+		String hex;
 		while (true) {
 			System.out.println("1 : Binary");
 			System.out.println("2 : Octal");
@@ -619,27 +621,18 @@ public class Main {
 							case 1:
 								System.out.print("Please input Binary : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyBinary(number)) {
-									break;
-								}
 								System.out.println("In Decimal : "+numberSystemConversion.binary2Decimal(number));
 								System.out.println("");
 								break;
 							case 2:
 								System.out.print("Please input Binary : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyBinary(number)) {
-									break;
-								}
 								System.out.println("In Octal : "+numberSystemConversion.binary2Octal(number));
 								System.out.println("");
 								break;
 							case 3:
 								System.out.print("Please input Binary : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyBinary(number)) {
-									break;
-								}
 								System.out.println("In Hexadecimal : "+numberSystemConversion.binary2Hex(number));
 								System.out.println("");
 								break;
@@ -666,27 +659,18 @@ public class Main {
 							case 1:
 								System.out.print("Please input Octal : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyOctal(number)) {
-									break;
-								}
 								System.out.println("In Decimal : "+numberSystemConversion.octal2Decimal(number));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Octal : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyOctal(number)) {
-									break;
-								}
 								System.out.println("In Binary : "+numberSystemConversion.octal2Binary(number));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Octal : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyOctal(number)) {
-									break;
-								}
 								System.out.println("In Hexadecimal : "+numberSystemConversion.octal2Hex(number));
 								System.out.println();
 								break;
@@ -714,27 +698,18 @@ public class Main {
 							case 1:
 								System.out.print("Please input Decimal : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyDecimal(number)) {
-									break;
-								}
 								System.out.println("In Binary : "+numberSystemConversion.decimal2Binary(number));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Decimal : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyDecimal(number)) {
-									break;
-								}
 								System.out.println("In Octal : "+numberSystemConversion.decimal2Octal(number));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Decimal : ");
 								number = input.nextLong();
-								if (!numberSystemConversion.verifyOctal(number)) {
-									break;
-								}
 								System.out.println("In Hexadecimal : "+numberSystemConversion.decimal2Hex(number));
 								System.out.println();
 								break;
@@ -750,9 +725,57 @@ public class Main {
 					}
 					break;
 				case 4:
-					String hex;
-					hex = input.next();
-					System.out.println(numberSystemConversion.Hex2decimal(hex));
+					while (true) {
+						System.out.println("1 : Hexadecimal to Binary");
+						System.out.println("2 : Hexadecimal to Octal");
+						System.out.println("3 : Hexadecimal to Decimal");
+						System.out.println("0 : Back");
+						System.out.print("Please input menu : ");
+						subMenu = input.nextInt();
+						switch (subMenu) {
+							case 1:
+								System.out.print("Please input Hexadecimal : ");
+								hex = input.next();
+								if (!numberSystemConversion.HexChecker(hex))
+								{
+									System.out.println("please input again");
+									break;
+								}
+								System.out.println("In Binary : "+numberSystemConversion.Hex2binary(hex));
+								System.out.println();
+								break;
+							case 2:
+								System.out.print("Please input Hexadecimal : ");
+								hex = input.next();
+								if (!numberSystemConversion.HexChecker(hex))
+								{
+									System.out.println("please input again");
+									break;
+								}
+								System.out.println("In Octal : "+numberSystemConversion.Hex2octal(hex));
+								System.out.println();
+								break;
+							case 3:
+								System.out.print("Please input Hexadecimal : ");
+								hex = input.next();
+								if (!numberSystemConversion.HexChecker(hex))
+								{
+									System.out.println("please input again");
+									break;
+								}
+								System.out.println("In Decimal : "+numberSystemConversion.Hex2decimal(hex));
+								System.out.println();
+								break;
+							case 0:
+								break;
+							default:
+								System.out.println("Please input again");
+
+						}
+						if (subMenu == 0) {
+							break;
+						}
+					}
 					break;
 
 				default:

@@ -247,7 +247,7 @@ class NumberSystemConversion {
 		return decimal2Octal(decimal);
 	}
 
-	boolean HexChecker(String a)
+	boolean isValidHex(String a)
 	{
 		boolean c = true;
 		for (int i = 0 ; i < a.length() ; i++)
@@ -277,6 +277,94 @@ class NumberSystemConversion {
 				case 'E':
 				case 'f':
 				case 'F':
+					break;
+				default:
+					c = false;
+			}
+
+			if (!c)
+			{
+				break;
+			}
+
+		}
+		return c;
+	}
+
+	boolean isValidDecimal(String a)
+	{
+		boolean c = true;
+		for (int i = 0 ; i < a.length() ; i++)
+		{
+
+			switch (a.charAt(a.length()-1-i))
+			{
+				case '0':
+				case '1':
+				case '2':
+				case '3':
+				case '4':
+				case '5':
+				case '6':
+				case '7':
+				case '8':
+				case '9':
+					break;
+				default:
+					c = false;
+			}
+
+			if (!c)
+			{
+				break;
+			}
+
+
+		}
+		return c;
+	}
+
+
+	boolean isValidOctal(String a)
+	{
+		boolean c = true;
+		for (int i = 0 ; i < a.length() ; i++)
+		{
+
+			switch (a.charAt(a.length()-1-i))
+			{
+				case '0':
+				case '1':
+				case '2':
+				case '3':
+				case '4':
+				case '5':
+				case '6':
+				case '7':
+					break;
+				default:
+					c = false;
+			}
+
+			if (!c)
+			{
+				break;
+			}
+
+		}
+		return c;
+	}
+
+	boolean isValidBinary(String a)
+	{
+		boolean c = true;
+		for (int i = 0 ; i < a.length() ; i++)
+		{
+
+			switch (a.charAt(a.length()-1-i))
+			{
+				case '0':
+				case '1':
 					break;
 				default:
 					c = false;

@@ -1,5 +1,4 @@
 
-import javax.swing.*;
 import java.util.Scanner;
 
 /**
@@ -597,7 +596,7 @@ public class Main {
 		NumberSystemConversion numberSystemConversion = new NumberSystemConversion();
 		int menu , subMenu;
 		long number ;
-		String hex;
+		String string;
 		while (true) {
 			System.out.println("1 : Binary");
 			System.out.println("2 : Octal");
@@ -620,19 +619,46 @@ public class Main {
 						switch (subMenu) {
 							case 1:
 								System.out.print("Please input Binary : ");
-								number = input.nextLong();
+								 string = input.next();
+								 if (!numberSystemConversion.isValidBinary(string))
+								 {
+								 	System.out.println("-------------------------------");
+								 	System.out.println("This is not Binary");
+								 	System.out.println("Binary is allow only 0 and 1");
+									 System.out.println("-------------------------------");
+								 	break;
+								 }
+								 number = Long.parseLong(string);
 								System.out.println("In Decimal : "+numberSystemConversion.binary2Decimal(number));
 								System.out.println("");
 								break;
 							case 2:
 								System.out.print("Please input Binary : ");
-								number = input.nextLong();
+								string = input.next();
+								if (!numberSystemConversion.isValidBinary(string))
+								{
+									System.out.println("-------------------------------");
+									System.out.println("This is not Binary");
+									System.out.println("Binary is allow only 0 and 1");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
 								System.out.println("In Octal : "+numberSystemConversion.binary2Octal(number));
 								System.out.println("");
 								break;
 							case 3:
 								System.out.print("Please input Binary : ");
-								number = input.nextLong();
+								string = input.next();
+								if (!numberSystemConversion.isValidBinary(string))
+								{
+									System.out.println("-------------------------------");
+									System.out.println("This is not Binary");
+									System.out.println("Binary is allow only 0 and 1");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
 								System.out.println("In Hexadecimal : "+numberSystemConversion.binary2Hex(number));
 								System.out.println("");
 								break;
@@ -658,19 +684,46 @@ public class Main {
 						switch (subMenu) {
 							case 1:
 								System.out.print("Please input Octal : ");
-								number = input.nextLong();
+								string = input.next();
+								if (!numberSystemConversion.isValidOctal(string))
+								{
+									System.out.println("-------------------------------");
+									System.out.println("This is not Octal");
+									System.out.println("Octal is allow only 0 to 7");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
 								System.out.println("In Decimal : "+numberSystemConversion.octal2Decimal(number));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Octal : ");
-								number = input.nextLong();
+								string = input.next();
+								if (!numberSystemConversion.isValidOctal(string))
+								{
+									System.out.println("-------------------------------");
+									System.out.println("This is not Octal");
+									System.out.println("Octal is allow only 0 to 7");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
 								System.out.println("In Binary : "+numberSystemConversion.octal2Binary(number));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Octal : ");
-								number = input.nextLong();
+								string = input.next();
+								if (!numberSystemConversion.isValidOctal(string))
+								{
+									System.out.println("-------------------------------");
+									System.out.println("This is not Octal");
+									System.out.println("Decimal is allow only 0 to 7");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
 								System.out.println("In Hexadecimal : "+numberSystemConversion.octal2Hex(number));
 								System.out.println();
 								break;
@@ -697,19 +750,46 @@ public class Main {
 						switch (subMenu) {
 							case 1:
 								System.out.print("Please input Decimal : ");
-								number = input.nextLong();
+								string = input.next();
+								if (!numberSystemConversion.isValidDecimal(string))
+								{
+									System.out.println("-------------------------------");
+									System.out.println("This is not Decimal");
+									System.out.println("Decimal is allow only 0 to 9");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
 								System.out.println("In Binary : "+numberSystemConversion.decimal2Binary(number));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Decimal : ");
-								number = input.nextLong();
+								string = input.next();
+								if (!numberSystemConversion.isValidDecimal(string))
+								{
+									System.out.println("-------------------------------");
+									System.out.println("This is not Decimal");
+									System.out.println("Decimal is allow only 0 to 9");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
 								System.out.println("In Octal : "+numberSystemConversion.decimal2Octal(number));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Decimal : ");
-								number = input.nextLong();
+								string = input.next();
+								if (!numberSystemConversion.isValidDecimal(string))
+								{
+									System.out.println("-------------------------------");
+									System.out.println("This is not Decimal");
+									System.out.println("Decimal is allow only 0 to 9");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
 								System.out.println("In Hexadecimal : "+numberSystemConversion.decimal2Hex(number));
 								System.out.println();
 								break;
@@ -735,35 +815,35 @@ public class Main {
 						switch (subMenu) {
 							case 1:
 								System.out.print("Please input Hexadecimal : ");
-								hex = input.next();
-								if (!numberSystemConversion.HexChecker(hex))
+								string = input.next();
+								if (!numberSystemConversion.isValidHex(string))
 								{
 									System.out.println("please input again");
 									break;
 								}
-								System.out.println("In Binary : "+numberSystemConversion.Hex2binary(hex));
+								System.out.println("In Binary : "+numberSystemConversion.Hex2binary(string));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Hexadecimal : ");
-								hex = input.next();
-								if (!numberSystemConversion.HexChecker(hex))
+								string = input.next();
+								if (!numberSystemConversion.isValidHex(string))
 								{
 									System.out.println("please input again");
 									break;
 								}
-								System.out.println("In Octal : "+numberSystemConversion.Hex2octal(hex));
+								System.out.println("In Octal : "+numberSystemConversion.Hex2octal(string));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Hexadecimal : ");
-								hex = input.next();
-								if (!numberSystemConversion.HexChecker(hex))
+								string = input.next();
+								if (!numberSystemConversion.isValidHex(string))
 								{
 									System.out.println("please input again");
 									break;
 								}
-								System.out.println("In Decimal : "+numberSystemConversion.Hex2decimal(hex));
+								System.out.println("In Decimal : "+numberSystemConversion.Hex2decimal(string));
 								System.out.println();
 								break;
 							case 0:

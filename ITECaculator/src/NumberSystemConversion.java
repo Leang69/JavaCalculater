@@ -4,14 +4,18 @@ class NumberSystemConversion {
 	/**
 	 *
 	 * @param binary
+	 * last_digit find a last_digit binary always loop
+	 * base = base(n - 1) * 2
+	 * decimal = decimal + last_digit * base
 	 * @return Decimal value
 	 */
 	String binary2Decimal(long binary) {
-		long last_digit;
+		int last_digit;
 		int decimal = 0;
 		int base = 1;
-		while (binary > 0) {
-			last_digit = binary % 10;
+		while (binary > 0)
+		{
+			last_digit = (int)(binary % 10);
 			binary = binary / 10;
 
 			decimal += last_digit * base;
@@ -24,6 +28,7 @@ class NumberSystemConversion {
 	/**
 	 *
 	 * @param binary
+	 * binary to octal = binary to decimal and than pass this decimal in decimal to octal
 	 * @return Octal value
 	 */
 	String binary2Octal(long binary) {
@@ -35,6 +40,7 @@ class NumberSystemConversion {
 	/**
 	 *
 	 * @param binary
+	 * octal = binary to decimal and than pass this decimal in decimal to hex
 	 * @return hexadecimal
 	 */
 	String binary2Hex(long binary) {
@@ -43,16 +49,13 @@ class NumberSystemConversion {
 		return Hex;
 	}
 
-	/**
-	 * using for check Binary
-	 * @param a
-	 * @return true of false
-	 */
+
 
 
 	/**
 	 *
 	 * @param octal
+	 * use a binary algorithm only change base = base *  8
 	 * @return Decimal
 	 */
 	String octal2Decimal(long octal) {
@@ -60,7 +63,7 @@ class NumberSystemConversion {
 		int decimal = 0;
 		int base = 1;
 		while (octal > 0) {
-			last_digit = (int) (octal % 10);
+			last_digit = (int)(octal % 10);
 			octal = octal / 10;
 
 			decimal += last_digit * base;
@@ -77,7 +80,6 @@ class NumberSystemConversion {
 	 */
 	String octal2Binary(long octal) {
 		long decimal = Long.parseLong(octal2Decimal(octal));
-		System.out.println(decimal);
 		String binary = decimal2Binary(decimal);
 		return binary;
 
@@ -95,11 +97,6 @@ class NumberSystemConversion {
 
 	}
 
-	/**
-	 * using for checking octal
-	 * @param a
-	 * @return true or false
-	 */
 
 
 	String decimal2Binary(long decimal)
@@ -156,6 +153,7 @@ class NumberSystemConversion {
 					break;
 				default:
 					hex.append(preInput);
+
 
 			}
 			decimal = decimal / 16;

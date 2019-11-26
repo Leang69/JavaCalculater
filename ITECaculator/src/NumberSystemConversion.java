@@ -170,6 +170,8 @@ class NumberSystemConversion {
 		long decimal = 0;
 		int power = 1;
 
+		hex = hex.toUpperCase();
+
 		for (int i = 0 ; i < hex.length() ; i++)
 		{
 
@@ -205,27 +207,21 @@ class NumberSystemConversion {
 				case '9':
 					decimal = decimal + 9*power;
 					break;
-				case 'a':
 				case 'A':
 					decimal = decimal + 10*power;
 					break;
-				case 'b':
 				case 'B':
 					decimal = decimal + 11*power;
 					break;
-				case 'c':
 				case 'C':
 					decimal = decimal + 12*power;
 					break;
-				case 'd':
 				case 'D':
 					decimal = decimal + 13*power;
 					break;
-				case 'e':
 				case 'E':
 					decimal = decimal + 14*power;
 					break;
-				case 'f':
 				case 'F':
 					decimal = decimal + 15*power;
 					break;
@@ -250,6 +246,8 @@ class NumberSystemConversion {
 	boolean isValidHex(String a)
 	{
 		boolean c = true;
+		a = a.toUpperCase();
+
 		for (int i = 0 ; i < a.length() ; i++)
 		{
 
@@ -265,17 +263,11 @@ class NumberSystemConversion {
 				case '7':
 				case '8':
 				case '9':
-				case 'a':
 				case 'A':
-				case 'b':
 				case 'B':
-				case 'c':
 				case 'C':
-				case 'd':
 				case 'D':
-				case 'e':
 				case 'E':
-				case 'f':
 				case 'F':
 					break;
 				default:
@@ -297,28 +289,11 @@ class NumberSystemConversion {
 		for (int i = 0 ; i < a.length() ; i++)
 		{
 
-			switch (a.charAt(a.length()-1-i))
+			if (!Character.isDigit(a.charAt(a.length()-1-i)))
 			{
-				case '0':
-				case '1':
-				case '2':
-				case '3':
-				case '4':
-				case '5':
-				case '6':
-				case '7':
-				case '8':
-				case '9':
-					break;
-				default:
-					c = false;
-			}
-
-			if (!c)
-			{
+				c = false;
 				break;
 			}
-
 
 		}
 		return c;

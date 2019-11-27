@@ -1,4 +1,6 @@
-
+/**
+ * This class is ues for convert number system ( 2 , 8  , 10 , 16) and prevent
+ */
 class NumberSystemConversion {
 
 	/**
@@ -76,6 +78,9 @@ class NumberSystemConversion {
 	/**
 	 *
 	 * @param octal
+	 *
+	 *  octal = octal2decimal and than pass this decimal in decimal2binary
+	 *
 	 * @return Binary
 	 */
 	String octal2Binary(long octal) {
@@ -88,6 +93,9 @@ class NumberSystemConversion {
 	/**
 	 *
 	 * @param octal
+	 *
+	 * octal = octal2decimal and than pass this decimal in decimal2Hex
+	 *
 	 * @return Hex
 	 */
 	String octal2Hex(long octal) {
@@ -97,8 +105,13 @@ class NumberSystemConversion {
 
 	}
 
-
-
+	/**
+	 *
+	 * @param decimal
+	 * covert process until decimal > 0
+	 *
+	 * @return
+	 */
 	String decimal2Binary(long decimal)
 	{
 		StringBuffer binary = new StringBuffer(); ;

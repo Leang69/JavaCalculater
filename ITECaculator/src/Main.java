@@ -818,7 +818,10 @@ public class Main {
 								string = input.next();
 								if (!numberSystemConversion.isValidHex(string))
 								{
-									System.out.println("please input again");
+									System.out.println("-------------------------------");
+									System.out.println("This is not Hexadecimal");
+									System.out.println("Decimal is allow only 0 to 9 and A to F");
+									System.out.println("-------------------------------");
 									break;
 								}
 								System.out.println("In Binary : "+numberSystemConversion.Hex2binary(string));
@@ -829,7 +832,10 @@ public class Main {
 								string = input.next();
 								if (!numberSystemConversion.isValidHex(string))
 								{
-									System.out.println("please input again");
+									System.out.println("-------------------------------");
+									System.out.println("This is not Hexadecimal");
+									System.out.println("Decimal is allow only 0 to 9 and A to F");
+									System.out.println("-------------------------------");
 									break;
 								}
 								System.out.println("In Octal : "+numberSystemConversion.Hex2octal(string));
@@ -840,7 +846,10 @@ public class Main {
 								string = input.next();
 								if (!numberSystemConversion.isValidHex(string))
 								{
-									System.out.println("please input again");
+									System.out.println("-------------------------------");
+									System.out.println("This is not Hexadecimal");
+									System.out.println("Decimal is allow only 0 to 9 and A to F");
+									System.out.println("-------------------------------");
 									break;
 								}
 								System.out.println("In Decimal : "+numberSystemConversion.Hex2decimal(string));

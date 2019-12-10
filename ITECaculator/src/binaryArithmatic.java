@@ -78,14 +78,76 @@ public class binaryArithmatic {
         builder.append(carry);
         return builder.reverse().toString();
     }
-        void binarySubtraction(String binaryA,String binaryB)
+    String binarySubtraction(String binaryA,String binaryB)
+    {
+        if (binaryA.length() > binaryB.length())
         {
-            char carry;
-        }
-        void findFirstComplement()
-        {
+            StringBuilder builder = new StringBuilder(binaryB);
+            // builder.append();
+            for (int i = binaryB.length() ; i  < binaryA.length() ; i++)
+            {
+                //builder.append(0);
+                builder.insert(0,0);
+            }
+
+            binaryB = builder.toString();
 
         }
+        else if (binaryA.length() < binaryB.length())
+        {
+            StringBuilder builder = new StringBuilder(binaryA);
+            // builder.append();
+            for (int i = binaryA.length() ; i  < binaryB.length() ; i++)
+            {
+                builder.insert(0,0);
+            }
+            binaryA = builder.toString();
+        }
+        binaryB = firstComplement(binaryB);
+        //System.out.println(binaryB);
+        String answer = binaryAdd(binaryA,binaryB);
+        System.out.println(answer);
+        if (answer.length() == binaryA.length() + 1 || answer.length() == binaryB.length() + 1)
+        {
+            System.out.println("con 1");
+            if (answer.charAt(0) == '1' )
+            {
+                StringBuilder builder = new StringBuilder();
+                builder.append(answer);
+                builder.deleteCharAt(0);
+                answer = builder.toString();
+                answer = binaryAdd(answer,"1");
+
+            }
+
+        }
+        else if ((answer.length() == binaryA.length() || answer.length() == binaryB.length()))
+        {
+            System.out.println("con 2");
+            answer = firstComplement(answer);
+            StringBuilder builder = new StringBuilder();
+            builder.append(answer);
+            builder.insert(0,'-');
+            answer = builder.toString();
+        }
+        return answer;
+    }
+    String firstComplement(String a)
+    {
+        StringBuilder answer = new StringBuilder();
+        for(int i = 0 ; i < a.length() ; i++)
+        {
+            if(a.charAt(i) == '0')
+            {
+                answer.append(1);
+            }
+            else if(a.charAt(i) == '1')
+            {
+                answer.append(0);
+            }
+        }
+        return answer.toString();
+    }
 
 
 }

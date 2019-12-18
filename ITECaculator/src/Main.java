@@ -17,7 +17,7 @@ public class Main {
 		/**
 		 * Create object form DecimalFormat for format string
 		 */
-
+		//dsaffffffffffhjshcjsdbfkjsadgbfiusadkjfhasd
 		int Menu;
 		while (true) {
 			System.out.println("Menu");

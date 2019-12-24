@@ -26,6 +26,7 @@ public class Main {
 			System.out.println("3  : Bitwise Operators");
 			System.out.println("4  : Storage Converter");
 			System.out.println("5  : Number System Conversion");
+			System.out.println("6  : Binary Arithmetic");
 			System.out.print("Please input menu : ");
 
 			Menu = input.nextInt();
@@ -45,6 +46,10 @@ public class Main {
 			case 5:
 			    NumberSystemConversion();
 				break;
+				case 6:
+					BinaryArithmatic();
+					break;
+
 			default:
 			}
 
@@ -878,5 +883,92 @@ public class Main {
 			}
 
 		}
+	}
+	static void BinaryArithmatic()
+	{
+
+		int menu;
+		String a, b;
+		System.out.println("1 : Sum binary");
+		System.out.println("2 : Subtract binary");
+		System.out.println("3 : Convert binary to 1st compliment");
+		System.out.println("0 : Back to main menu");
+		binaryArithmetic binary_Arithmatic = new binaryArithmetic();
+		NumberSystemConversion binaryChecker = new NumberSystemConversion();
+		while (true) {
+			System.out.println("-----------------------");
+			System.out.print("Input menu : ");
+			menu = input.nextInt();
+			System.out.println("-----------------------");
+			switch (menu) {
+				case 1:
+					System.out.print("Input A :");
+					a = input.next();
+					System.out.print("Input B :");
+					b = input.next();
+					if (!binaryChecker.isValidBinary(a))
+					{
+						System.out.println("-------------------------------");
+						System.out.println("A is not Binary");
+						System.out.println("Binary is allow only 0 and 1");
+						System.out.println("-------------------------------");
+						break;
+					}
+					if (!binaryChecker.isValidBinary(b))
+					{
+						System.out.println("-------------------------------");
+						System.out.println("B is not Binary");
+						System.out.println("Binary is allow only 0 and 1");
+						System.out.println("-------------------------------");
+						break;
+					}
+					System.out.println("a + b = " + binary_Arithmatic.binaryAdd(a, b));
+					break;
+				case 2:
+					System.out.print("Input A :");
+					a = input.next();
+					System.out.print("Input B :");
+					b = input.next();
+					if (!binaryChecker.isValidBinary(a))
+					{
+						System.out.println("-------------------------------");
+						System.out.println("A is not Binary");
+						System.out.println("Binary is allow only 0 and 1");
+						System.out.println("-------------------------------");
+						break;
+					}
+					if (!binaryChecker.isValidBinary(b))
+					{
+						System.out.println("-------------------------------");
+						System.out.println("B is not Binary");
+						System.out.println("Binary is allow only 0 and 1");
+						System.out.println("-------------------------------");
+						break;
+					}
+					System.out.println("a - b = " + binary_Arithmatic.binarySubtraction(a, b));
+					break;
+				case 3:
+					System.out.print("Input A :");
+					a = input.next();
+					if (!binaryChecker.isValidBinary(a))
+					{
+						System.out.println("-------------------------------");
+						System.out.println("A is not Binary");
+						System.out.println("Binary is allow only 0 and 1");
+						System.out.println("-------------------------------");
+						break;
+					}
+					System.out.println("A in 1st compliment = " + binary_Arithmatic.firstComplement(a));
+					break;
+				case 0:
+					break;
+				default:
+					System.out.print("Please input again : ");
+			}
+			if (menu == 0) {
+				break;
+			}
+
+	}
 	}
 }

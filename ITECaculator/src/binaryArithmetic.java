@@ -1,4 +1,4 @@
-public class binaryArithmatic {
+public class binaryArithmetic {
 
     String binaryAdd(String binaryA,String binaryB)
     {
@@ -75,15 +75,19 @@ public class binaryArithmatic {
         }
         //System.out.println(carry);
         StringBuilder builder = new StringBuilder(answer);
-        builder.append(carry);
+        if (carry == '1') {
+            builder.append(carry);
+        }
         return builder.reverse().toString();
     }
+
+
     String binarySubtraction(String binaryA,String binaryB)
     {
         if (binaryA.length() > binaryB.length())
         {
             StringBuilder builder = new StringBuilder(binaryB);
-            // builder.append();
+            //builder.append();
             for (int i = binaryB.length() ; i  < binaryA.length() ; i++)
             {
                 //builder.append(0);
@@ -106,12 +110,13 @@ public class binaryArithmatic {
         binaryB = firstComplement(binaryB);
         //System.out.println(binaryB);
         String answer = binaryAdd(binaryA,binaryB);
-        System.out.println(answer);
+        //System.out.println(answer);
         if (answer.length() == binaryA.length() + 1 || answer.length() == binaryB.length() + 1)
         {
-            System.out.println("con 1");
+
             if (answer.charAt(0) == '1' )
             {
+                System.out.println("con 1");
                 StringBuilder builder = new StringBuilder();
                 builder.append(answer);
                 builder.deleteCharAt(0);
@@ -127,7 +132,7 @@ public class binaryArithmatic {
             answer = firstComplement(answer);
             StringBuilder builder = new StringBuilder();
             builder.append(answer);
-            builder.insert(0,'-');
+            builder.insert(0,"- ");
             answer = builder.toString();
         }
         return answer;

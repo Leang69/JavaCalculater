@@ -81,37 +81,37 @@ public class Main
 				System.out.print("Input angle in radian : ");
 				radian = input.nextFloat();
 				System.out.print("Sin of " + radian + " in radian = ");
-				System.out.printf("%.2f\n", operators.sin(radian));
+				System.out.printf("%.2f\n", operators.sinRadian(radian));
 				break;
 			case 2:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
 				System.out.println("Sin of " + degree + " in degree = ");
-				System.out.printf("%.2f\n", operators.sind(degree));
+				System.out.printf("%.2f\n", operators.sinDegree(degree));
 				break;
 			case 3:
 				System.out.print("Input angle in radian : ");
 				radian = input.nextFloat();
 				System.out.println("Cos of " + radian + " in radian = ");
-				System.out.printf("%.2f/n", operators.cos(radian));
+				System.out.printf("%.2f/n", operators.cosRadian(radian));
 				break;
 			case 4:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
 				System.out.println("Cos of " + degree + " in degree = ");
-				System.out.printf("%.2f/n", operators.cosd(degree));
+				System.out.printf("%.2f/n", operators.cosDegree(degree));
 				break;
 			case 5:
 				System.out.print("Input angle in radian : ");
 				radian = input.nextFloat();
 				System.out.println("Tan of " + radian + " in radian = ");
-				System.out.printf("%.2f/n", operators.tan(radian));
+				System.out.printf("%.2f/n", operators.tanRadian(radian));
 				break;
 			case 6:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
 				System.out.println("Tan of " + degree + " in degree = ");
-				System.out.printf("%.2f/n", operators.tand(degree));
+				System.out.printf("%.2f/n", operators.tanDegree(degree));
 				break;
 			case 7:
 				d_degree = input.nextDouble();
@@ -391,46 +391,43 @@ public class Main
 				System.out.println("4 : Megabyte to Terabyte");
 				System.out.println("5 : Megabyte to Petabyte");
 				System.out.println("0 : Back to Storage Category");
-				while (true) {
+				do {
 					System.out.println("-----------------------");
 					System.out.print("Input menu : ");
 					subMenu = input.nextInt();
 					System.out.println("-----------------------");
 					switch (subMenu) {
-					case 1:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Megabyte = " + storage_converter.mb2Byte(l) + " KB");
-						break;
-					case 2:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Megabyte = " + storage_converter.mb2KB(l) + " KB");
-						break;
-					case 3:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Megabyte = " + storage_converter.mb2GB(l) + " GB");
-						break;
-					case 4:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Megabyte = " + storage_converter.mb2TB(l) + " TB");
-						break;
-					case 5:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Megabyte = " + storage_converter.mb2PB(l) + " PB");
-						break;
-					case 0:
-						break;
-					default:
-						System.out.print("Please input again : ");
+						case 1:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Megabyte = " + storage_converter.mb2Byte(l) + " KB");
+							break;
+						case 2:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Megabyte = " + storage_converter.mb2KB(l) + " KB");
+							break;
+						case 3:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Megabyte = " + storage_converter.mb2GB(l) + " GB");
+							break;
+						case 4:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Megabyte = " + storage_converter.mb2TB(l) + " TB");
+							break;
+						case 5:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Megabyte = " + storage_converter.mb2PB(l) + " PB");
+							break;
+						case 0:
+							break;
+						default:
+							System.out.print("Please input again : ");
 					}
-					if (subMenu == 0) {
-						break;
-					}
-				}
+				} while (subMenu != 0);
 
 				break;
 
@@ -442,46 +439,43 @@ public class Main
 				System.out.println("4 : Gigabyte to Terabyte");
 				System.out.println("5 : Gigabyte to Petabyte");
 				System.out.println("0 : Back to Storage Category");
-				while (true) {
+				do {
 					System.out.println("-----------------------");
 					System.out.print("Input menu : ");
 					subMenu = input.nextInt();
 					System.out.println("-----------------------");
 					switch (subMenu) {
-					case 1:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Gigabyte = " + storage_converter.gb2Byte(l) + " Byte");
-						break;
-					case 2:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Gigabyte = " + storage_converter.gb2KB(l) + " KB");
-						break;
-					case 3:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Gigabyte = " + storage_converter.gb2MB(l) + " MB");
-						break;
-					case 4:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Gigabyte = " + storage_converter.gb2TB(l) + " TB");
-						break;
-					case 5:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Gigabyte = " + storage_converter.gb2PB(l) + " PB");
-						break;
-					case 0:
-						break;
-					default:
-						System.out.print("Please input again : ");
+						case 1:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Gigabyte = " + storage_converter.gb2Byte(l) + " Byte");
+							break;
+						case 2:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Gigabyte = " + storage_converter.gb2KB(l) + " KB");
+							break;
+						case 3:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Gigabyte = " + storage_converter.gb2MB(l) + " MB");
+							break;
+						case 4:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Gigabyte = " + storage_converter.gb2TB(l) + " TB");
+							break;
+						case 5:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Gigabyte = " + storage_converter.gb2PB(l) + " PB");
+							break;
+						case 0:
+							break;
+						default:
+							System.out.print("Please input again : ");
 					}
-					if (subMenu == 0) {
-						break;
-					}
-				}
+				} while (subMenu != 0);
 
 				break;
 			case 5:
@@ -492,46 +486,43 @@ public class Main
 				System.out.println("4 : Terabyte to Gigabyte");
 				System.out.println("5 : Terabyte to Petabyte");
 				System.out.println("0 : Back to Storage Category");
-				while (true) {
+				do {
 					System.out.println("-----------------------");
 					System.out.print("Input menu : ");
 					subMenu = input.nextInt();
 					System.out.println("-----------------------");
 					switch (subMenu) {
-					case 1:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Terabyte = " + storage_converter.tb2Byte(l) + " Byte");
-						break;
-					case 2:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Terabyte = " + storage_converter.tb2KB(l) + " KB");
-						break;
-					case 3:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Terabyte = " + storage_converter.tb2MB(l) + " MB");
-						break;
-					case 4:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Terabyte = " + storage_converter.tb2GB(l) + " GB");
-						break;
-					case 5:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Terabyte = " + storage_converter.tb2PB(l) + " PB");
-						break;
-					case 0:
-						break;
-					default:
-						System.out.print("Please input again : ");
+						case 1:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Terabyte = " + storage_converter.tb2Byte(l) + " Byte");
+							break;
+						case 2:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Terabyte = " + storage_converter.tb2KB(l) + " KB");
+							break;
+						case 3:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Terabyte = " + storage_converter.tb2MB(l) + " MB");
+							break;
+						case 4:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Terabyte = " + storage_converter.tb2GB(l) + " GB");
+							break;
+						case 5:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Terabyte = " + storage_converter.tb2PB(l) + " PB");
+							break;
+						case 0:
+							break;
+						default:
+							System.out.print("Please input again : ");
 					}
-					if (subMenu == 0) {
-						break;
-					}
-				}
+				} while (subMenu != 0);
 
 				break;
 			case 6:
@@ -542,46 +533,43 @@ public class Main
 				System.out.println("4 : Petabyte to Gigabyte");
 				System.out.println("5 : Petabyte to Terabyte");
 				System.out.println("0 : Back to Storage Category");
-				while (true) {
+				do {
 					System.out.println("-----------------------");
 					System.out.print("Input menu : ");
 					subMenu = input.nextInt();
 					System.out.println("-----------------------");
 					switch (subMenu) {
-					case 1:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Petabyte = " + storage_converter.pb2Byte(l) + " B");
-						break;
-					case 2:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Petabyte = " + storage_converter.pb2KB(l) + " KB");
-						break;
-					case 3:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Petabyte = " + storage_converter.pb2MB(l) + " MB");
-						break;
-					case 4:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Petabyte = " + storage_converter.pb2GB(l) + " GB");
-						break;
-					case 5:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Petabyte = " + storage_converter.pb2TB(l) + " TB");
-						break;
-					case 0:
-						break;
-					default:
-						System.out.print("Please input again : ");
+						case 1:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Petabyte = " + storage_converter.pb2Byte(l) + " B");
+							break;
+						case 2:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Petabyte = " + storage_converter.pb2KB(l) + " KB");
+							break;
+						case 3:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Petabyte = " + storage_converter.pb2MB(l) + " MB");
+							break;
+						case 4:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Petabyte = " + storage_converter.pb2GB(l) + " GB");
+							break;
+						case 5:
+							System.out.print("Input Storage :");
+							l = input.nextLong();
+							System.out.println(l + " Petabyte = " + storage_converter.pb2TB(l) + " TB");
+							break;
+						case 0:
+							break;
+						default:
+							System.out.print("Please input again : ");
 					}
-					if (subMenu == 0) {
-						break;
-					}
-				}
+				} while (subMenu != 0);
 
 				break;
 			case 0:
@@ -598,10 +586,11 @@ public class Main
 	static void NumberSystemConversion()
 	{
 		NumberSystemConversion numberSystemConversion = new NumberSystemConversion();
+		NumberSystemConversion.UserInput inputChecker = numberSystemConversion.new UserInput();
 		int menu , subMenu;
 		long number ;
 		String string;
-		while (true) {
+		do {
 			System.out.println("1 : Binary");
 			System.out.println("2 : Octal");
 			System.out.println("3 : Decimal");
@@ -610,7 +599,7 @@ public class Main
 			menu = input.nextInt();
 			switch (menu) {
 				case 1:
-					while (true) {
+					do {
 						System.out.println();
 						System.out.println("1 : Binary to Decimal");
 						System.out.println("2 : Binary to Octal");
@@ -623,24 +612,22 @@ public class Main
 						switch (subMenu) {
 							case 1:
 								System.out.print("Please input Binary : ");
-								 string = input.next();
-								 if (!numberSystemConversion.isValidBinary(string))
-								 {
-								 	System.out.println("-------------------------------");
-								 	System.out.println("This is not Binary");
-								 	System.out.println("Binary is allow only 0 and 1");
-									 System.out.println("-------------------------------");
-								 	break;
-								 }
-								 number = Long.parseLong(string);
-								System.out.println("In Decimal : "+numberSystemConversion.binary2Decimal(number));
+								string = input.next();
+								if (inputChecker.isValidBinary(string)) {
+									System.out.println("-------------------------------");
+									System.out.println("This is not Binary");
+									System.out.println("Binary is allow only 0 and 1");
+									System.out.println("-------------------------------");
+									break;
+								}
+								number = Long.parseLong(string);
+								System.out.println("In Decimal : " + numberSystemConversion.binary2Decimal(number));
 								System.out.println("");
 								break;
 							case 2:
 								System.out.print("Please input Binary : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidBinary(string))
-								{
+								if (inputChecker.isValidBinary(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Binary");
 									System.out.println("Binary is allow only 0 and 1");
@@ -648,14 +635,13 @@ public class Main
 									break;
 								}
 								number = Long.parseLong(string);
-								System.out.println("In Octal : "+numberSystemConversion.binary2Octal(number));
+								System.out.println("In Octal : " + numberSystemConversion.binary2Octal(number));
 								System.out.println("");
 								break;
 							case 3:
 								System.out.print("Please input Binary : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidBinary(string))
-								{
+								if (inputChecker.isValidBinary(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Binary");
 									System.out.println("Binary is allow only 0 and 1");
@@ -663,22 +649,19 @@ public class Main
 									break;
 								}
 								number = Long.parseLong(string);
-								System.out.println("In Hexadecimal : "+numberSystemConversion.binary2Hex(number));
+								System.out.println("In Hexadecimal : " + numberSystemConversion.binary2Hex(number));
 								System.out.println("");
 								break;
 							default:
 								System.out.println("Please input again");
 
 						}
-						if (subMenu == 0) {
-							break;
-						}
-					}
+					} while (subMenu != 0);
 					break;
 
 
 				case 2:
-					while (true) {
+					do {
 						System.out.println("1 : Octal to Decimal");
 						System.out.println("2 : Octal to Binary");
 						System.out.println("3 : Octal to Hexadecimal");
@@ -689,8 +672,7 @@ public class Main
 							case 1:
 								System.out.print("Please input Octal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidOctal(string))
-								{
+								if (inputChecker.isValidOctal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Octal");
 									System.out.println("Octal is allow only 0 to 7");
@@ -698,14 +680,13 @@ public class Main
 									break;
 								}
 								number = Long.parseLong(string);
-								System.out.println("In Decimal : "+numberSystemConversion.octal2Decimal(number));
+								System.out.println("In Decimal : " + numberSystemConversion.octal2Decimal(number));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Octal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidOctal(string))
-								{
+								if (inputChecker.isValidOctal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Octal");
 									System.out.println("Octal is allow only 0 to 7");
@@ -713,14 +694,13 @@ public class Main
 									break;
 								}
 								number = Long.parseLong(string);
-								System.out.println("In Binary : "+numberSystemConversion.octal2Binary(number));
+								System.out.println("In Binary : " + numberSystemConversion.octal2Binary(number));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Octal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidOctal(string))
-								{
+								if (inputChecker.isValidOctal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Octal");
 									System.out.println("Decimal is allow only 0 to 7");
@@ -728,7 +708,7 @@ public class Main
 									break;
 								}
 								number = Long.parseLong(string);
-								System.out.println("In Hexadecimal : "+numberSystemConversion.octal2Hex(number));
+								System.out.println("In Hexadecimal : " + numberSystemConversion.octal2Hex(number));
 								System.out.println();
 								break;
 							case 0:
@@ -737,14 +717,11 @@ public class Main
 								System.out.println("Please input again");
 
 						}
-						if (subMenu == 0) {
-							break;
-						}
-					}
+					} while (subMenu != 0);
 					break;
 
 				case 3:
-					while (true) {
+					do {
 						System.out.println("1 : Decimal to Binary");
 						System.out.println("2 : Decimal to Octal");
 						System.out.println("3 : Decimal to Hexadecimal");
@@ -755,8 +732,7 @@ public class Main
 							case 1:
 								System.out.print("Please input Decimal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidDecimal(string))
-								{
+								if (inputChecker.isValidDecimal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Decimal");
 									System.out.println("Decimal is allow only 0 to 9");
@@ -764,14 +740,13 @@ public class Main
 									break;
 								}
 								number = Long.parseLong(string);
-								System.out.println("In Binary : "+numberSystemConversion.decimal2Binary(number));
+								System.out.println("In Binary : " + numberSystemConversion.decimal2Binary(number));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Decimal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidDecimal(string))
-								{
+								if (inputChecker.isValidDecimal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Decimal");
 									System.out.println("Decimal is allow only 0 to 9");
@@ -779,14 +754,13 @@ public class Main
 									break;
 								}
 								number = Long.parseLong(string);
-								System.out.println("In Octal : "+numberSystemConversion.decimal2Octal(number));
+								System.out.println("In Octal : " + numberSystemConversion.decimal2Octal(number));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Decimal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidDecimal(string))
-								{
+								if (inputChecker.isValidDecimal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Decimal");
 									System.out.println("Decimal is allow only 0 to 9");
@@ -794,7 +768,7 @@ public class Main
 									break;
 								}
 								number = Long.parseLong(string);
-								System.out.println("In Hexadecimal : "+numberSystemConversion.decimal2Hex(number));
+								System.out.println("In Hexadecimal : " + numberSystemConversion.decimal2Hex(number));
 								System.out.println();
 								break;
 							case 0:
@@ -803,13 +777,10 @@ public class Main
 								System.out.println("Please input again");
 
 						}
-						if (subMenu == 0) {
-							break;
-						}
-					}
+					} while (subMenu != 0);
 					break;
 				case 4:
-					while (true) {
+					do {
 						System.out.println("1 : Hexadecimal to Binary");
 						System.out.println("2 : Hexadecimal to Octal");
 						System.out.println("3 : Hexadecimal to Decimal");
@@ -820,43 +791,40 @@ public class Main
 							case 1:
 								System.out.print("Please input Hexadecimal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidHex(string))
-								{
+								if (!inputChecker.isValidHex(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Hexadecimal");
 									System.out.println("Decimal is allow only 0 to 9 and A to F");
 									System.out.println("-------------------------------");
 									break;
 								}
-								System.out.println("In Binary : "+numberSystemConversion.Hex2binary(string));
+								System.out.println("In Binary : " + numberSystemConversion.Hex2binary(string));
 								System.out.println();
 								break;
 							case 2:
 								System.out.print("Please input Hexadecimal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidHex(string))
-								{
+								if (!inputChecker.isValidHex(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Hexadecimal");
 									System.out.println("Decimal is allow only 0 to 9 and A to F");
 									System.out.println("-------------------------------");
 									break;
 								}
-								System.out.println("In Octal : "+numberSystemConversion.Hex2octal(string));
+								System.out.println("In Octal : " + numberSystemConversion.Hex2octal(string));
 								System.out.println();
 								break;
 							case 3:
 								System.out.print("Please input Hexadecimal : ");
 								string = input.next();
-								if (!numberSystemConversion.isValidHex(string))
-								{
+								if (!inputChecker.isValidHex(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Hexadecimal");
 									System.out.println("Decimal is allow only 0 to 9 and A to F");
 									System.out.println("-------------------------------");
 									break;
 								}
-								System.out.println("In Decimal : "+numberSystemConversion.Hex2decimal(string));
+								System.out.println("In Decimal : " + numberSystemConversion.Hex2decimal(string));
 								System.out.println();
 								break;
 							case 0:
@@ -865,10 +833,7 @@ public class Main
 								System.out.println("Please input again");
 
 						}
-						if (subMenu == 0) {
-							break;
-						}
-					}
+					} while (subMenu != 0);
 					break;
 
 				default:
@@ -877,11 +842,7 @@ public class Main
 
 			}
 
-			if (menu == 0) {
-				break;
-			}
-
-		}
+		} while (menu != 0);
 	}
 	static void BinaryArithmatic()
 	{
@@ -893,11 +854,13 @@ public class Main
 		System.out.println("3 : Convert binary to 1st compliment");
 		System.out.println("4 : Convert binary to 2nd compliment");
 		System.out.println("5 : Subtract With 2nd Complement");
-		System.out.println("6 : Multiply");
+		System.out.println("6 : Multiply ");
+		System.out.println("7 : Divide");
 		System.out.println("0 : Back to main menu");
-		binaryArithmetic binary_Arithmatic = new binaryArithmetic();
-		NumberSystemConversion binaryChecker = new NumberSystemConversion();
-		while (true) {
+		binaryArithmetic binary_Arithmetic = new binaryArithmetic();
+		NumberSystemConversion outerClass = new NumberSystemConversion();
+		NumberSystemConversion.UserInput inputChecker = outerClass.new UserInput();
+		do {
 			System.out.println("-----------------------");
 			System.out.print("Input menu : ");
 			menu = input.nextInt();
@@ -908,128 +871,136 @@ public class Main
 					a = input.next();
 					System.out.print("Input B :");
 					b = input.next();
-					if (!binaryChecker.isValidBinary(a))
-					{
+					if (inputChecker.isValidBinary(a)) {
 						System.out.println("-------------------------------");
 						System.out.println("A is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					if (!binaryChecker.isValidBinary(b))
-					{
+					if (inputChecker.isValidBinary(b)) {
 						System.out.println("-------------------------------");
 						System.out.println("B is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					System.out.println("a + b = " + binary_Arithmatic.binaryAdd(a, b));
+					System.out.println("a + b = " + binary_Arithmetic.binaryAdd(a, b));
 					break;
 				case 2:
 					System.out.print("Input A :");
 					a = input.next();
 					System.out.print("Input B :");
 					b = input.next();
-					if (!binaryChecker.isValidBinary(a))
-					{
+					if (inputChecker.isValidBinary(a)) {
 						System.out.println("-------------------------------");
 						System.out.println("A is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					if (!binaryChecker.isValidBinary(b))
-					{
+					if (inputChecker.isValidBinary(b)) {
 						System.out.println("-------------------------------");
 						System.out.println("B is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					System.out.println("a - b = " + binary_Arithmatic.binarySubtraction(a, b));
+					System.out.println("a - b = " + binary_Arithmetic.binarySubtraction(a, b));
 					break;
 				case 3:
 					System.out.print("Input A :");
 					a = input.next();
-					if (!binaryChecker.isValidBinary(a))
-					{
+					if (inputChecker.isValidBinary(a)) {
 						System.out.println("-------------------------------");
 						System.out.println("A is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					System.out.println("A in 1st compliment = " + binary_Arithmatic.firstComplement(a));
+					System.out.println("A in 1st compliment = " + binary_Arithmetic.complement.firstComplement(a));
 					break;
 				case 4:
 					System.out.print("Input A :");
 					a = input.next();
-					if (!binaryChecker.isValidBinary(a))
-					{
+					if (inputChecker.isValidBinary(a)) {
 						System.out.println("-------------------------------");
 						System.out.println("A is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					System.out.println("A in 2nd compliment = " + binary_Arithmatic.secondComplement(a));
+					System.out.println("A in 2nd compliment = " + binary_Arithmetic.complement.secondComplement(a));
 					break;
 				case 5:
 					System.out.print("Input A :");
 					a = input.next();
 					System.out.print("Input B :");
 					b = input.next();
-					if (!binaryChecker.isValidBinary(a))
-					{
+					if (inputChecker.isValidBinary(a)) {
 						System.out.println("-------------------------------");
 						System.out.println("A is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					if (!binaryChecker.isValidBinary(b))
-					{
+					if (inputChecker.isValidBinary(b)) {
 						System.out.println("-------------------------------");
 						System.out.println("B is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					System.out.println("a - b = " + binary_Arithmatic.substractWith2ndComplement(a, b));
+					System.out.println("a - b = " + binary_Arithmetic.complement.subtractWith2ndComplement(a, b));
 					break;
 				case 6:
 					System.out.print("Input A :");
 					a = input.next();
 					System.out.print("Input B :");
 					b = input.next();
-					if (!binaryChecker.isValidBinary(a))
-					{
+					if (inputChecker.isValidBinary(a)) {
 						System.out.println("-------------------------------");
 						System.out.println("A is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					if (!binaryChecker.isValidBinary(b))
-					{
+					if (inputChecker.isValidBinary(b)) {
 						System.out.println("-------------------------------");
 						System.out.println("B is not Binary");
 						System.out.println("Binary is allow only 0 and 1");
 						System.out.println("-------------------------------");
 						break;
 					}
-					System.out.println("a * b = " + binary_Arithmatic.multiply(a, b));
+					System.out.println("a * b = " + binary_Arithmetic.multiply(a, b));
+					break;
+				case 7:
+					System.out.print("Input A :");
+					a = input.next();
+					System.out.print("Input B :");
+					b = input.next();
+					if (inputChecker.isValidBinary(a)) {
+						System.out.println("-------------------------------");
+						System.out.println("A is not Binary");
+						System.out.println("Binary is allow only 0 and 1");
+						System.out.println("-------------------------------");
+						break;
+					}
+					if (inputChecker.isValidBinary(b)) {
+						System.out.println("-------------------------------");
+						System.out.println("B is not Binary");
+						System.out.println("Binary is allow only 0 and 1");
+						System.out.println("-------------------------------");
+						break;
+					}
+					System.out.println("a / b = " + binary_Arithmetic.divide(a, b));
 					break;
 				case 0:
 					break;
 				default:
 					System.out.print("Please input again : ");
 			}
-			if (menu == 0) {
-				break;
-			}
 
-	}
+		} while (menu != 0);
 	}
 }

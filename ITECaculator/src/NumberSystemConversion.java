@@ -250,116 +250,123 @@ class NumberSystemConversion {
 		return decimal2Octal(decimal);
 	}
 
-	boolean isValidHex(String a)
+
+
+
+
+	class UserInput
 	{
-		boolean c = true;
-		a = a.toUpperCase();
-
-		for (int i = 0 ; i < a.length() ; i++)
+		boolean isValidHex(String a)
 		{
+			boolean c = true;
+			a = a.toUpperCase();
 
-			switch (a.charAt(a.length()-1-i))
+			for (int i = 0 ; i < a.length() ; i++)
 			{
-				case '0':
-				case '1':
-				case '2':
-				case '3':
-				case '4':
-				case '5':
-				case '6':
-				case '7':
-				case '8':
-				case '9':
-				case 'A':
-				case 'B':
-				case 'C':
-				case 'D':
-				case 'E':
-				case 'F':
+
+				switch (a.charAt(a.length()-1-i))
+				{
+					case '0':
+					case '1':
+					case '2':
+					case '3':
+					case '4':
+					case '5':
+					case '6':
+					case '7':
+					case '8':
+					case '9':
+					case 'A':
+					case 'B':
+					case 'C':
+					case 'D':
+					case 'E':
+					case 'F':
+						break;
+					default:
+						c = false;
+				}
+
+				if (!c)
+				{
 					break;
-				default:
+				}
+
+			}
+			return c;
+		}
+		boolean isValidDecimal(String a)
+		{
+			boolean c = true;
+			for (int i = 0 ; i < a.length() ; i++)
+			{
+
+				if (!Character.isDigit(a.charAt(a.length()-1-i)))
+				{
 					c = false;
-			}
-
-			if (!c)
-			{
-				break;
-			}
-
-		}
-		return c;
-	}
-
-	boolean isValidDecimal(String a)
-	{
-		boolean c = true;
-		for (int i = 0 ; i < a.length() ; i++)
-		{
-
-			if (!Character.isDigit(a.charAt(a.length()-1-i)))
-			{
-				c = false;
-				break;
-			}
-
-		}
-		return c;
-	}
-
-
-	boolean isValidOctal(String a)
-	{
-		boolean c = true;
-		for (int i = 0 ; i < a.length() ; i++)
-		{
-
-			switch (a.charAt(a.length()-1-i))
-			{
-				case '0':
-				case '1':
-				case '2':
-				case '3':
-				case '4':
-				case '5':
-				case '6':
-				case '7':
 					break;
-				default:
-					c = false;
-			}
+				}
 
-			if (!c)
-			{
-				break;
 			}
-
+			return !c;
 		}
-		return c;
-	}
-
-	boolean isValidBinary(String a)
-	{
-		boolean c = true;
-		for (int i = 0 ; i < a.length() ; i++)
+		boolean isValidOctal(String a)
 		{
-
-			switch (a.charAt(a.length()-1-i))
+			boolean c = true;
+			for (int i = 0 ; i < a.length() ; i++)
 			{
-				case '0':
-				case '1':
+
+				switch (a.charAt(a.length()-1-i))
+				{
+					case '0':
+					case '1':
+					case '2':
+					case '3':
+					case '4':
+					case '5':
+					case '6':
+					case '7':
+						break;
+					default:
+						c = false;
+				}
+
+				if (!c)
+				{
 					break;
-				default:
-					c = false;
-			}
+				}
 
-			if (!c)
-			{
-				break;
 			}
-
+			return !c;
 		}
-		return c;
+		boolean isValidBinary(String a)
+		{
+			boolean c = true;
+			for (int i = 0 ; i < a.length() ; i++)
+			{
+
+				switch (a.charAt(a.length()-1-i))
+				{
+					case '0':
+					case '1':
+						break;
+					default:
+						c = false;
+				}
+
+				if (!c)
+				{
+					break;
+				}
+
+			}
+			return !c;
+		}
+
 	}
+
+
+
 
 
 }

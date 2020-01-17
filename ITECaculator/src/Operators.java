@@ -1,12 +1,13 @@
+/**
+ * This class is use for handle a normal Number Arithmetic
+ */
 class Operators {
-    // sum method we can sum 2integer
-
     /**
      * Sum method use for sum 2 integer
      * 
      * @param a integer viable
      * @param b integer viable
-     * @return integer viable
+     * @return integer viable form a + b
      */
     int sum(int a, int b) {
         return a + b;
@@ -17,7 +18,7 @@ class Operators {
      * 
      * @param a integer viable
      * @param b integer viable
-     * @return double value
+     * @return double value form a / b
      */
     // divide method we can divide 2integer
     double divide(int a, int b) {
@@ -29,7 +30,7 @@ class Operators {
      * 
      * @param a integer viable
      * @param b integer viable
-     * @return integer value
+     * @return integer value form a * b
      */
     int multiply(int a, int b) {
         return a * b;
@@ -41,7 +42,7 @@ class Operators {
      * 
      * @param a integer viable
      * @param b integer viable
-     * @return integer value
+     * @return integer value a - b
      */
     int minus(int a, int b) {
         return a - b;
@@ -53,7 +54,7 @@ class Operators {
      * 
      * @param a integer viable
      * @param b integer viable
-     * @return integer value
+     * @return integer value form remainder of a / b
      */
     int modulo(int a, int b) {
         return a % b;
@@ -64,7 +65,7 @@ class Operators {
      * @param radian
      * @return the Trigonometry sine of an angle in radian
      */
-    float sin(float radian) {
+    float sinRadian(float radian) {
 	return (float) Math.sin(radian);
     }
 
@@ -73,7 +74,7 @@ class Operators {
      * @param degree
      * @return the Trigonometry sine of an angle in degree
      */
-    float sind(int degree) {
+    float sinDegree(int degree) {
 	return (float) Math.sin(Math.toRadians(degree));
 
     }
@@ -83,7 +84,7 @@ class Operators {
      * @param radian
      * @return the Trigonometry cos of an angle in radian
      */
-    float cos(float radian) {
+    float cosRadian(float radian) {
 	return (float) Math.cos(radian);
     }
 
@@ -92,7 +93,7 @@ class Operators {
      * @param degree
      * @return the Trigonometry cos of an angle in degree
      */
-    float cosd(int degree) {
+    float cosDegree(int degree) {
 	return (float) Math.cos(Math.toRadians(degree));
 
     }
@@ -102,7 +103,7 @@ class Operators {
      * @param radian
      * @return the Trigonometry tan of an angle in radian
      */
-    float tan(float radian) {
+    float tanRadian(float radian) {
 	return (float) Math.tan(radian);
     }
 
@@ -111,14 +112,14 @@ class Operators {
      * @param degree
      * @return the Trigonometry tan of an angle in degree
      */
-    float tand(int degree) {
+    float tanDegree(int degree) {
 	return (float) Math.tan(Math.toRadians(degree));
 
     }
 
     /**
      *
-     * @param x
+     * @param x that x is integer
      * @return x power of 2
      */
     long square2(long x) {
@@ -127,7 +128,7 @@ class Operators {
 
     /**
      *
-     * @param x
+     * @param x that x is floating number
      * @return x power of 2
      */
     double square2(double x) {
@@ -136,7 +137,7 @@ class Operators {
 
     /**
      *
-     * @param x
+     * @param x that x is integer
      * @return x power of 3
      */
     long square3(long x) {
@@ -145,7 +146,7 @@ class Operators {
 
     /**
      *
-     * @param x
+     * @param x that x is floating number
      * @return x power of 3
      */
     double square3(double x) {
@@ -154,11 +155,11 @@ class Operators {
 
     /**
      *
-     * @param a
+     * @param degree is angle is degree
      * @return the angle in radian
      */
-    double degree2Radian(double a) {
-	return Math.toRadians(a);
+    double degree2Radian(double degree) {
+	return Math.toRadians(degree);
     }
 
 }

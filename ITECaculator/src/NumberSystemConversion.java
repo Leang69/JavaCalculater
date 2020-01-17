@@ -18,7 +18,7 @@ class NumberSystemConversion {
 		while (binary > 0)
 		{
 			last_digit = (int)(binary % 10);
-			binary = binary / 10;
+			binary = binary / 10; //1100
 
 			decimal += last_digit * base;
 
@@ -35,8 +35,7 @@ class NumberSystemConversion {
 	 */
 	String binary2Octal(long binary) {
 		int decimal = Integer.parseInt(binary2Decimal(binary));
-		String octal = decimal2Octal(decimal);
-		return octal;
+		return decimal2Octal(decimal);
 	}
 
 	/**
@@ -47,8 +46,7 @@ class NumberSystemConversion {
 	 */
 	String binary2Hex(long binary) {
 		int decimal = Integer.parseInt(binary2Decimal(binary));
-		String Hex = decimal2Hex(decimal);
-		return Hex;
+		return decimal2Hex(decimal);
 	}
 
 
@@ -85,8 +83,7 @@ class NumberSystemConversion {
 	 */
 	String octal2Binary(long octal) {
 		long decimal = Long.parseLong(octal2Decimal(octal));
-		String binary = decimal2Binary(decimal);
-		return binary;
+		return decimal2Binary(decimal);
 
 	}
 
@@ -100,8 +97,7 @@ class NumberSystemConversion {
 	 */
 	String octal2Hex(long octal) {
 		long decimal = Long.parseLong(octal2Decimal(octal));
-		String hex = decimal2Hex(decimal);
-		return hex;
+		return decimal2Hex(decimal);
 
 	}
 
@@ -114,7 +110,7 @@ class NumberSystemConversion {
 	 */
 	String decimal2Binary(long decimal)
 	{
-		StringBuffer binary = new StringBuffer(); ;
+		StringBuilder binary = new StringBuilder(); ;
 		while (decimal > 0)
 		{
 			// storing remainder in binary array
@@ -126,7 +122,7 @@ class NumberSystemConversion {
 
 	String decimal2Octal(long decimal)
 	{
-		StringBuffer octal = new StringBuffer(); ;
+		StringBuilder octal = new StringBuilder(); ;
 		while (decimal > 0)
 		{
 			// storing remainder in binary array
@@ -138,7 +134,7 @@ class NumberSystemConversion {
 
 	String decimal2Hex(long decimal)
 	{
-		StringBuffer hex = new StringBuffer();
+		StringBuilder hex = new StringBuilder();
 		int preInput = 0;
 		while (decimal > 0)
 		{
@@ -189,10 +185,10 @@ class NumberSystemConversion {
 			switch (hex.charAt(hex.length()-1-i))
 			{
 				case '0':
-					decimal = decimal + 0*power;
+					decimal = decimal + 0;
 					break;
 				case '1':
-					decimal = decimal + 1*power;
+					decimal = decimal + power;
 					break;
 				case '2':
 					decimal = decimal + 2*power;

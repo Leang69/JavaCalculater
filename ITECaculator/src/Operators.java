@@ -9,8 +9,7 @@ class Operators {
      * @return integer viable
      */
     int sum(int a, int b) {
-	int c = a + b;
-	return c;
+        return a + b;
     }
 
     /**
@@ -22,8 +21,7 @@ class Operators {
      */
     // divide method we can divide 2integer
     double divide(int a, int b) {
-	double c = (double) a / (double) b;
-	return c;
+        return (double) a / (double) b;
     }
 
     /**
@@ -34,8 +32,7 @@ class Operators {
      * @return integer value
      */
     int multiply(int a, int b) {
-	int c = a * b;
-	return c;
+        return a * b;
     }
 
     // minus method we can minus 2integer
@@ -47,8 +44,7 @@ class Operators {
      * @return integer value
      */
     int minus(int a, int b) {
-	int c = a - b;
-	return c;
+        return a - b;
     }
 
     // modulo method we can find the reminder after divide between 2integer
@@ -60,8 +56,7 @@ class Operators {
      * @return integer value
      */
     int modulo(int a, int b) {
-	int c = a % b;
-	return c;
+        return a % b;
     }
 
     /**

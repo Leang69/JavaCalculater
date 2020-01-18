@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main
 {
 	static Scanner input = new Scanner(System.in);
-
+	
 	public static void main(String[] args) {
 
 		int Menu;
@@ -80,31 +80,31 @@ public class Main
 			case 2:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
-				System.out.println("Sin of " + degree + " in degree = ");
+				System.out.print("Sin of " + degree + " in degree = ");
 				System.out.printf("%.2f\n", operators.sinDegree(degree));
 				break;
 			case 3:
 				System.out.print("Input angle in radian : ");
 				radian = input.nextFloat();
-				System.out.println("Cos of " + radian + " in radian = ");
+				System.out.print("Cos of " + radian + " in radian = ");
 				System.out.printf("%.2f/n", operators.cosRadian(radian));
 				break;
 			case 4:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
-				System.out.println("Cos of " + degree + " in degree = ");
+				System.out.print("Cos of " + degree + " in degree = ");
 				System.out.printf("%.2f/n", operators.cosDegree(degree));
 				break;
 			case 5:
 				System.out.print("Input angle in radian : ");
 				radian = input.nextFloat();
-				System.out.println("Tan of " + radian + " in radian = ");
+				System.out.print("Tan of " + radian + " in radian = ");
 				System.out.printf("%.2f/n", operators.tanRadian(radian));
 				break;
 			case 6:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
-				System.out.println("Tan of " + degree + " in degree = ");
+				System.out.print("Tan of " + degree + " in degree = ");
 				System.out.printf("%.2f/n", operators.tanDegree(degree));
 				break;
 			case 7:

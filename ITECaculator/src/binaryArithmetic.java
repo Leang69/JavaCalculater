@@ -15,6 +15,7 @@ public class binaryArithmetic {
      * @param binaryB is string
      * @return A answer of binaryA + binaryB
      */
+    //Hello
     String binaryAdd(String binaryA,String binaryB)
     {
         StringBuilder answer = new StringBuilder();

@@ -2,13 +2,13 @@
  * This class is ues for convert number system ( 2 , 8  , 10 , 16) and prevent
  */
 class NumberSystemConversion {
+	/**
+	 *  This is instant of class UserInput
+	 */
 	UserInput InputChecker = new UserInput();
 	/**
-	 *
-	 * @param binary
-	 * last_digit find a last_digit binary always loop
-	 * base = base(n - 1) * 2
-	 * decimal = decimal + last_digit * base
+	 *This method is use for convert binary to decimal
+	 * @param binary is long
 	 * @return Decimal value
 	 */
 	String binary2Decimal(long binary) {
@@ -28,9 +28,8 @@ class NumberSystemConversion {
 	}
 
 	/**
-	 *
-	 * @param binary
-	 * binary to octal = binary to decimal and than pass this decimal in decimal to octal
+	 *This method is use for convert binary to Octal
+	 * @param binary is long
 	 * @return Octal value
 	 */
 	String binary2Octal(long binary) {
@@ -39,10 +38,9 @@ class NumberSystemConversion {
 	}
 
 	/**
-	 *
-	 * @param binary
-	 * octal = binary to decimal and than pass this decimal in decimal to hex
-	 * @return hexadecimal
+	 *This method is use for convert binary to Hexadecimal
+	 * @param binary is long
+	 * @return hexadecimal value
 	 */
 	String binary2Hex(long binary) {
 		int decimal = Integer.parseInt(binary2Decimal(binary));
@@ -53,10 +51,9 @@ class NumberSystemConversion {
 
 
 	/**
-	 *
-	 * @param octal
-	 * use a binary algorithm only change base = base *  8
-	 * @return Decimal
+	 *This method is use for convert octal to decimal
+	 * @param octal is long
+	 * @return Decimal value
 	 */
 		String octal2Decimal(long octal) {
 		int last_digit;
@@ -74,12 +71,9 @@ class NumberSystemConversion {
 	}
 
 	/**
-	 *
-	 * @param octal
-	 *
-	 *  octal = octal2decimal and than pass this decimal in decimal2binary
-	 *
-	 * @return Binary
+	 *This method is use for convert octal to Binary
+	 * @param octal is long
+	 * @return Binary value
 	 */
 	String octal2Binary(long octal) {
 		long decimal = Long.parseLong(octal2Decimal(octal));
@@ -88,12 +82,9 @@ class NumberSystemConversion {
 	}
 
 	/**
-	 *
-	 * @param octal
-	 *
-	 * octal = octal2decimal and than pass this decimal in decimal2Hex
-	 *
-	 * @return Hex
+	 *This method is use for convert octal to Hexadecimal
+	 * @param octal is long
+	 * @return Hex value
 	 */
 	String octal2Hex(long octal) {
 		long decimal = Long.parseLong(octal2Decimal(octal));
@@ -102,11 +93,9 @@ class NumberSystemConversion {
 	}
 
 	/**
-	 *
-	 * @param decimal
-	 * covert process until decimal > 0
-	 *
-	 * @return
+	 *This method is use for convert decimal to binary
+	 * @param decimal is long
+	 * @return a binary value
 	 */
 	String decimal2Binary(long decimal)
 	{
@@ -119,7 +108,11 @@ class NumberSystemConversion {
 		}
 		return binary.reverse().toString();
 	}
-
+	/**
+	 * This method is use for convert decimal to octal
+	 * @param decimal is long
+	 * @return octal value
+	 */
 	String decimal2Octal(long decimal)
 	{
 		StringBuilder octal = new StringBuilder(); ;
@@ -131,7 +124,11 @@ class NumberSystemConversion {
 		}
 		return octal.reverse().toString();
 	}
-
+	/**
+	 * This method is use for convert decimal to Hex
+	 * @param decimal is long
+	 * @return Hex value
+	 */
 	String decimal2Hex(long decimal)
 	{
 		StringBuilder hex = new StringBuilder();
@@ -171,7 +168,11 @@ class NumberSystemConversion {
 	}
 
 
-
+	/**
+	 * This method is use for convert Hex to decimal
+	 * @param hex is string
+	 * @return decimal value
+	 */
 	String Hex2decimal (String hex)
 	{
 		long decimal = 0;
@@ -237,13 +238,21 @@ class NumberSystemConversion {
 		}
 		return ""+decimal;
 	}
-
+	/**
+	 * This method is use for convert Hex to binary
+	 * @param hex is string
+	 * @return binary value
+	 */
 	String Hex2binary(String hex)
 	{
 		long decimal = Long.parseLong(Hex2decimal(hex));
 		return decimal2Binary(decimal);
 	}
-
+	/**
+	 * This method is use for convert Hex to octal
+	 * @param hex is string
+	 * @return octal value
+	 */
 	String Hex2octal(String hex)
 	{
 		long decimal = Long.parseLong(Hex2decimal(hex));
@@ -253,18 +262,27 @@ class NumberSystemConversion {
 
 
 
-
+	/**
+	 * 
+	 * @author Leang
+	 *This class is use for check user input
+	 */
 	class UserInput
 	{
-		boolean isValidHex(String a)
+		/**
+		 * This method is check everything that user input Hexadecimal or not
+		 * @param hexadecimal is string
+		 * @return if user input Hexadecimal return true,else return false
+		 */
+		boolean isValidHex(String hexadecimal)
 		{
 			boolean c = true;
-			a = a.toUpperCase();
+			hexadecimal = hexadecimal.toUpperCase();
 
-			for (int i = 0 ; i < a.length() ; i++)
+			for (int i = 0 ; i < hexadecimal.length() ; i++)
 			{
 
-				switch (a.charAt(a.length()-1-i))
+				switch (hexadecimal.charAt(hexadecimal.length()-1-i))
 				{
 					case '0':
 					case '1':
@@ -295,13 +313,18 @@ class NumberSystemConversion {
 			}
 			return c;
 		}
-		boolean isValidDecimal(String a)
+		/**
+		 * This method is check everything that user input decimal or not
+		 * @param decimal is string
+		 * @return if user input decimal return true,else return false
+		 */
+		boolean isValidDecimal(String decimal)
 		{
 			boolean c = true;
-			for (int i = 0 ; i < a.length() ; i++)
+			for (int i = 0 ; i < decimal.length() ; i++)
 			{
 
-				if (!Character.isDigit(a.charAt(a.length()-1-i)))
+				if (!Character.isDigit(decimal.charAt(decimal.length()-1-i)))
 				{
 					c = false;
 					break;
@@ -310,13 +333,19 @@ class NumberSystemConversion {
 			}
 			return !c;
 		}
-		boolean isValidOctal(String a)
+		/**
+		 * This method is check everything that user input octal or not
+		 * @param octal is string
+		 * @return if user input octal return true,else return false
+		 */
+		boolean isValidOctal(String octal)
+
 		{
 			boolean c = true;
-			for (int i = 0 ; i < a.length() ; i++)
+			for (int i = 0 ; i < octal.length() ; i++)
 			{
 
-				switch (a.charAt(a.length()-1-i))
+				switch (octal.charAt(octal.length()-1-i))
 				{
 					case '0':
 					case '1':
@@ -339,13 +368,19 @@ class NumberSystemConversion {
 			}
 			return !c;
 		}
-		boolean isValidBinary(String a)
+		/**
+		 * This method is check everything that user input binary or not
+		 * @param binary is string
+		 * @return if user input binary return true,else return false
+		 */
+		boolean isValidBinary(String binary)
+
 		{
 			boolean c = true;
-			for (int i = 0 ; i < a.length() ; i++)
+			for (int i = 0 ; i < binary.length() ; i++)
 			{
 
-				switch (a.charAt(a.length()-1-i))
+				switch (binary.charAt(binary.length()-1-i))
 				{
 					case '0':
 					case '1':

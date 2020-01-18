@@ -14,7 +14,7 @@ class Operators {
     }
 
     /**
-     * Sum method use for divide 2 integer
+     * divide method use for divide 2 integer
      * 
      * @param a integer viable
      * @param b integer viable
@@ -26,7 +26,7 @@ class Operators {
     }
 
     /**
-     * Sum method use for multiply 2 integer
+     * multiply method use for multiply 2 integer
      * 
      * @param a integer viable
      * @param b integer viable
@@ -38,7 +38,7 @@ class Operators {
 
     // minus method we can minus 2integer
     /**
-     * Sum method use for minus 2 integer
+     * minus method use for minus 2 integer
      * 
      * @param a integer viable
      * @param b integer viable
@@ -50,10 +50,10 @@ class Operators {
 
     // modulo method we can find the reminder after divide between 2integer
     /**
-     * Sum method use for modulo 2 integer
+     * Sum method use for find the remainder of 2 integer after divide
      * 
-     * @param a integer viable
-     * @param b integer viable
+     * @param a integer 
+     * @param b integer 
      * @return integer value form remainder of a / b
      */
     int modulo(int a, int b) {
@@ -61,8 +61,8 @@ class Operators {
     }
 
     /**
-     *
-     * @param radian
+     *This method is use for find sin of Radian angle
+     * @param radian is float
      * @return the Trigonometry sine of an angle in radian
      */
     float sinRadian(float radian) {
@@ -70,8 +70,8 @@ class Operators {
     }
 
     /**
-     *
-     * @param degree
+     *This method is use for find sin of Degree angle
+     * @param degree is int
      * @return the Trigonometry sine of an angle in degree
      */
     float sinDegree(int degree) {
@@ -80,8 +80,8 @@ class Operators {
     }
 
     /**
-     *
-     * @param radian
+     *This method is use for find cos of Radian angle
+     * @param radian is float
      * @return the Trigonometry cos of an angle in radian
      */
     float cosRadian(float radian) {
@@ -89,8 +89,8 @@ class Operators {
     }
 
     /**
-     *
-     * @param degree
+     *This method is use for find cos of degree angle
+     * @param degree int
      * @return the Trigonometry cos of an angle in degree
      */
     float cosDegree(int degree) {
@@ -99,8 +99,8 @@ class Operators {
     }
 
     /**
-     *
-     * @param radian
+     *This method is use for find tan of radian angle
+     * @param radian is float
      * @return the Trigonometry tan of an angle in radian
      */
     float tanRadian(float radian) {
@@ -108,8 +108,8 @@ class Operators {
     }
 
     /**
-     *
-     * @param degree
+     *This method is use for find tan of degree angle
+     * @param degree is degree
      * @return the Trigonometry tan of an angle in degree
      */
     float tanDegree(int degree) {
@@ -154,7 +154,7 @@ class Operators {
     }
 
     /**
-     *
+     *This method is use for convert degree to radian
      * @param degree is angle is degree
      * @return the angle in radian
      */

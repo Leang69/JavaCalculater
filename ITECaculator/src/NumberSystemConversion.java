@@ -2,7 +2,7 @@
  * This class is ues for convert number system ( 2 , 8  , 10 , 16) and prevent
  */
 class NumberSystemConversion {
-
+	UserInput InputChecker = new UserInput();
 	/**
 	 *
 	 * @param binary
@@ -58,7 +58,7 @@ class NumberSystemConversion {
 	 * use a binary algorithm only change base = base *  8
 	 * @return Decimal
 	 */
-	String octal2Decimal(long octal) {
+		String octal2Decimal(long octal) {
 		int last_digit;
 		int decimal = 0;
 		int base = 1;

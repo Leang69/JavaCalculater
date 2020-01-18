@@ -10,13 +10,7 @@ public class Main
 	static Scanner input = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		/**
-		 * Create object form scanner class
-		 */
 
-		/**
-		 * Create object form DecimalFormat for format string
-		 */
 		int Menu;
 		while (true) {
 			System.out.println("Menu");
@@ -265,7 +259,7 @@ public class Main
 	static void StorageConverter() {
 		int Menu, subMenu;
 		long l;
-		while (true) {
+		do {
 			System.out.println("1 : Byte");
 			System.out.println("2 : Kilobyte");
 			System.out.println("3 : Megabyte");
@@ -281,312 +275,308 @@ public class Main
 			System.out.println("-----------------------");
 
 			switch (Menu) {
-			case 1:
+				case 1:
 
-				System.out.println("1 : Byte to Kilobyte");
-				System.out.println("2 : Byte to Megabyte");
-				System.out.println("3 : Byte to Gigabyte");
-				System.out.println("4 : Byte to Terabyte");
-				System.out.println("5 : Byte to Petabyte");
-				System.out.println("0 : Back to Storage Category");
-				while (true) {
-					System.out.println("-----------------------");
-					System.out.print("Input menu : ");
-					subMenu = input.nextInt();
-					System.out.println("-----------------------");
-					switch (subMenu) {
-					case 1:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Byte = " + storage_converter.byte2KB(l) + " KB");
-						break;
-					case 2:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Byte = " + storage_converter.byte2MB(l) + " MB");
-						break;
-					case 3:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Byte = " + storage_converter.byte2GB(l) + " GB");
-						break;
-					case 4:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Byte = " + storage_converter.byte2TB(l) + " TB");
-						break;
-					case 5:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Byte = " + storage_converter.byte2PB(l) + " PB");
-						break;
-					case 0:
-						break;
-					default:
-						System.out.print("Please input again : ");
+					System.out.println("1 : Byte to Kilobyte");
+					System.out.println("2 : Byte to Megabyte");
+					System.out.println("3 : Byte to Gigabyte");
+					System.out.println("4 : Byte to Terabyte");
+					System.out.println("5 : Byte to Petabyte");
+					System.out.println("0 : Back to Storage Category");
+					while (true) {
+						System.out.println("-----------------------");
+						System.out.print("Input menu : ");
+						subMenu = input.nextInt();
+						System.out.println("-----------------------");
+						switch (subMenu) {
+							case 1:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Byte = " + storage_converter.byte2KB(l) + " KB");
+								break;
+							case 2:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Byte = " + storage_converter.byte2MB(l) + " MB");
+								break;
+							case 3:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Byte = " + storage_converter.byte2GB(l) + " GB");
+								break;
+							case 4:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Byte = " + storage_converter.byte2TB(l) + " TB");
+								break;
+							case 5:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Byte = " + storage_converter.byte2PB(l) + " PB");
+								break;
+							case 0:
+								break;
+							default:
+								System.out.print("Please input again : ");
+						}
+						if (subMenu == 0) {
+							break;
+						}
 					}
-					if (subMenu == 0) {
-						break;
+
+					break;
+
+				case 2:
+
+					System.out.println("1 : Kilobyte to Byte");
+					System.out.println("2 : Kilobyte to Megabyte");
+					System.out.println("3 : Kilobyte to Gigabyte");
+					System.out.println("4 : Kilobyte to Terabyte");
+					System.out.println("5 : Kilobyte to Petabyte");
+					System.out.println("0 : Back to Storage Category");
+					while (true) {
+						System.out.println("-----------------------");
+						System.out.print("Input menu : ");
+						subMenu = input.nextInt();
+						System.out.println("-----------------------");
+						switch (subMenu) {
+							case 1:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Kilobyte = " + storage_converter.kb2Byte(l) + " Byte");
+								break;
+							case 2:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Kilobyte = " + storage_converter.kb2MB(l) + " MB");
+								break;
+							case 3:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Kilobyte = " + storage_converter.kb2GB(l) + " GB");
+								break;
+							case 4:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Kilobyte = " + storage_converter.kb2TB(l) + " TB");
+								break;
+							case 5:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Kilobyte = " + storage_converter.kb2PB(l) + " PB");
+								break;
+							case 0:
+								break;
+							default:
+								System.out.print("Please input again : ");
+						}
+						if (subMenu == 0) {
+							break;
+						}
 					}
-				}
 
-				break;
+					break;
 
-			case 2:
+				case 3:
 
-				System.out.println("1 : Kilobyte to Byte");
-				System.out.println("2 : Kilobyte to Megabyte");
-				System.out.println("3 : Kilobyte to Gigabyte");
-				System.out.println("4 : Kilobyte to Terabyte");
-				System.out.println("5 : Kilobyte to Petabyte");
-				System.out.println("0 : Back to Storage Category");
-				while (true) {
-					System.out.println("-----------------------");
-					System.out.print("Input menu : ");
-					subMenu = input.nextInt();
-					System.out.println("-----------------------");
-					switch (subMenu) {
-					case 1:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Kilobyte = " + storage_converter.kb2Byte(l) + " Byte");
-						break;
-					case 2:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Kilobyte = " + storage_converter.kb2MB(l) + " MB");
-						break;
-					case 3:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Kilobyte = " + storage_converter.kb2GB(l) + " GB");
-						break;
-					case 4:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Kilobyte = " + storage_converter.kb2TB(l) + " TB");
-						break;
-					case 5:
-						System.out.print("Input Storage :");
-						l = input.nextLong();
-						System.out.println(l + " Kilobyte = " + storage_converter.kb2PB(l) + " PB");
-						break;
-					case 0:
-						break;
-					default:
-						System.out.print("Please input again : ");
-					}
-					if (subMenu == 0) {
-						break;
-					}
-				}
+					System.out.println("1 : Megabyte to Byte");
+					System.out.println("2 : Megabyte to Kilobyte");
+					System.out.println("3 : Megabyte to Gigabyte");
+					System.out.println("4 : Megabyte to Terabyte");
+					System.out.println("5 : Megabyte to Petabyte");
+					System.out.println("0 : Back to Storage Category");
+					do {
+						System.out.println("-----------------------");
+						System.out.print("Input menu : ");
+						subMenu = input.nextInt();
+						System.out.println("-----------------------");
+						switch (subMenu) {
+							case 1:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Megabyte = " + storage_converter.mb2Byte(l) + " KB");
+								break;
+							case 2:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Megabyte = " + storage_converter.mb2KB(l) + " KB");
+								break;
+							case 3:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Megabyte = " + storage_converter.mb2GB(l) + " GB");
+								break;
+							case 4:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Megabyte = " + storage_converter.mb2TB(l) + " TB");
+								break;
+							case 5:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Megabyte = " + storage_converter.mb2PB(l) + " PB");
+								break;
+							case 0:
+								break;
+							default:
+								System.out.print("Please input again : ");
+						}
+					} while (subMenu != 0);
 
-				break;
+					break;
 
-			case 3:
+				case 4:
 
-				System.out.println("1 : Megabyte to Byte");
-				System.out.println("2 : Megabyte to Kilobyte");
-				System.out.println("3 : Megabyte to Gigabyte");
-				System.out.println("4 : Megabyte to Terabyte");
-				System.out.println("5 : Megabyte to Petabyte");
-				System.out.println("0 : Back to Storage Category");
-				do {
-					System.out.println("-----------------------");
-					System.out.print("Input menu : ");
-					subMenu = input.nextInt();
-					System.out.println("-----------------------");
-					switch (subMenu) {
-						case 1:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Megabyte = " + storage_converter.mb2Byte(l) + " KB");
-							break;
-						case 2:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Megabyte = " + storage_converter.mb2KB(l) + " KB");
-							break;
-						case 3:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Megabyte = " + storage_converter.mb2GB(l) + " GB");
-							break;
-						case 4:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Megabyte = " + storage_converter.mb2TB(l) + " TB");
-							break;
-						case 5:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Megabyte = " + storage_converter.mb2PB(l) + " PB");
-							break;
-						case 0:
-							break;
-						default:
-							System.out.print("Please input again : ");
-					}
-				} while (subMenu != 0);
+					System.out.println("1 : Gigabyte to Byte");
+					System.out.println("2 : Gigabyte to Kilobyte");
+					System.out.println("3 : Gigabyte to Megabyte");
+					System.out.println("4 : Gigabyte to Terabyte");
+					System.out.println("5 : Gigabyte to Petabyte");
+					System.out.println("0 : Back to Storage Category");
+					do {
+						System.out.println("-----------------------");
+						System.out.print("Input menu : ");
+						subMenu = input.nextInt();
+						System.out.println("-----------------------");
+						switch (subMenu) {
+							case 1:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Gigabyte = " + storage_converter.gb2Byte(l) + " Byte");
+								break;
+							case 2:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Gigabyte = " + storage_converter.gb2KB(l) + " KB");
+								break;
+							case 3:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Gigabyte = " + storage_converter.gb2MB(l) + " MB");
+								break;
+							case 4:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Gigabyte = " + storage_converter.gb2TB(l) + " TB");
+								break;
+							case 5:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Gigabyte = " + storage_converter.gb2PB(l) + " PB");
+								break;
+							case 0:
+								break;
+							default:
+								System.out.print("Please input again : ");
+						}
+					} while (subMenu != 0);
 
-				break;
+					break;
+				case 5:
 
-			case 4:
+					System.out.println("1 : Terabyte to Byte");
+					System.out.println("2 : Terabyte to Kilobyte");
+					System.out.println("3 : Terabyte to Megabyte");
+					System.out.println("4 : Terabyte to Gigabyte");
+					System.out.println("5 : Terabyte to Petabyte");
+					System.out.println("0 : Back to Storage Category");
+					do {
+						System.out.println("-----------------------");
+						System.out.print("Input menu : ");
+						subMenu = input.nextInt();
+						System.out.println("-----------------------");
+						switch (subMenu) {
+							case 1:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Terabyte = " + storage_converter.tb2Byte(l) + " Byte");
+								break;
+							case 2:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Terabyte = " + storage_converter.tb2KB(l) + " KB");
+								break;
+							case 3:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Terabyte = " + storage_converter.tb2MB(l) + " MB");
+								break;
+							case 4:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Terabyte = " + storage_converter.tb2GB(l) + " GB");
+								break;
+							case 5:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Terabyte = " + storage_converter.tb2PB(l) + " PB");
+								break;
+							case 0:
+								break;
+							default:
+								System.out.print("Please input again : ");
+						}
+					} while (subMenu != 0);
 
-				System.out.println("1 : Gigabyte to Byte");
-				System.out.println("2 : Gigabyte to Kilobyte");
-				System.out.println("3 : Gigabyte to Megabyte");
-				System.out.println("4 : Gigabyte to Terabyte");
-				System.out.println("5 : Gigabyte to Petabyte");
-				System.out.println("0 : Back to Storage Category");
-				do {
-					System.out.println("-----------------------");
-					System.out.print("Input menu : ");
-					subMenu = input.nextInt();
-					System.out.println("-----------------------");
-					switch (subMenu) {
-						case 1:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Gigabyte = " + storage_converter.gb2Byte(l) + " Byte");
-							break;
-						case 2:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Gigabyte = " + storage_converter.gb2KB(l) + " KB");
-							break;
-						case 3:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Gigabyte = " + storage_converter.gb2MB(l) + " MB");
-							break;
-						case 4:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Gigabyte = " + storage_converter.gb2TB(l) + " TB");
-							break;
-						case 5:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Gigabyte = " + storage_converter.gb2PB(l) + " PB");
-							break;
-						case 0:
-							break;
-						default:
-							System.out.print("Please input again : ");
-					}
-				} while (subMenu != 0);
+					break;
+				case 6:
 
-				break;
-			case 5:
+					System.out.println("1 : Petabyte to Byte");
+					System.out.println("2 : Petabyte to Kilobyte");
+					System.out.println("3 : Petabyte to Megabyte");
+					System.out.println("4 : Petabyte to Gigabyte");
+					System.out.println("5 : Petabyte to Terabyte");
+					System.out.println("0 : Back to Storage Category");
+					do {
+						System.out.println("-----------------------");
+						System.out.print("Input menu : ");
+						subMenu = input.nextInt();
+						System.out.println("-----------------------");
+						switch (subMenu) {
+							case 1:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Petabyte = " + storage_converter.pb2Byte(l) + " B");
+								break;
+							case 2:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Petabyte = " + storage_converter.pb2KB(l) + " KB");
+								break;
+							case 3:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Petabyte = " + storage_converter.pb2MB(l) + " MB");
+								break;
+							case 4:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Petabyte = " + storage_converter.pb2GB(l) + " GB");
+								break;
+							case 5:
+								System.out.print("Input Storage :");
+								l = input.nextLong();
+								System.out.println(l + " Petabyte = " + storage_converter.pb2TB(l) + " TB");
+								break;
+							case 0:
+								break;
+							default:
+								System.out.print("Please input again : ");
+						}
+					} while (subMenu != 0);
 
-				System.out.println("1 : Terabyte to Byte");
-				System.out.println("2 : Terabyte to Kilobyte");
-				System.out.println("3 : Terabyte to Megabyte");
-				System.out.println("4 : Terabyte to Gigabyte");
-				System.out.println("5 : Terabyte to Petabyte");
-				System.out.println("0 : Back to Storage Category");
-				do {
-					System.out.println("-----------------------");
-					System.out.print("Input menu : ");
-					subMenu = input.nextInt();
-					System.out.println("-----------------------");
-					switch (subMenu) {
-						case 1:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Terabyte = " + storage_converter.tb2Byte(l) + " Byte");
-							break;
-						case 2:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Terabyte = " + storage_converter.tb2KB(l) + " KB");
-							break;
-						case 3:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Terabyte = " + storage_converter.tb2MB(l) + " MB");
-							break;
-						case 4:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Terabyte = " + storage_converter.tb2GB(l) + " GB");
-							break;
-						case 5:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Terabyte = " + storage_converter.tb2PB(l) + " PB");
-							break;
-						case 0:
-							break;
-						default:
-							System.out.print("Please input again : ");
-					}
-				} while (subMenu != 0);
-
-				break;
-			case 6:
-
-				System.out.println("1 : Petabyte to Byte");
-				System.out.println("2 : Petabyte to Kilobyte");
-				System.out.println("3 : Petabyte to Megabyte");
-				System.out.println("4 : Petabyte to Gigabyte");
-				System.out.println("5 : Petabyte to Terabyte");
-				System.out.println("0 : Back to Storage Category");
-				do {
-					System.out.println("-----------------------");
-					System.out.print("Input menu : ");
-					subMenu = input.nextInt();
-					System.out.println("-----------------------");
-					switch (subMenu) {
-						case 1:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Petabyte = " + storage_converter.pb2Byte(l) + " B");
-							break;
-						case 2:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Petabyte = " + storage_converter.pb2KB(l) + " KB");
-							break;
-						case 3:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Petabyte = " + storage_converter.pb2MB(l) + " MB");
-							break;
-						case 4:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Petabyte = " + storage_converter.pb2GB(l) + " GB");
-							break;
-						case 5:
-							System.out.print("Input Storage :");
-							l = input.nextLong();
-							System.out.println(l + " Petabyte = " + storage_converter.pb2TB(l) + " TB");
-							break;
-						case 0:
-							break;
-						default:
-							System.out.print("Please input again : ");
-					}
-				} while (subMenu != 0);
-
-				break;
-			case 0:
-				break;
-			default:
-				System.out.print("Please input again : ");
+					break;
+				case 0:
+					break;
+				default:
+					System.out.print("Please input again : ");
 			}
-			if (Menu == 0) {
-				break;
-			}
-		}
+		} while (Menu != 0);
 	}
 	
 	static void NumberSystemConversion()
 	{
 		NumberSystemConversion numberSystemConversion = new NumberSystemConversion();
-		NumberSystemConversion.UserInput inputChecker = numberSystemConversion.new UserInput();
 		int menu , subMenu;
 		long number ;
 		String string;
@@ -613,7 +603,7 @@ public class Main
 							case 1:
 								System.out.print("Please input Binary : ");
 								string = input.next();
-								if (inputChecker.isValidBinary(string)) {
+								if (numberSystemConversion.InputChecker.isValidBinary(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Binary");
 									System.out.println("Binary is allow only 0 and 1");
@@ -627,7 +617,7 @@ public class Main
 							case 2:
 								System.out.print("Please input Binary : ");
 								string = input.next();
-								if (inputChecker.isValidBinary(string)) {
+								if (numberSystemConversion.InputChecker.isValidBinary(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Binary");
 									System.out.println("Binary is allow only 0 and 1");
@@ -641,7 +631,7 @@ public class Main
 							case 3:
 								System.out.print("Please input Binary : ");
 								string = input.next();
-								if (inputChecker.isValidBinary(string)) {
+								if (numberSystemConversion.InputChecker.isValidBinary(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Binary");
 									System.out.println("Binary is allow only 0 and 1");
@@ -672,7 +662,7 @@ public class Main
 							case 1:
 								System.out.print("Please input Octal : ");
 								string = input.next();
-								if (inputChecker.isValidOctal(string)) {
+								if (numberSystemConversion.InputChecker.isValidOctal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Octal");
 									System.out.println("Octal is allow only 0 to 7");
@@ -686,7 +676,7 @@ public class Main
 							case 2:
 								System.out.print("Please input Octal : ");
 								string = input.next();
-								if (inputChecker.isValidOctal(string)) {
+								if (numberSystemConversion.InputChecker.isValidOctal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Octal");
 									System.out.println("Octal is allow only 0 to 7");
@@ -700,7 +690,7 @@ public class Main
 							case 3:
 								System.out.print("Please input Octal : ");
 								string = input.next();
-								if (inputChecker.isValidOctal(string)) {
+								if (numberSystemConversion.InputChecker.isValidOctal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Octal");
 									System.out.println("Decimal is allow only 0 to 7");
@@ -732,7 +722,7 @@ public class Main
 							case 1:
 								System.out.print("Please input Decimal : ");
 								string = input.next();
-								if (inputChecker.isValidDecimal(string)) {
+								if (numberSystemConversion.InputChecker.isValidDecimal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Decimal");
 									System.out.println("Decimal is allow only 0 to 9");
@@ -746,7 +736,7 @@ public class Main
 							case 2:
 								System.out.print("Please input Decimal : ");
 								string = input.next();
-								if (inputChecker.isValidDecimal(string)) {
+								if (numberSystemConversion.InputChecker.isValidDecimal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Decimal");
 									System.out.println("Decimal is allow only 0 to 9");
@@ -760,7 +750,7 @@ public class Main
 							case 3:
 								System.out.print("Please input Decimal : ");
 								string = input.next();
-								if (inputChecker.isValidDecimal(string)) {
+								if (numberSystemConversion.InputChecker.isValidDecimal(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Decimal");
 									System.out.println("Decimal is allow only 0 to 9");
@@ -791,7 +781,7 @@ public class Main
 							case 1:
 								System.out.print("Please input Hexadecimal : ");
 								string = input.next();
-								if (!inputChecker.isValidHex(string)) {
+								if (!numberSystemConversion.InputChecker.isValidHex(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Hexadecimal");
 									System.out.println("Decimal is allow only 0 to 9 and A to F");
@@ -804,7 +794,7 @@ public class Main
 							case 2:
 								System.out.print("Please input Hexadecimal : ");
 								string = input.next();
-								if (!inputChecker.isValidHex(string)) {
+								if (!numberSystemConversion.InputChecker.isValidHex(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Hexadecimal");
 									System.out.println("Decimal is allow only 0 to 9 and A to F");
@@ -817,7 +807,7 @@ public class Main
 							case 3:
 								System.out.print("Please input Hexadecimal : ");
 								string = input.next();
-								if (!inputChecker.isValidHex(string)) {
+								if (!numberSystemConversion.InputChecker.isValidHex(string)) {
 									System.out.println("-------------------------------");
 									System.out.println("This is not Hexadecimal");
 									System.out.println("Decimal is allow only 0 to 9 and A to F");

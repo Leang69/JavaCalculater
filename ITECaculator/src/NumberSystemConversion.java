@@ -18,8 +18,7 @@ class NumberSystemConversion {
 		while (binary > 0)
 		{
 			last_digit = (int)(binary % 10);
-			binary = binary / 10; //1100
-
+			binary = binary / 10; 
 			decimal += last_digit * base;
 
 			base = base * 2;

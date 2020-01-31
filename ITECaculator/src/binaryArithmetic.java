@@ -15,6 +15,7 @@ public class binaryArithmetic {
      * @param binaryB is string
      * @return A answer of binaryA + binaryB
      */
+    //Hello
     String binaryAdd(String binaryA,String binaryB)
     {
         StringBuilder answer = new StringBuilder();
@@ -131,7 +132,7 @@ public class binaryArithmetic {
 
             if (answer.charAt(0) == '1' )
             {
-                System.out.println("con 1");
+                //System.out.println("con 1");
                 StringBuilder builder = new StringBuilder();
                 builder.append(answer);
                 builder.deleteCharAt(0);
@@ -143,7 +144,7 @@ public class binaryArithmetic {
         }
         else if ((answer.length() == binaryA.length() || answer.length() == binaryB.length()))
         {
-            System.out.println("con 2");
+            //System.out.println("con 2");
             answer = complement.firstComplement(answer);
             StringBuilder builder = new StringBuilder();
             builder.append(answer);
@@ -297,6 +298,7 @@ public class binaryArithmetic {
      */
     String divide(String binaryA, String binaryB)
     {
+    	
         StringBuilder answer = new StringBuilder();
         StringBuilder remain = new StringBuilder();
         StringBuilder tmp = new StringBuilder();
@@ -326,7 +328,12 @@ public class binaryArithmetic {
                 remain.append(binaryA.charAt(i+1));
             }
         }
-        if (remain.charAt(0) == '0')
+        valA = Long.parseLong(remain.toString());
+        if(valA == 0)
+        {
+        	return "0";
+        }
+        if (remain.charAt(0) == '0' )
         {
             remain.delete(0,remain.indexOf("1",0));
         }

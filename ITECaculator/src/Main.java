@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main
 {
 	static Scanner input = new Scanner(System.in);
-
+	
 	public static void main(String[] args) {
 
 		int Menu;
@@ -55,7 +55,9 @@ public class Main
 		}
 
 	}
-
+	/**
+	 * use to call all function in TrigonometricOperators to work in main function
+	 */
 	static void TrigonometricOperators() {
 		int menu;
 		float radian;
@@ -86,42 +88,43 @@ public class Main
 			case 2:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
-				System.out.println("Sin of " + degree + " in degree = ");
+				System.out.print("Sin of " + degree + " in degree = ");
 				System.out.printf("%.2f\n", operators.sinDegree(degree));
 				break;
 			case 3:
 				System.out.print("Input angle in radian : ");
 				radian = input.nextFloat();
-				System.out.println("Cos of " + radian + " in radian = ");
-				System.out.printf("%.2f/n", operators.cosRadian(radian));
+				System.out.print("Cos of " + radian + " in radian = ");
+				System.out.printf("%.2f\n", operators.cosRadian(radian));
 				break;
 			case 4:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
-				System.out.println("Cos of " + degree + " in degree = ");
-				System.out.printf("%.2f/n", operators.cosDegree(degree));
+				System.out.print("Cos of " + degree + " in degree = ");
+				System.out.printf("%.2f\n", operators.cosDegree(degree));
 				break;
 			case 5:
 				System.out.print("Input angle in radian : ");
 				radian = input.nextFloat();
-				System.out.println("Tan of " + radian + " in radian = ");
-				System.out.printf("%.2f/n", operators.tanRadian(radian));
+				System.out.print("Tan of " + radian + " in radian = ");
+				System.out.printf("%.2f\n", operators.tanRadian(radian));
 				break;
 			case 6:
 				System.out.print("Input angle in degree : ");
 				degree = input.nextInt();
-				System.out.println("Tan of " + degree + " in degree = ");
-				System.out.printf("%.2f/n", operators.tanDegree(degree));
+				System.out.print("Tan of " + degree + " in degree = ");
+				System.out.printf("%.2f\n", operators.tanDegree(degree));
 				break;
 			case 7:
+				System.out.print("Input angle in degree : ");
 				d_degree = input.nextDouble();
-				System.out.println("Degree " + d_degree + " = ");
-				System.out.printf("%.2f/n", operators.degree2Radian(d_degree));
+				System.out.print("Degree " + d_degree + " = ");
+				System.out.printf("%.2f\n", operators.degree2Radian(d_degree));
 				break;
 			case 0:
 				break;
 			default:
-				System.out.print("Please input again : ");
+				System.out.println("Please input again : ");
 			}
 			if (menu == 0) {
 				break;
@@ -129,7 +132,9 @@ public class Main
 		}
 
 	}
-
+	/**
+	 * use to call all function in Operators to work in main function
+	 */
 	static void ArithmeticOperators() {
 		int menu;
 		int a, b;
@@ -192,7 +197,9 @@ public class Main
 			}
 		}
 	}
-
+	/**
+	 * use to call all function in Bitwise to work in main function
+	 */
 	static void BitWise() {
 		int menu;
 		int a, b;
@@ -254,14 +261,16 @@ public class Main
 			case 0:
 				break;
 			default:
-				System.out.print("Please input again : ");
+				System.out.println("Please input again : ");
 			}
 			if (menu == 0) {
 				break;
 			}
 		}
 	}
-
+	/**
+	 * use to call all function in StorageConverter to work in main function
+	 */
 	static void StorageConverter() {
 		int Menu, subMenu;
 		long l;
@@ -323,7 +332,7 @@ public class Main
 							case 0:
 								break;
 							default:
-								System.out.print("Please input again : ");
+								System.out.println("Please input again : ");
 						}
 						if (subMenu == 0) {
 							break;
@@ -374,7 +383,7 @@ public class Main
 							case 0:
 								break;
 							default:
-								System.out.print("Please input again : ");
+								System.out.println("Please input again : ");
 						}
 						if (subMenu == 0) {
 							break;
@@ -425,7 +434,7 @@ public class Main
 							case 0:
 								break;
 							default:
-								System.out.print("Please input again : ");
+								System.out.println("Please input again : ");
 						}
 					} while (subMenu != 0);
 
@@ -473,7 +482,7 @@ public class Main
 							case 0:
 								break;
 							default:
-								System.out.print("Please input again : ");
+								System.out.println("Please input again : ");
 						}
 					} while (subMenu != 0);
 
@@ -520,7 +529,7 @@ public class Main
 							case 0:
 								break;
 							default:
-								System.out.print("Please input again : ");
+								System.out.println("Please input again : ");
 						}
 					} while (subMenu != 0);
 
@@ -575,11 +584,13 @@ public class Main
 				case 0:
 					break;
 				default:
-					System.out.print("Please input again : ");
+					System.out.println("Please input again : ");
 			}
 		} while (Menu != 0);
 	}
-	
+	/**
+	 * use to call all function in NumberSystemConversion to work in main function
+	 */
 	static void NumberSystemConversion()
 	{
 		NumberSystemConversion numberSystemConversion = new NumberSystemConversion();
@@ -840,6 +851,9 @@ public class Main
 
 		} while (menu != 0);
 	}
+	/**
+	 * use to call all function in BinaryArithmetic to work in main function
+	 */
 	static void BinaryArithmatic()
 	{
 
@@ -994,7 +1008,7 @@ public class Main
 				case 0:
 					break;
 				default:
-					System.out.print("Please input again : ");
+					System.out.println("Please input again : ");
 			}
 
 		} while (menu != 0);

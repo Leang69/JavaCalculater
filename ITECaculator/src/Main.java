@@ -20,6 +20,7 @@ public class Main
 			System.out.println("4  : Storage Converter");
 			System.out.println("5  : Number System Conversion");
 			System.out.println("6  : Binary Arithmetic");
+			System.out.println("7  : Set Theory");
 			System.out.print("Please input menu : ");
 
 			Menu = input.nextInt();
@@ -37,13 +38,18 @@ public class Main
 				StorageConverter();
 				break;
 			case 5:
-			    NumberSystemConversion();
+				NumberSystemConversion();
 				break;
 				case 6:
 					BinaryArithmatic();
 					break;
+				case 7:
+					set();
+					break;
 
 			default:
+				System.out.print("Please input again : ");
+				break;
 			}
 
 		}
@@ -984,6 +990,32 @@ public class Main
 						break;
 					}
 					System.out.println("a / b = " + binary_Arithmetic.divide(a, b));
+					break;
+				case 0:
+					break;
+				default:
+					System.out.print("Please input again : ");
+			}
+
+		} while (menu != 0);
+	}
+	static void set()
+	{
+		int menu;
+		String a, b;
+		System.out.println("1 : Union");
+		System.out.println("2 : Intersection");
+		System.out.println("3 : Set difference");
+		System.out.println("0 : Back to main menu");
+		SetTheory setTheory= new SetTheory();
+		do {
+			System.out.println("-----------------------");
+			System.out.print("Input menu : ");
+			menu = input.nextInt();
+			System.out.println("-----------------------");
+			switch (menu) {
+				case 1:
+					setTheory.union();
 					break;
 				case 0:
 					break;

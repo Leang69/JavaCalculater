@@ -24,6 +24,7 @@ public class SetTheory {
     void createSet()
     {
         String setStringA , setStringB;
+        StringBuilder builder = new StringBuilder();
         System.out.print("Please input set A : ");
         setStringA =  input.next();
         System.out.print("Please input set B : ");

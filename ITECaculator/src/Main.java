@@ -1031,6 +1031,11 @@ public class Main
 				case 1:
 					setTheory.union();
 					break;
+				case 2:
+					setTheory.intersection();
+					break;
+				case 3:
+					setTheory.setDiff();
 				case 0:
 					break;
 				default:

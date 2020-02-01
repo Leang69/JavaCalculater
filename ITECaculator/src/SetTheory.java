@@ -17,7 +17,7 @@ public class SetTheory {
     }
     interface SetDifferenceHelper
     {
-        ArrayList<String>  differenceOperation();
+        ArrayList<String>  differenceOperation(ArrayList <String>  setA , ArrayList <String>  setB);
         void display(ArrayList <String> difference);
     }
 
@@ -150,55 +150,15 @@ public class SetTheory {
         SetDifferenceHelper SetDifference = new SetDifferenceHelper()
         {
             @Override
-            public ArrayList<String> differenceOperation()
-            {
+            public ArrayList<String> differenceOperation(ArrayList<String> setA, ArrayList<String> setB) {
                 ArrayList<String> difference = new ArrayList<String>();
-                Scanner input = new Scanner(System.in);
-                int menu;
-                do {
-                    System.out.println("A - B");
-                    System.out.println("B - A");
-                    System.out.println("-----------------------");
-                    System.out.print("Input menu : ");
-                    menu = input.nextInt();
-                    System.out.println("-----------------------");
-                    switch (menu) {
-                        case 1:
-                        {
-                            difference.addAll(setA);
-                            for (String a : setA)
-                            {
-                                for (String b : setB)
-                                {
-                                    if (a.contains(b))
-                                    {
-                                        difference.remove(a);
-                                    }
-                                }
-                            }
-                        }
-                        case 2:
-                        {
-                            difference.addAll(setB);
-                            for (String a : setB)
-                            {
-                                for (String b : setA)
-                                {
-                                    if (a.contains(b))
-                                    {
-                                        difference.remove(a);
-                                    }
-                                }
-                            }
-                        }
-                            break;
-                        case 0:
-                            break;
-                        default:
-                            System.out.print("Please input again : ");
+                for (String a : setA)
+                {
+                    if (!setB.contains(a))
+                    {
+                        difference.add(a);
                     }
-
-                } while (menu != 0);
+                }
                 return difference;
             }
 
@@ -209,7 +169,35 @@ public class SetTheory {
                 System.out.println();
             }
         };
-        createSet();
-        SetDifference.display(SetDifference.differenceOperation());
+        int menu;
+        while (true) {
+            System.out.println("1 : A - B");
+            System.out.println("2 : B - A");
+            System.out.println("0 : Back to main menu");
+            System.out.println("-----------------------");
+            System.out.print("Input menu : ");
+            menu = input.nextInt();
+            input.nextLine();
+            System.out.println("-----------------------");
+            switch (menu) {
+                case 1:
+                    createSet();
+                    System.out.print("A - B : ");
+                    SetDifference.display(SetDifference.differenceOperation(setA,setB));
+                    break;
+                case 2:
+                    createSet();
+                    System.out.print("B - A : ");
+                    SetDifference.display(SetDifference.differenceOperation(setB,setA));
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Please input again");
+            }
+            if (menu == 0) {
+                break;
+            }
+        }
     }
 }

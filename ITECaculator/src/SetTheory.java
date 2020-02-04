@@ -64,17 +64,6 @@ public class SetTheory {
             }
 
         }
-
-        /*for (String set : setA)
-        {
-            System.out.println(set);
-        }
-        System.out.println("----------------------------------------------");
-        for (String set : setB)
-        {
-            System.out.println(set);
-        }*/
-
     }
 
     class SetUnion implements UnionHelper
@@ -119,16 +108,10 @@ public class SetTheory {
             public ArrayList<String> intersectionOperation() 
             {
                 ArrayList<String> intersection = new ArrayList<String>();
-                for (String b : setA)
+                for (String a : setA)
                 {
-                    for (String a : setB)
-                    {
-                        if (b.contains(a))
-                        {
-                            intersection.add(a);
-                        }
-                    }
-
+                    if (setB.contains(a))
+                    { intersection.add(a); }
                 }
                 return intersection;
             }

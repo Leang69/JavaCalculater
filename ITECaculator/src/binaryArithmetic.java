@@ -266,27 +266,19 @@ public class binaryArithmetic {
      */
     String multiply(String binaryA, String binaryB)
     {
-        String answer;
-        StringBuilder builder = new StringBuilder();
-        builder.append(binaryB);
+        String answer = "";
+        StringBuilder builder = new StringBuilder(binaryB);
         binaryB = builder.reverse().toString();
-        if (binaryB.charAt(0) == '1')
-        {
-            answer = binaryA;
-        }
-        else
-        {
-            answer = "0";
-        }
-        builder = new StringBuilder();
+        builder.setLength(0);
         builder.append(binaryA);
-        for (int i = 1 ; i < binaryB.length() ; i++)
+        for (int i = 0 ; i < binaryB.length() ; i++)
         {
-            builder.append(0);
+
             if (binaryB.charAt(i) == '1')
             {
                 answer = binaryAdd(answer,builder.toString());
             }
+            builder.append(0);
         }
         return answer;
     }

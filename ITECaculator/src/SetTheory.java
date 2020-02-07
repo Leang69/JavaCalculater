@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class SetTheory {
     private ArrayList <String>  setA = new ArrayList<String>();
@@ -80,6 +79,9 @@ public class SetTheory {
                     union.add(a);
                 }
             }
+            setA.removeAll(setA);
+            setB.removeAll(setB);
+            union.sort(Comparator.comparing(Integer::parseInt));
             return union;
         }
 
@@ -113,6 +115,9 @@ public class SetTheory {
                     if (setB.contains(a))
                     { intersection.add(a); }
                 }
+                setA.removeAll(setA);
+                setB.removeAll(setB);
+                Collections.sort(intersection);
                 return intersection;
             }
 
@@ -133,7 +138,8 @@ public class SetTheory {
         SetDifferenceHelper SetDifference = new SetDifferenceHelper()
         {
             @Override
-            public ArrayList<String> differenceOperation(ArrayList<String> setA, ArrayList<String> setB) {
+            public ArrayList<String> differenceOperation(ArrayList<String> setA, ArrayList<String> setB)
+            {
                 ArrayList<String> difference = new ArrayList<String>();
                 for (String a : setA)
                 {
@@ -142,18 +148,23 @@ public class SetTheory {
                         difference.add(a);
                     }
                 }
+                setA.removeAll(setA);
+                setB.removeAll(setB);
+                Collections.sort(difference);
                 return difference;
             }
 
             @Override
-            public void display(ArrayList<String> difference) {
+            public void display(ArrayList<String> difference)
+            {
                 System.out.print("difference : ");
                 System.out.print(difference);
                 System.out.println();
             }
         };
         int menu;
-        while (true) {
+        while (true)
+        {
             System.out.println("1 : A - B");
             System.out.println("2 : B - A");
             System.out.println("0 : Back to main menu");
@@ -162,7 +173,8 @@ public class SetTheory {
             menu = input.nextInt();
             input.nextLine();
             System.out.println("-----------------------");
-            switch (menu) {
+            switch (menu)
+            {
                 case 1:
                     createSet();
                     System.out.print("A - B : ");
@@ -178,7 +190,8 @@ public class SetTheory {
                 default:
                     System.out.println("Please input again");
             }
-            if (menu == 0) {
+            if (menu == 0)
+            {
                 break;
             }
         }

@@ -1,3 +1,5 @@
+package calculator;
+
 /**
  * This class is use for handle a Storage Conversion
  * Storage unit that we can to convert are Byte , Kilobyte (KB) , Megabyte (MB) , GigaByte (GB) , TeraByte (TB) , PetaByte (PB)

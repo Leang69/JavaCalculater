@@ -1,3 +1,5 @@
+package calculator;
+
 import jdk.nashorn.api.scripting.ScriptObjectMirror;
 /**
  * This Class is use for do binary arithmetic ( sum , subtraction , multiply , divide , 1st and 2nh complement )
@@ -8,6 +10,7 @@ public class binaryArithmetic {
 	/**
 	 * This instant of Complement inner class
 	 */
+	//dftvygbhnjmk,l
     Complement complement = new Complement();
     /**
      * This method is use for fine a answer for sum between 2 binary number.
@@ -155,7 +158,7 @@ public class binaryArithmetic {
     }
 
     	/**
-    	 * This is a inner class of binaryArithmetic class.<br>
+    	 * This is a inner class of calculator.binaryArithmetic class.<br>
     	 * It use for find a 1st and 2nd complement
     	 * @author Leang
     	 *

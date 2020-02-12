@@ -1,7 +1,6 @@
+package calculator;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
  * @author Leang
@@ -16,9 +15,9 @@ public class Main
 		int Menu;
 		while (true) {
 			System.out.println("Menu");
-			System.out.println("1  : Arithmetic Operators");
-			System.out.println("2  : Trigonometric Operators");
-			System.out.println("3  : Bitwise Operators");
+			System.out.println("1  : Arithmetic calculator.Operators");
+			System.out.println("2  : Trigonometric calculator.Operators");
+			System.out.println("3  : Bitwise calculator.Operators");
 			System.out.println("4  : Storage Converter");
 			System.out.println("5  : Number System Conversion");
 			System.out.println("6  : Binary Arithmetic");
@@ -135,7 +134,7 @@ public class Main
 
 	}
 	/**
-	 * use to call all function in Operators to work in main function
+	 * use to call all function in calculator.Operators to work in main function
 	 */
 	static void ArithmeticOperators() {
 		int menu;
@@ -271,7 +270,7 @@ public class Main
 		}
 	}
 	/**
-	 * use to call all function in StorageConverter to work in main function
+	 * use to call all function in calculator.StorageConverter to work in main function
 	 */
 	static void StorageConverter() {
 		int Menu, subMenu;
@@ -591,7 +590,7 @@ public class Main
 		} while (Menu != 0);
 	}
 	/**
-	 * use to call all function in NumberSystemConversion to work in main function
+	 * use to call all function in calculator.NumberSystemConversion to work in main function
 	 */
 	static void NumberSystemConversion()
 	{

@@ -32,6 +32,11 @@ public class SetTheory {
         setStringB =  input.nextLine();
         setStringA = setStringA + ",";
         setStringB =  setStringB + ",";
+        filterArray(setStringA, builder, setA);
+        filterArray(setStringB, builder, setB);
+    }
+
+    private void filterArray(String setStringA, StringBuilder builder, ArrayList<String> setA) {
         for (int i = 0 ; i < setStringA.length() ; i++)
         {
             if(setStringA.charAt(i) == ',')
@@ -46,22 +51,6 @@ public class SetTheory {
             else
             {
                 builder.append(setStringA.charAt(i));
-            }
-
-        }
-        for (int i = 0 ; i < setStringB.length() ; i++)
-        {
-            if(setStringB.charAt(i) == ',')
-            {
-                if(!setB.contains(builder.toString()))
-                {
-                    setB.add(builder.toString());
-                }
-                builder.setLength(0);
-            }
-            else
-            {
-                builder.append(setStringB.charAt(i));
             }
 
         }

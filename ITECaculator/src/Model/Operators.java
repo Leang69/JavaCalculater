@@ -1,4 +1,4 @@
-package calculator;
+package Model;
 
 /**
  * This class is use for handle a normal Number Arithmetic

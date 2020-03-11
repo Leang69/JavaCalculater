@@ -1,4 +1,4 @@
-package calculator;
+package Model;
 
 import java.util.*;
 

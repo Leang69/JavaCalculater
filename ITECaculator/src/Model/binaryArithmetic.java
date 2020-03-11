@@ -1,6 +1,5 @@
-package calculator;
+package Model;
 
-import jdk.nashorn.api.scripting.ScriptObjectMirror;
 /**
  * This Class is use for do binary arithmetic ( sum , subtraction , multiply , divide , 1st and 2nh complement )
  * @author Leang

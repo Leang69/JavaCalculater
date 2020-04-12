@@ -27,21 +27,255 @@ public class standard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Num1 = new javax.swing.JButton();
+        Standard_Display = new javax.swing.JTextField();
+        Num3 = new javax.swing.JButton();
+        Num2 = new javax.swing.JButton();
+        Num4 = new javax.swing.JButton();
+        Num5 = new javax.swing.JButton();
+        Num6 = new javax.swing.JButton();
+        Num7 = new javax.swing.JButton();
+        Num8 = new javax.swing.JButton();
+        Num9 = new javax.swing.JButton();
+        B_pos_ne = new javax.swing.JButton();
+        Num0 = new javax.swing.JButton();
+        Bdot = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+
+        Num1.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num1.setText("1");
+        Num1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num1ActionPerformed(evt);
+            }
+        });
+
+        Standard_Display.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Standard_Display.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        Standard_Display.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        Num3.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num3.setText("3");
+        Num3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num3ActionPerformed(evt);
+            }
+        });
+
+        Num2.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num2.setText("2");
+        Num2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num2ActionPerformed(evt);
+            }
+        });
+
+        Num4.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num4.setText("4");
+        Num4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num4ActionPerformed(evt);
+            }
+        });
+
+        Num5.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num5.setText("5");
+        Num5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num5ActionPerformed(evt);
+            }
+        });
+
+        Num6.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num6.setText("6");
+        Num6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num6ActionPerformed(evt);
+            }
+        });
+
+        Num7.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num7.setText("7");
+        Num7.setToolTipText("");
+        Num7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num7ActionPerformed(evt);
+            }
+        });
+
+        Num8.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num8.setText("8");
+        Num8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num8ActionPerformed(evt);
+            }
+        });
+
+        Num9.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num9.setText("8");
+        Num9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num9ActionPerformed(evt);
+            }
+        });
+
+        B_pos_ne.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        B_pos_ne.setText("+/-");
+        B_pos_ne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_pos_neActionPerformed(evt);
+            }
+        });
+
+        Num0.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Num0.setText("0");
+        Num0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Num0ActionPerformed(evt);
+            }
+        });
+
+        Bdot.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        Bdot.setText(".");
+        Bdot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BdotActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1037, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Standard_Display)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 452, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Num1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Num2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Num3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Num7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Num4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Num5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Num6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Num8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Num9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(B_pos_ne, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Num0, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bdot, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 70, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 562, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Standard_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Num7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Num8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Num9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Num5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Num4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Num6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Num1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Num2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Num3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(B_pos_ne, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Num0, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bdot, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num1ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText()+'1');
+    }//GEN-LAST:event_Num1ActionPerformed
+
+    private void Num3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num3ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText() + '3');
+    }//GEN-LAST:event_Num3ActionPerformed
+
+    private void Num2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num2ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText() + '2');
+    }//GEN-LAST:event_Num2ActionPerformed
+
+    private void Num4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num4ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText() + '4');
+    }//GEN-LAST:event_Num4ActionPerformed
+
+    private void Num5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num5ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText() + '5');
+    }//GEN-LAST:event_Num5ActionPerformed
+
+    private void Num6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num6ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText() + '6');
+    }//GEN-LAST:event_Num6ActionPerformed
+
+    private void Num7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num7ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText() + '7');
+    }//GEN-LAST:event_Num7ActionPerformed
+
+    private void Num8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num8ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText() + '8');
+    }//GEN-LAST:event_Num8ActionPerformed
+
+    private void Num9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num9ActionPerformed
+        // TODO add your handling code here:
+        Standard_Display.setText(Standard_Display.getText() + '9');
+    }//GEN-LAST:event_Num9ActionPerformed
+
+    private void B_pos_neActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_pos_neActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_pos_neActionPerformed
+
+    private void Num0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num0ActionPerformed
+        // TODO add your handling code here:
+        if(Standard_Display.getText() != "0")
+        {
+            Standard_Display.setText(Standard_Display.getText() + '0');
+        }
+    }//GEN-LAST:event_Num0ActionPerformed
+
+    private void BdotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BdotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BdotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +313,18 @@ public class standard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_pos_ne;
+    private javax.swing.JButton Bdot;
+    private javax.swing.JButton Num0;
+    private javax.swing.JButton Num1;
+    private javax.swing.JButton Num2;
+    private javax.swing.JButton Num3;
+    private javax.swing.JButton Num4;
+    private javax.swing.JButton Num5;
+    private javax.swing.JButton Num6;
+    private javax.swing.JButton Num7;
+    private javax.swing.JButton Num8;
+    private javax.swing.JButton Num9;
+    private javax.swing.JTextField Standard_Display;
     // End of variables declaration//GEN-END:variables
 }

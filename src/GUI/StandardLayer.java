@@ -7,6 +7,8 @@ package GUI;
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
+import java.util.*; // import the ArrayList class
+
 
 /**
  *
@@ -83,13 +85,14 @@ public class StandardLayer extends MyFrame {
         keyPanel.setBackground(new Color(172, 240, 241));
         keyPanel.setLayout(new GridLayout(6,6,5,5));
         
-        MyButton[] StandardButton = new MyButton[36];
-        for(MyButton standardButton : StandardButton)
+        ArrayList<MyButton> StandardButton = new ArrayList();
+        for(int i = 0 ; i < 36 ; i++)
         {
-            standardButton = new MyButton();
-            keyPanel.add(standardButton);
+            StandardButton.add(new MyButton());
+            keyPanel.add(StandardButton.get(i));
         }
-        setButtonText(StandardButton);
+        
+        this.setButtonText(StandardButton,0,"Leang");
         setCell(0,2,3,6,c);
         this.getContentPane().add(keyPanel,c);
         c.weightx = 0.3; 
@@ -97,8 +100,8 @@ public class StandardLayer extends MyFrame {
         setCell(0,0,6,1,c);
         this.getContentPane().add(Display,c);   
     }
-    void setButtonText(MyButton[] AllButton)
+    void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
     {
-        AllButton[0].setText("1");
+        AllButton.get(inx).setText(name);
     }
 }

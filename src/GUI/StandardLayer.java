@@ -92,7 +92,44 @@ public class StandardLayer extends MyFrame {
             keyPanel.add(StandardButton.get(i));
         }
         
-        this.setButtonText(StandardButton,0,"Leang");
+        this.setButtonText(StandardButton,0,"log∎∎");
+        this.setButtonText(StandardButton,1,"π");
+        this.setButtonText(StandardButton,2,"(");
+        this.setButtonText(StandardButton,3,")");
+        this.setButtonText(StandardButton,4,"%");
+        this.setButtonText(StandardButton,5,"Back");
+        this.setButtonText(StandardButton,6,"∜");
+        this.setButtonText(StandardButton,7,"ln");
+        this.setButtonText(StandardButton,8,"mod");
+        this.setButtonText(StandardButton,9,"CE");
+        this.setButtonText(StandardButton,10,"C");
+        this.setButtonText(StandardButton,11,"+");
+        this.setButtonText(StandardButton,12,"∛");
+        this.setButtonText(StandardButton,13,"log");
+        this.setButtonText(StandardButton,14,"7");
+        this.setButtonText(StandardButton,15,"8");
+        this.setButtonText(StandardButton,16,"9");
+        this.setButtonText(StandardButton,17,"-");
+        this.setButtonText(StandardButton,18,"∛");
+        this.setButtonText(StandardButton,19,"sin");
+        this.setButtonText(StandardButton,20,"4");
+        this.setButtonText(StandardButton,21,"5");
+        this.setButtonText(StandardButton,22,"6");
+        this.setButtonText(StandardButton,23,"×");
+        this.setButtonText(StandardButton,24,"√∎");
+        this.setButtonText(StandardButton,25,"cos");
+        this.setButtonText(StandardButton,26,"1");
+        this.setButtonText(StandardButton,27,"2");
+        this.setButtonText(StandardButton,28,"3");
+        this.setButtonText(StandardButton,29,"÷");
+        this.setButtonText(StandardButton,30,"χ∎");
+        this.setButtonText(StandardButton,31,"tan");
+        this.setButtonText(StandardButton,32,"+/-");
+        this.setButtonText(StandardButton,33,"0");
+        this.setButtonText(StandardButton,34,".");
+        this.setButtonText(StandardButton,35,"=");
+       
+        
         setCell(0,2,3,6,c);
         this.getContentPane().add(keyPanel,c);
         c.weightx = 0.3; 
@@ -103,5 +140,6 @@ public class StandardLayer extends MyFrame {
     void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
     {
         AllButton.get(inx).setText(name);
+        
     }
 }

@@ -89,6 +89,7 @@ public class StandardLayer extends MyFrame {
             standardButton = new MyButton();
             keyPanel.add(standardButton);
         }
+        setButtonText(StandardButton);
         setCell(0,2,3,6,c);
         this.getContentPane().add(keyPanel,c);
         c.weightx = 0.3; 
@@ -98,6 +99,6 @@ public class StandardLayer extends MyFrame {
     }
     void setButtonText(MyButton[] AllButton)
     {
-        
+        AllButton[0].setText("1");
     }
 }

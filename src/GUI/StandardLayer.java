@@ -94,8 +94,10 @@ public class StandardLayer extends MyFrame {
         c.weightx = 0.3; 
         c.weighty = 0.3;
         setCell(0,0,6,1,c);
-        this.getContentPane().add(Display,c);
-        
+        this.getContentPane().add(Display,c);   
+    }
+    void setButtonText(MyButton[] AllButton)
+    {
         
     }
 }

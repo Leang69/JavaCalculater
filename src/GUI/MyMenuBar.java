@@ -5,18 +5,25 @@
  */
 package GUI;
 import javax.swing.*;
+import java.awt.*;
 /**
  *
  * @author User
  */
-public class MenuBar extends JMenuBar{
+public class MyMenuBar extends JMenuBar{
     private JMenu Standard , Programmer , StorageConverter , SetTheory;
-    MenuBar()
+    private Font MenuBarFont = new Font("Arial", Font.BOLD, 14);
+    MyMenuBar()
     {
+        this.setBackground(new Color(152, 222, 224));
         Standard = new JMenu("Standard");
         Programmer = new JMenu("Programmer");
         StorageConverter = new JMenu("StorageConverter");
         SetTheory = new JMenu("SetTheory");
+        Standard.setFont(MenuBarFont);
+        Programmer.setFont(MenuBarFont);
+        StorageConverter.setFont(MenuBarFont);
+        SetTheory.setFont(MenuBarFont);
         this.add(Standard);
         this.add(Programmer);
         this.add(StorageConverter);

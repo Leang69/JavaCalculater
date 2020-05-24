@@ -5,5 +5,6 @@ public class Main {
         StandardLayer standardGUI = new StandardLayer("Standard");
         ProgrammingLayer programming = new ProgrammingLayer("Programming");
         StorageConverterLayer storageConverterLayer = new StorageConverterLayer("Storage Converter");
+        Set_Theory setTheory = new Set_Theory("Set Theory");
     }
 }

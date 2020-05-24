@@ -16,30 +16,17 @@ import java.util.*;
  */
 public class StorageConverterLayer extends MyFrame{
     public StorageConverterLayer(String title) {
-        this.buildContendPane();
-        this.setTitle(title);
-        this.setJMenuBar(new MyMenuBar());
-        this.setVisible(true);
-        this.setMinimumSize(new Dimension(1000,500));
-        //this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
+         this.iniFrame(title, 1000, 500);
     }
-    private class MyButton extends JButton 
+
+    class MyButton extends JButton 
     {
-        MyButton()
-        {
+         MyButton()
+         {
             this.setBackground(new Color(152, 222, 224));
             this.setBorder(null);
             this.setFont(new Font("Arial", Font.BOLD, 25));
-        }
-    }
-    
-    void setCell(int posX , int posY , int w , int h,GridBagConstraints c)
-     {
-            c.gridx = posX;
-            c.gridy = posY;
-            c.gridwidth = w;
-            c.gridheight = h;
+         }   
     }
     
     @Override 
@@ -86,28 +73,21 @@ public class StorageConverterLayer extends MyFrame{
         cD.fill = GridBagConstraints.BOTH; 
         cD.insets = new Insets(5,5,5,5);
         
-        setCell(0,0,6,3,c);
-        c.weightx = 1; 
-        c.weighty = 1;
+        setCell(0,0,6,3,1,1,c);
         Display.add(A,c);
-        setCell(0,3,3,3,c);
-        c.weightx = 0.1; 
-        c.weighty = 0.1;
+        setCell(0,3,3,3,0.1,0.1,c);
         Display.add(typeA,c);
-        setCell(0,6,6,3,c);
-        c.weightx = 1; 
-        c.weighty = 1;
+        setCell(0,6,6,3,1,1,c);
         Display.add(B,c);
-        setCell(0,9,3,3,c);
-        c.weightx = 0.1; 
-        c.weighty = 0.1;
+        setCell(0,9,3,3,0.1,0.1,c);
         Display.add(typeB,c);
 
-        
-        
-        
+
         JPanel keyPanel = new JPanel(new GridLayout(4,3,5,5));
         keyPanel.setBackground(new Color(172, 240, 241));
+        
+        
+        
         ArrayList<MyButton> AllButton = new ArrayList();
         for(int i = 0 ; i < 12 ; i++)
         {
@@ -115,26 +95,23 @@ public class StorageConverterLayer extends MyFrame{
             keyPanel.add(AllButton.get(i));
         }
        
-        this.setButtonText(AllButton,0,"9");
+        this.setButtonText(AllButton,0,"7");
         this.setButtonText(AllButton,1,"8");
-        this.setButtonText(AllButton,2,"DELETE");
-        this.setButtonText(AllButton,3,"7");
-        this.setButtonText(AllButton,4,"6");
-        this.setButtonText(AllButton,5,"CE");
-        this.setButtonText(AllButton,6,"4");
-        this.setButtonText(AllButton,7,"5");
+        this.setButtonText(AllButton,2,"9");
+        this.setButtonText(AllButton,3,"4");
+        this.setButtonText(AllButton,4,"5");
+        this.setButtonText(AllButton,5,"6");
+        this.setButtonText(AllButton,6,"1");
+        this.setButtonText(AllButton,7,"2");
         this.setButtonText(AllButton,8,"3");
-        this.setButtonText(AllButton,9,"2");
-        this.setButtonText(AllButton,10,"1");
-        this.setButtonText(AllButton,11,"0");
+        this.setButtonText(AllButton,9,"CE");
+        this.setButtonText(AllButton,10,"0");
+        this.setButtonText(AllButton,11,"Backspace");
    
-        c.weightx = 1; 
-        c.weighty = 1;
-        setCell(3,0,6,6,c);
+        
+        setCell(3,0,6,6,1,1,c);
         this.getContentPane().add(keyPanel,c);
-        c.weightx = 0.7; 
-        c.weighty = 0.7;
-        setCell(0,0,3,6,c);
+        setCell(0,0,3,6,0.7,0.7,c);
         this.getContentPane().add(Display,c);
  
     }

@@ -18,13 +18,7 @@ public class StandardLayer extends MyFrame {
     
     public StandardLayer(String title)
     {
-        this.buildContendPane();
-        this.setTitle(title);
-        this.setJMenuBar(new MyMenuBar());
-        this.setVisible(true);
-        this.setMinimumSize(new Dimension(1000, 500));
-        //this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.iniFrame(title, 1000, 500);
     }
     
     private class MyButton extends JButton 
@@ -36,40 +30,12 @@ public class StandardLayer extends MyFrame {
             this.setFont(new Font("Arial", Font.BOLD, 25));
         }
     }
-    /*private class MyGridBagConstraints extends GridBagConstraints 
-    {
-        MyGridBagConstraints()
-        {
-            this.weightx = 1 ; 
-            this.weighty = 1;
-            this.fill = GridBagConstraints.BOTH; 
-            this.insets = new Insets(5,5,5,5);
-          
-        }
-        void setCell(int posX , int posY , int w , int h,int Anchor)
-        {
-            this.gridx = posX;
-            this.gridy = posY;
-            this.gridwidth = w;
-            this.gridheight = h;
-            this.anchor = Anchor;
-        }
-    }*/
     
-    void setCell(int posX , int posY , int w , int h,GridBagConstraints c)
-        {
-            c.gridx = posX;
-            c.gridy = posY;
-            c.gridwidth = w;
-            c.gridheight = h;
-        }
     
     @Override 
     void buildContendPane()
     {
         GridBagConstraints c = new GridBagConstraints();
-        c.weightx = 1 ; 
-        c.weighty = 1;
         c.fill = GridBagConstraints.BOTH; 
         c.insets = new Insets(5,5,5,5);
         
@@ -131,11 +97,9 @@ public class StandardLayer extends MyFrame {
         this.setButtonText(StandardButton,35,"=");
        
         
-        setCell(0,2,3,6,c);
+        setCell(0,2,3,6,1,1,c);
         this.getContentPane().add(keyPanel,c);
-        c.weightx = 0.3; 
-        c.weighty = 0.3;
-        setCell(0,0,6,1,c);
+        setCell(0,0,6,1,0.3,0.3,c);
         this.getContentPane().add(Display,c);   
     }
     void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
@@ -143,4 +107,5 @@ public class StandardLayer extends MyFrame {
         AllButton.get(inx).setText(name);
         
     }
+    
 }

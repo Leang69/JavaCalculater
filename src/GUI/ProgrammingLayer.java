@@ -17,13 +17,7 @@ import java.util.*; // import the ArrayList class
  */
 public class ProgrammingLayer extends MyFrame{
     public ProgrammingLayer(String title) {
-        this.setTitle(title);
-        this.setJMenuBar(new MyMenuBar());
-        this.setVisible(true);
-        this.setMinimumSize(new Dimension(1000, 500));
-        //this.setResizable(false);
-        this.buildContendPane();
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
+        this.iniFrame(title, 1000, 500);   
     }
     private class MyButton extends JButton 
     {
@@ -34,14 +28,6 @@ public class ProgrammingLayer extends MyFrame{
             this.setFont(new Font("Arial", Font.BOLD, 25));
         }
     }
-    
-    void setCell(int posX , int posY , int w , int h,GridBagConstraints c)
-        {
-            c.gridx = posX;
-            c.gridy = posY;
-            c.gridwidth = w;
-            c.gridheight = h;
-        }
     
     @Override 
     void buildContendPane() {
@@ -121,12 +107,10 @@ public class ProgrammingLayer extends MyFrame{
         
         
         
-       setCell(0,2,3,6,c);
-        this.getContentPane().add(keyPanel,c);
-        c.weightx = 0.3; 
-        c.weighty = 0.3;
-        setCell(0,0,6,1,c);
-        this.getContentPane().add(Display,c);
+       setCell(0,2,3,6,1,1,c);
+       this.getContentPane().add(keyPanel,c);
+       setCell(0,0,6,1,0.3,0.3,c);
+       this.getContentPane().add(Display,c);
         
     }
     private void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)

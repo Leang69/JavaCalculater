@@ -98,7 +98,7 @@ public class StandardLayer extends MyFrame {
         this.setButtonText(StandardButton,2,"(");
         this.setButtonText(StandardButton,3,")");
         this.setButtonText(StandardButton,4,"%");
-        this.setButtonText(StandardButton,5,"Back");
+        this.setButtonText(StandardButton,5,"DELETE");
         this.setButtonText(StandardButton,6,"∜");
         this.setButtonText(StandardButton,7,"ln");
         this.setButtonText(StandardButton,8,"mod");

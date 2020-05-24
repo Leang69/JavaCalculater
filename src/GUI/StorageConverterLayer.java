@@ -57,7 +57,8 @@ public class StorageConverterLayer extends MyFrame{
         JPanel Display = new JPanel();
         Display.setLayout(new GridBagLayout());
         
-        String[] StorageType = {"A" , "B"};
+        String[] StorageType = {"Bits" , "Bytes","Kilobits","Kibibits","Kilobytes","Kibibytes","Megabits","Mebibits","Megabytes",
+                                "Mebibytes","Gigabits","Gibibits","Gigabytes","Givibytes","Terabits","Tebibits","Terabytes","Tebibytes"};
         JTextField A = new JTextField("1000");
         JTextField B = new JTextField("1000");
         JComboBox  typeA = new JComboBox (StorageType);
@@ -111,7 +112,23 @@ public class StorageConverterLayer extends MyFrame{
             AllButton.add(new MyButton());
             keyPanel.add(AllButton.get(i));
         }
-            
+        
+        this.setButtonText(AllButton,0,"9");
+        this.setButtonText(AllButton,1,"8");
+        this.setButtonText(AllButton,2,"7");
+        this.setButtonText(AllButton,3,"DELETE");
+        this.setButtonText(AllButton,4,"6");
+        this.setButtonText(AllButton,5,"5");
+        this.setButtonText(AllButton,6,"4");
+        this.setButtonText(AllButton,7,"CE");
+        this.setButtonText(AllButton,8,"3");
+        this.setButtonText(AllButton,9,"2");
+        this.setButtonText(AllButton,10,"1");
+        this.setButtonText(AllButton,11,"0");
+        
+        
+        
+        
         c.weightx = 1; 
         c.weighty = 1;
         setCell(3,0,6,6,c);
@@ -124,4 +141,9 @@ public class StorageConverterLayer extends MyFrame{
         
         
     }
+    private void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
+    {
+        AllButton.get(inx).setText(name);  
+    }
+    
 }

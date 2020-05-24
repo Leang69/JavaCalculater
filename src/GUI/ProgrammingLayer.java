@@ -87,7 +87,7 @@ public class ProgrammingLayer extends MyFrame{
         this.setButtonText(ProgrammingButton,2,"(");
         this.setButtonText(ProgrammingButton,3,")");
         this.setButtonText(ProgrammingButton,4,"Ans");
-        this.setButtonText(ProgrammingButton,5,"Back");
+        this.setButtonText(ProgrammingButton,5,"DELETE");
         this.setButtonText(ProgrammingButton,6,"DEC");
         this.setButtonText(ProgrammingButton,7,"B");
         this.setButtonText(ProgrammingButton,8,"<<");

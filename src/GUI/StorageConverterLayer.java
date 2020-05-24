@@ -7,6 +7,8 @@ package GUI;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.Dimension;
+import java.util.*;
 
 /**
  *
@@ -14,13 +16,12 @@ import javax.swing.*;
  */
 public class StorageConverterLayer extends MyFrame{
     public StorageConverterLayer(String title) {
-        this.setLayout(new GridBagLayout());
         this.buildContendPane();
         this.setTitle(title);
         this.setJMenuBar(new MyMenuBar());
         this.setVisible(true);
-        this.setMinimumSize(new Dimension(1000, 500));
-        this.setResizable(false);
+        this.setMinimumSize(new Dimension(1000,500));
+        //this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
     }
     private class MyButton extends JButton 
@@ -32,21 +33,93 @@ public class StorageConverterLayer extends MyFrame{
         }
     }
     
+    void setCell(int posX , int posY , int w , int h,GridBagConstraints c)
+     {
+            c.gridx = posX;
+            c.gridy = posY;
+            c.gridwidth = w;
+            c.gridheight = h;
+    }
+    
     @Override 
     void buildContendPane() {
-        JPanel Display = new JPanel();
-        Display.setLayout(new GridLayout(4,1));
-        JTextField A = new JTextField();
-        JTextField B = new JTextField();
-        JComboBox  typeA = new JComboBox ();
-        JComboBox  typeB = new JComboBox();
-        Display.add(A);
-        Display.add(typeA);
-        Display.add(B);
-        Display.add(typeB);  
-        this.getContentPane().add(Display,BorderLayout.NORTH);
         
-        JPanel keyPanel = new JPanel();
+        GridBagConstraints c = new GridBagConstraints();
+        c.weightx = 1 ; 
+        c.weighty = 1;
+        c.fill = GridBagConstraints.BOTH; 
+        c.insets = new Insets(5,5,5,5);
+        
+        this.setLayout(new GridBagLayout());
+        
+        
+        
+        JPanel Display = new JPanel();
+        Display.setLayout(new GridBagLayout());
+        
+        String[] StorageType = {"A" , "B"};
+        JTextField A = new JTextField("1000");
+        JTextField B = new JTextField("1000");
+        JComboBox  typeA = new JComboBox (StorageType);
+        JComboBox  typeB = new JComboBox(StorageType);
+        
+        //Set TextField Style
+        A.setFont(new Font("Arial", Font.PLAIN, 25));
+        B.setFont(new Font("Arial", Font.PLAIN, 25));
+        A.setEditable(false);
+        B.setEditable(false);
+        A.setBackground(Color.WHITE);
+        B.setBackground(Color.WHITE);
+        
+        //set combo Box
+        typeA.setFont(new Font("Arial", Font.PLAIN, 20));
+        typeB.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        
+        //set Gridlayout
+        GridBagConstraints cD = new GridBagConstraints();
+        cD.weightx = 1 ; 
+        cD.weighty = 1;
+        cD.fill = GridBagConstraints.BOTH; 
+        cD.insets = new Insets(5,5,5,5);
+        
+        setCell(0,0,6,3,c);
+        c.weightx = 1; 
+        c.weighty = 1;
+        Display.add(A,c);
+        setCell(0,3,3,3,c);
+        c.weightx = 0.1; 
+        c.weighty = 0.1;
+        Display.add(typeA,c);
+        setCell(0,6,6,3,c);
+        c.weightx = 1; 
+        c.weighty = 1;
+        Display.add(B,c);
+        setCell(0,9,3,3,c);
+        c.weightx = 0.1; 
+        c.weighty = 0.1;
+        Display.add(typeB,c);
+
+        
+        
+        
+        JPanel keyPanel = new JPanel(new GridLayout(3,4,5,5));
+        keyPanel.setBackground(new Color(172, 240, 241));
+        ArrayList<MyButton> AllButton = new ArrayList();
+        for(int i = 0 ; i < 12 ; i++)
+        {
+            AllButton.add(new MyButton());
+            keyPanel.add(AllButton.get(i));
+        }
+            
+        c.weightx = 1; 
+        c.weighty = 1;
+        setCell(3,0,6,6,c);
+        this.getContentPane().add(keyPanel,c);
+        c.weightx = 0.9; 
+        c.weighty = 0.9;
+        setCell(0,0,3,6,c);
+        this.getContentPane().add(Display,c);
         
         
         

@@ -33,6 +33,7 @@ public class StandardLayer extends MyFrame {
         {
             this.setBackground(new Color(152, 222, 224));
             this.setBorder(null);
+            this.setFont(new Font("Arial", Font.BOLD, 25));
         }
     }
     /*private class MyGridBagConstraints extends GridBagConstraints 

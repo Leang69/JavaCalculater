@@ -21,7 +21,7 @@ public class ProgrammingLayer extends MyFrame{
         this.setJMenuBar(new MyMenuBar());
         this.setVisible(true);
         this.setMinimumSize(new Dimension(1000, 500));
-        this.setResizable(false);
+        //this.setResizable(false);
         this.buildContendPane();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
     }
@@ -31,11 +31,29 @@ public class ProgrammingLayer extends MyFrame{
         {
             this.setBackground(new Color(152, 222, 224));
             this.setBorder(null);
+            this.setFont(new Font("Arial", Font.BOLD, 25));
         }
     }
+    
+    void setCell(int posX , int posY , int w , int h,GridBagConstraints c)
+        {
+            c.gridx = posX;
+            c.gridy = posY;
+            c.gridwidth = w;
+            c.gridheight = h;
+        }
+    
     @Override 
     void buildContendPane() {
-        this.setLayout(new BorderLayout(5,5));
+        GridBagConstraints c = new GridBagConstraints();
+        c.weightx = 1 ; 
+        c.weighty = 1;
+        c.fill = GridBagConstraints.BOTH; 
+        c.insets = new Insets(5,5,5,5);
+        
+        this.setLayout(new GridBagLayout());
+        
+        
         JTextField Display = new JTextField("0");
         Display.setEditable(false);
         Display.setPreferredSize(new Dimension(this.getWidth(), 60));
@@ -48,19 +66,6 @@ public class ProgrammingLayer extends MyFrame{
         keyPanel.setBackground(new Color(172, 240, 241));
         keyPanel.setLayout(new GridLayout(6, 6, 5, 5));
         
-        /*MyButton[] StandardButton = new MyButton[36];
-        for (MyButton standardButton : StandardButton) {
-            standardButton = new MyButton();
-            keyPanel.add(standardButton);
-        }
-        keyPanel.getComponent(31).setBackground(new Color(48,168,191));
-        keyPanel.getComponent(0).setBackground(new Color(48,168,191));
-        keyPanel.getComponent(6).setBackground(new Color(48,168,191));
-        keyPanel.getComponent(12).setBackground(new Color(48,168,191));
-        keyPanel.getComponent(18).setBackground(new Color(48,168,191));
-        keyPanel.getComponent(24).setBackground(new Color(48,168,191));
-        keyPanel.getComponent(30).setBackground(new Color(48,168,191));
-        */
         ArrayList<MyButton> ProgrammingButton =new ArrayList();
         for(int i = 0 ; i < 36 ; i++)
         {
@@ -116,13 +121,16 @@ public class ProgrammingLayer extends MyFrame{
         
         
         
-       this.getContentPane().add(Display, BorderLayout.NORTH);
-       this.getContentPane().add(keyPanel,BorderLayout.CENTER);
+       setCell(0,2,3,6,c);
+        this.getContentPane().add(keyPanel,c);
+        c.weightx = 0.3; 
+        c.weighty = 0.3;
+        setCell(0,0,6,1,c);
+        this.getContentPane().add(Display,c);
         
     }
-    void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
+    private void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
     {
-        AllButton.get(inx).setText(name);
-        
+        AllButton.get(inx).setText(name);  
     }
 }

@@ -61,7 +61,7 @@ public class Set_Theory extends MyFrame{
         Answer.setEditable(false);
         
         
-        String[] setOperatorsName = {"Intersection" , "Union"};
+        String[] setOperatorsName = {"Intersection" , "Union","Set Difference A-B","Set Difference B-A"};
         JComboBox setOperators = new JComboBox(setOperatorsName);
         setOperators.setBackground(Color.WHITE);
         setOperators.setFont(new Font("Arial", Font.BOLD, 25 ));
@@ -95,6 +95,27 @@ public class Set_Theory extends MyFrame{
             ProgrammingButton.add(new MyButton());
             keyPanel.add(ProgrammingButton.get(i));
         }
+        keyPanel.getComponent(12).setVisible(false);
+        keyPanel.getComponent(15).setVisible(false);
+        
+        this.setButtonText(ProgrammingButton,0,"9");
+        this.setButtonText(ProgrammingButton,1,"8");
+        this.setButtonText(ProgrammingButton,2,"7");
+        this.setButtonText(ProgrammingButton,3,"DELETE");
+        this.setButtonText(ProgrammingButton,4,"6");
+        this.setButtonText(ProgrammingButton,5,"5");
+        this.setButtonText(ProgrammingButton,6,"4");
+        this.setButtonText(ProgrammingButton,7,"CE");
+        this.setButtonText(ProgrammingButton,8,"3");
+        this.setButtonText(ProgrammingButton,9,"2");
+        this.setButtonText(ProgrammingButton,10,"1");
+        this.setButtonText(ProgrammingButton,11,"ENTER");
+        this.setButtonText(ProgrammingButton,12,"0");
+        this.setButtonText(ProgrammingButton,13,"0");
+        this.setButtonText(ProgrammingButton,14,".");
+        this.setButtonText(ProgrammingButton,15,"0");
+        
+        
         
    
         this.getContentPane().setLayout(new GridBagLayout());
@@ -105,7 +126,11 @@ public class Set_Theory extends MyFrame{
         
        
     }
-    
+    void setButtonText(ArrayList<MyButton> ProgrammingButton,int inx,String name)
+    {
+        ProgrammingButton.get(inx).setText(name);
+        
+    }
 }
 
 

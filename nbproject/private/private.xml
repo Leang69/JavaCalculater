@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/D:/RUPP/Advance%20PL/JavaCalculater/src/Model/Main.java</file>
             <file>file:/D:/RUPP/Advance%20PL/JavaCalculater/src/GUI/Set_Theory.java</file>
             <file>file:/D:/RUPP/Advance%20PL/JavaCalculater/src/GUI/ProgrammingLayer.java</file>
@@ -11,6 +12,19 @@
             <file>file:/D:/RUPP/Advance%20PL/JavaCalculater/src/GUI/StandardLayer.java</file>
             <file>file:/D:/RUPP/Advance%20PL/JavaCalculater/src/Model/BitWise.java</file>
             <file>file:/D:/RUPP/Advance%20PL/JavaCalculater/src/GUI/MyFrame.java</file>
+=======
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/GUI/StandardLayer.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/Model/NumberSystemConversion.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/Model/Main.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/Model/StorageConverter.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/Model/SetTheory.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/Model/binaryArithmetic.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/GUI/ProgrammingLayer.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/GUI/StorageConverterLayer.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/GUI/MyFrame.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/Model/Operators.java</file>
+            <file>file:/D:/Study/Y2/s2/Advanced%20Programming/programming%20project/project/JavaCalculater/src/GUI/MyMenuBar.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

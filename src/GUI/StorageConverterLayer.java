@@ -30,6 +30,7 @@ public class StorageConverterLayer extends MyFrame{
         {
             this.setBackground(new Color(152, 222, 224));
             this.setBorder(null);
+            this.setFont(new Font("Arial", Font.BOLD, 25));
         }
     }
     
@@ -57,8 +58,9 @@ public class StorageConverterLayer extends MyFrame{
         JPanel Display = new JPanel();
         Display.setLayout(new GridBagLayout());
         
-        String[] StorageType = {"Bits" , "Bytes","Kilobits","Kibibits","Kilobytes","Kibibytes","Megabits","Mebibits","Megabytes",
-                                "Mebibytes","Gigabits","Gibibits","Gigabytes","Givibytes","Terabits","Tebibits","Terabytes","Tebibytes"};
+        //set tpye 
+        String[] StorageType = {"Bits" , "Bytes","Kilobits","Kibibits","Kilobytes","Kibibytes","Megabits","Mebibits","Megabytes", "Mebibytes",
+                                "Gigabits","Gibibits","Gigabytes","Givibytes","Terabits","Tebibits","Terabytes","Tebibytes"};
         JTextField A = new JTextField("1000");
         JTextField B = new JTextField("1000");
         JComboBox  typeA = new JComboBox (StorageType);
@@ -104,7 +106,7 @@ public class StorageConverterLayer extends MyFrame{
         
         
         
-        JPanel keyPanel = new JPanel(new GridLayout(3,4,5,5));
+        JPanel keyPanel = new JPanel(new GridLayout(4,3,5,5));
         keyPanel.setBackground(new Color(172, 240, 241));
         ArrayList<MyButton> AllButton = new ArrayList();
         for(int i = 0 ; i < 12 ; i++)
@@ -112,38 +114,33 @@ public class StorageConverterLayer extends MyFrame{
             AllButton.add(new MyButton());
             keyPanel.add(AllButton.get(i));
         }
-        
+       
         this.setButtonText(AllButton,0,"9");
         this.setButtonText(AllButton,1,"8");
-        this.setButtonText(AllButton,2,"7");
-        this.setButtonText(AllButton,3,"DELETE");
+        this.setButtonText(AllButton,2,"DELETE");
+        this.setButtonText(AllButton,3,"7");
         this.setButtonText(AllButton,4,"6");
-        this.setButtonText(AllButton,5,"5");
+        this.setButtonText(AllButton,5,"CE");
         this.setButtonText(AllButton,6,"4");
-        this.setButtonText(AllButton,7,"CE");
+        this.setButtonText(AllButton,7,"5");
         this.setButtonText(AllButton,8,"3");
         this.setButtonText(AllButton,9,"2");
         this.setButtonText(AllButton,10,"1");
         this.setButtonText(AllButton,11,"0");
-        
-        
-        
-        
+   
         c.weightx = 1; 
         c.weighty = 1;
         setCell(3,0,6,6,c);
         this.getContentPane().add(keyPanel,c);
-        c.weightx = 0.9; 
-        c.weighty = 0.9;
+        c.weightx = 0.7; 
+        c.weighty = 0.7;
         setCell(0,0,3,6,c);
         this.getContentPane().add(Display,c);
-        
-        
-        
+ 
     }
     private void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
     {
         AllButton.get(inx).setText(name);  
     }
-    
+ 
 }

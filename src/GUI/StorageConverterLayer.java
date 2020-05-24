@@ -30,6 +30,7 @@ public class StorageConverterLayer extends MyFrame{
         {
             this.setBackground(new Color(152, 222, 224));
             this.setBorder(null);
+            this.setFont(new Font("Arial", Font.BOLD, 25));
         }
     }
     
@@ -57,7 +58,11 @@ public class StorageConverterLayer extends MyFrame{
         JPanel Display = new JPanel();
         Display.setLayout(new GridBagLayout());
         
+        //set tpye 
         String[] StorageType = {"A" , "B"};
+        
+        
+        
         JTextField A = new JTextField("1000");
         JTextField B = new JTextField("1000");
         JComboBox  typeA = new JComboBox (StorageType);
@@ -103,7 +108,7 @@ public class StorageConverterLayer extends MyFrame{
         
         
         
-        JPanel keyPanel = new JPanel(new GridLayout(3,4,5,5));
+        JPanel keyPanel = new JPanel(new GridLayout(4,3,5,5));
         keyPanel.setBackground(new Color(172, 240, 241));
         ArrayList<MyButton> AllButton = new ArrayList();
         for(int i = 0 ; i < 12 ; i++)
@@ -111,17 +116,24 @@ public class StorageConverterLayer extends MyFrame{
             AllButton.add(new MyButton());
             keyPanel.add(AllButton.get(i));
         }
-            
+        
+        
+        
+        
+        
+        
         c.weightx = 1; 
         c.weighty = 1;
         setCell(3,0,6,6,c);
         this.getContentPane().add(keyPanel,c);
-        c.weightx = 0.9; 
-        c.weighty = 0.9;
+        c.weightx = 0.7; 
+        c.weighty = 0.7;
         setCell(0,0,3,6,c);
         this.getContentPane().add(Display,c);
-        
-        
-        
+ 
+    }
+    private void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
+    {
+        AllButton.get(inx).setText(name);  
     }
 }

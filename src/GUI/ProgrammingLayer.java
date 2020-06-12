@@ -63,9 +63,7 @@ public class ProgrammingLayer extends MyFrame{
         keyPanel.getComponent(6).setBackground(new Color(48,168,191));
         keyPanel.getComponent(12).setBackground(new Color(48,168,191));
         keyPanel.getComponent(18).setBackground(new Color(48,168,191));
-        keyPanel.getComponent(24).setVisible(false);
-        keyPanel.getComponent(30).setVisible(false);
-        keyPanel.getComponent(31).setVisible(false);
+        keyPanel.getComponent(31).setBackground(new Color(48,168,191));
         
         
         this.setButtonText(ProgrammingButton,0,"HEX");
@@ -92,14 +90,12 @@ public class ProgrammingLayer extends MyFrame{
         this.setButtonText(ProgrammingButton,21,"5");
         this.setButtonText(ProgrammingButton,22,"6");
         this.setButtonText(ProgrammingButton,23,"×");
-        this.setButtonText(ProgrammingButton,24,"√∎");
         this.setButtonText(ProgrammingButton,25,"F");
         this.setButtonText(ProgrammingButton,26,"1");
         this.setButtonText(ProgrammingButton,27,"2");
         this.setButtonText(ProgrammingButton,28,"3");
-        this.setButtonText(ProgrammingButton,29,"÷");
-        this.setButtonText(ProgrammingButton,30,"χ∎");
-        this.setButtonText(ProgrammingButton,31,"tan");
+        this.setButtonText(ProgrammingButton,29,"÷");;
+        this.setButtonText(ProgrammingButton,31,"Bitwise");
         this.setButtonText(ProgrammingButton,32,"+/-");
         this.setButtonText(ProgrammingButton,33,"0");
         this.setButtonText(ProgrammingButton,34,".");

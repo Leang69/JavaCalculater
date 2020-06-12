@@ -14,7 +14,7 @@ import javax.swing.*;
  *
  * @author User
  */
-abstract class MyFrame extends JFrame{
+public abstract class MyFrame extends JFrame{
     void iniFrame(String title,int height , int weight)
     {
         this.buildContendPane();

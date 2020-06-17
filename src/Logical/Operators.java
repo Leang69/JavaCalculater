@@ -1,9 +1,12 @@
-package Model;
+package Logical;
 
 /**
  * This class is use for handle a normal Number Arithmetic
  */
-class Operators {
+public class Operators {
+    double a , b , answer;
+    boolean doneInput_a;
+    boolean doneInput_b;
     /**
      * Sum method use for sum 2 integer
      * 
@@ -11,7 +14,7 @@ class Operators {
      * @param b integer viable
      * @return integer viable form a + b
      */
-    int sum(int a, int b) {
+    public double sum(double a, double b) {
         return a + b;
     }
 
@@ -23,7 +26,7 @@ class Operators {
      * @return double value form a / b
      */
     // divide method we can divide 2integer
-    double divide(int a, int b) {
+    public double divide(double a, double b) {
         return (double) a / (double) b;
     }
 
@@ -34,7 +37,7 @@ class Operators {
      * @param b integer viable
      * @return integer value form a * b
      */
-    int multiply(int a, int b) {
+    public double multiply(double a, double b) {
         return a * b;
     }
 
@@ -46,7 +49,7 @@ class Operators {
      * @param b integer viable
      * @return integer value a - b
      */
-    int minus(int a, int b) {
+    public double minus(double a, double b) {
         return a - b;
     }
 
@@ -58,7 +61,7 @@ class Operators {
      * @param b integer 
      * @return integer value form remainder of a / b
      */
-    int modulo(int a, int b) {
+    public double modulo(double a, double b) {
         return a % b;
     }
 
@@ -67,8 +70,8 @@ class Operators {
      * @param radian is float
      * @return the Trigonometry sine of an angle in radian
      */
-    float sinRadian(float radian) {
-	return (float) Math.sin(radian);
+    public double sinRadian(double radian) {
+	return Math.sin(radian);
     }
 
     /**
@@ -76,8 +79,8 @@ class Operators {
      * @param degree is int
      * @return the Trigonometry sine of an angle in degree
      */
-    float sinDegree(int degree) {
-	return (float) Math.sin(Math.toRadians(degree));
+    public double sinDegree(double degree) {
+	return Math.sin(Math.toRadians(degree));
 
     }
 
@@ -86,8 +89,8 @@ class Operators {
      * @param radian is float
      * @return the Trigonometry cos of an angle in radian
      */
-    float cosRadian(float radian) {
-	return (float) Math.cos(radian);
+    public double cosRadian(double radian) {
+	return Math.cos(radian);
     }
 
     /**
@@ -95,8 +98,8 @@ class Operators {
      * @param degree int
      * @return the Trigonometry cos of an angle in degree
      */
-    float cosDegree(int degree) {
-	return (float) Math.cos(Math.toRadians(degree));
+    public double cosDegree(double degree) {
+	return Math.cos(Math.toRadians(degree));
 
     }
 
@@ -105,8 +108,8 @@ class Operators {
      * @param radian is float
      * @return the Trigonometry tan of an angle in radian
      */
-    float tanRadian(float radian) {
-	return (float) Math.tan(radian);
+    public double tanRadian(double radian) {
+	return Math.tan(radian);
     }
 
     /**
@@ -114,8 +117,8 @@ class Operators {
      * @param degree is degree
      * @return the Trigonometry tan of an angle in degree
      */
-    float tanDegree(int degree) {
-	return (float) Math.tan(Math.toRadians(degree));
+    public double tanDegree(double degree) {
+	return Math.tan(Math.toRadians(degree));
 
     }
 
@@ -124,43 +127,27 @@ class Operators {
      * @param x that x is integer
      * @return x power of 2
      */
-    long square2(long x) {
-	return (long) Math.pow(x, 2);
+    public double square2(double x) {
+	return (double) Math.pow(x, 2);
     }
 
-    /**
-     *
-     * @param x that x is floating number
-     * @return x power of 2
-     */
-    double square2(double x) {
-	return Math.pow(x, 2);
-    }
 
     /**
      *
      * @param x that x is integer
      * @return x power of 3
      */
-    long square3(long x) {
-	return (long) Math.pow(x, 3);
-    }
-
-    /**
-     *
-     * @param x that x is floating number
-     * @return x power of 3
-     */
-    double square3(double x) {
+    public double square3(double x) {
 	return Math.pow(x, 3);
     }
+
 
     /**
      *This method is use for convert degree to radian
      * @param degree is angle is degree
      * @return the angle in radian
      */
-    double degree2Radian(double degree) {
+    public double degree2Radian(double degree) {
 	return Math.toRadians(degree);
     }
 

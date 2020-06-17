@@ -15,11 +15,13 @@ import java.util.*; // import the ArrayList class
  *
  * @author User
  */
-public class Set_Theory extends MyFrame{
-    
-    public Set_Theory(String title)
+public class Set_Theory extends JPanel{
+    JTextField setA , setB , Answer; 
+    JComboBox setOperators;
+    public Set_Theory()
     {
-       this.iniFrame(title, 1000, 500);
+       this.setSize(1000, 500);
+       buildContendPane();
     }
     
     private class MyButton extends JButton 
@@ -32,7 +34,6 @@ public class Set_Theory extends MyFrame{
         }
     }
     
-    @Override
     void buildContendPane()
     {
         
@@ -47,9 +48,9 @@ public class Set_Theory extends MyFrame{
         setALable.setFont(new Font("Arial", Font.BOLD, 25 ));
         setBLable.setFont(new Font("Arial", Font.BOLD, 25 ));
         
-        JTextField setA = new JTextField("");
-        JTextField setB = new JTextField("");
-        JTextField Answer = new JTextField();
+        setA = new JTextField("");
+        setB = new JTextField("");
+        Answer = new JTextField();
         setA.setBackground(Color.WHITE);
         setB.setBackground(Color.WHITE);
         Answer.setBackground(Color.WHITE);
@@ -63,7 +64,7 @@ public class Set_Theory extends MyFrame{
         
         
         String[] setOperatorsName = {"Intersection" , "Union","Set Difference A-B","Set Difference B-A"};
-        JComboBox setOperators = new JComboBox(setOperatorsName);
+        setOperators = new JComboBox(setOperatorsName);
         setOperators.setBackground(Color.WHITE);
         setOperators.setFont(new Font("Arial", Font.BOLD, 25 ));
         
@@ -119,14 +120,25 @@ public class Set_Theory extends MyFrame{
         
         
    
-        this.getContentPane().setLayout(new GridBagLayout());
+        this.setLayout(new GridBagLayout());
         this.setCell(0, 0, 14, 4, 0.2, 0.2, c);
-        this.getContentPane().add(Display,c);
+        this.add(Display,c);
         this.setCell(0, 4, 14, 10, 0.8, 0.8, c);
-        this.getContentPane().add(keyPanel,c);
+        this.add(keyPanel,c);
         
        
     }
+    
+     void setCell(int posX ,int posY ,int w ,int h,double weightx,double weighty,GridBagConstraints c)
+    {
+            c.gridx = posX;
+            c.gridy = posY;
+            c.gridwidth = w;
+            c.gridheight = h;
+            c.weightx = weightx;
+            c.weighty = weighty;
+    }
+    
     void setButtonText(ArrayList<MyButton> ProgrammingButton,int inx,String name)
     {
         ProgrammingButton.get(inx).setText(name);

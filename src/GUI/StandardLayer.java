@@ -14,14 +14,22 @@ import java.util.*; // import the ArrayList class
  *
  * @author User
  */
-public class StandardLayer extends MyFrame {
+public class StandardLayer extends JPanel {
     
-    public StandardLayer(String title)
+    private ArrayList<MyButton> StandardButton = new ArrayList();
+    public JLabel Display = new JLabel("0");
+    public ArrayList<MyButton> getStandardButton()
     {
-        this.iniFrame(title, 1000, 500);
+       return  StandardButton;   
     }
     
-    private class MyButton extends JButton 
+    public StandardLayer()
+    {
+        this.setSize(1000, 500);
+        buildContendPane();
+    }
+    
+    public class MyButton extends JButton 
     {
         MyButton()
         {
@@ -31,8 +39,7 @@ public class StandardLayer extends MyFrame {
         }
     }
     
-    
-    @Override 
+
     void buildContendPane()
     {
         GridBagConstraints c = new GridBagConstraints();
@@ -40,10 +47,7 @@ public class StandardLayer extends MyFrame {
         c.insets = new Insets(5,5,5,5);
         
         this.setLayout(new GridBagLayout());
-        JTextField Display = new JTextField("0");
-        Display.setEditable(false);
         Display.setFont(new Font("Arial", Font.PLAIN, 25));
-        Display.setBackground(Color.WHITE);
         Display.setHorizontalAlignment(JTextField.RIGHT);
         Display.setBorder(new LineBorder(Color.BLACK));
         Display.setBorder(new LineBorder(Color.BLACK));
@@ -52,7 +56,7 @@ public class StandardLayer extends MyFrame {
         keyPanel.setBackground(new Color(172, 240, 241));
         keyPanel.setLayout(new GridLayout(6,6,5,5));
         
-        ArrayList<MyButton> StandardButton = new ArrayList();
+        
         for(int i = 0 ; i < 36 ; i++)
         {
             StandardButton.add(new MyButton());
@@ -97,11 +101,47 @@ public class StandardLayer extends MyFrame {
         this.setButtonText(StandardButton,35,"=");
        
         
+         for(int i = 0 ; i < 5 ; i++)
+        {
+            StandardButton.get(i).setEnabled(false);
+        }
+         for(int i = 6 ; i < 9 ; i++)
+        {
+            StandardButton.get(i).setEnabled(false);
+        }
+          for(int i = 12 ; i < 14 ; i++)
+        {
+            StandardButton.get(i).setEnabled(false);
+        }
+           for(int i = 18 ; i < 20 ; i++)
+        {
+            StandardButton.get(i).setEnabled(false);
+        }
+            for(int i = 24 ; i < 26 ; i++)
+        {
+            StandardButton.get(i).setEnabled(false);
+        }
+            for(int i = 30 ; i < 32 ; i++)
+        {
+            StandardButton.get(i).setEnabled(false);
+        }
+        
         setCell(0,2,3,6,1,1,c);
-        this.getContentPane().add(keyPanel,c);
+        this.add(keyPanel,c);
         setCell(0,0,6,1,0.3,0.3,c);
-        this.getContentPane().add(Display,c);   
+        this.add(Display,c);   
     }
+    
+     void setCell(int posX ,int posY ,int w ,int h,double weightx,double weighty,GridBagConstraints c)
+    {
+            c.gridx = posX;
+            c.gridy = posY;
+            c.gridwidth = w;
+            c.gridheight = h;
+            c.weightx = weightx;
+            c.weighty = weighty;
+    }
+    
     void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
     {
         AllButton.get(inx).setText(name);

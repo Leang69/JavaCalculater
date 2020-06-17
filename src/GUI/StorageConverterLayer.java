@@ -14,9 +14,10 @@ import java.util.*;
  *
  * @author User
  */
-public class StorageConverterLayer extends MyFrame{
-    public StorageConverterLayer(String title) {
-         this.iniFrame(title, 1000, 500);
+public class StorageConverterLayer extends JPanel{
+    public StorageConverterLayer() {
+         this.setSize(1000, 500);
+         buildContendPane();
     }
 
     class MyButton extends JButton 
@@ -28,8 +29,7 @@ public class StorageConverterLayer extends MyFrame{
             this.setFont(new Font("Arial", Font.BOLD, 25));
          }   
     }
-    
-    @Override 
+
     void buildContendPane() {
         
         GridBagConstraints c = new GridBagConstraints();
@@ -110,11 +110,22 @@ public class StorageConverterLayer extends MyFrame{
    
         
         setCell(3,0,6,6,1,1,c);
-        this.getContentPane().add(keyPanel,c);
+        this.add(keyPanel,c);
         setCell(0,0,3,6,0.7,0.7,c);
-        this.getContentPane().add(Display,c);
+        this.add(Display,c);
  
     }
+    
+     void setCell(int posX ,int posY ,int w ,int h,double weightx,double weighty,GridBagConstraints c)
+    {
+            c.gridx = posX;
+            c.gridy = posY;
+            c.gridwidth = w;
+            c.gridheight = h;
+            c.weightx = weightx;
+            c.weighty = weighty;
+    }
+    
     private void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
     {
         AllButton.get(inx).setText(name);  

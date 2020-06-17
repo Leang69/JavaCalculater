@@ -1,4 +1,4 @@
-package Model;
+package Logical;
 
 /**
  * This class is use for handle a Storage Conversion

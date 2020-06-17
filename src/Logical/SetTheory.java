@@ -1,4 +1,4 @@
-package Model;
+package Logical;
 
 import java.util.*;
 

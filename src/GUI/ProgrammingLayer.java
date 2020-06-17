@@ -15,9 +15,11 @@ import java.util.*; // import the ArrayList class
  *
  * @author User
  */
-public class ProgrammingLayer extends MyFrame{
-    public ProgrammingLayer(String title) {
-        this.iniFrame(title, 1000, 500);   
+public class ProgrammingLayer extends JPanel{
+    public ProgrammingLayer() {
+        //this.iniFrame(title, 1000, 500);
+        this.setSize(1000, 500);
+        buildContendPane();
     }
     private class MyButton extends JButton 
     {
@@ -28,8 +30,8 @@ public class ProgrammingLayer extends MyFrame{
             this.setFont(new Font("Arial", Font.BOLD, 25));
         }
     }
+
     
-    @Override 
     void buildContendPane() {
         GridBagConstraints c = new GridBagConstraints();
         c.weightx = 1 ; 
@@ -101,14 +103,25 @@ public class ProgrammingLayer extends MyFrame{
         this.setButtonText(ProgrammingButton,34,".");
         this.setButtonText(ProgrammingButton,35,"=");
         
-        
+       
         
        setCell(0,2,3,6,1,1,c);
-       this.getContentPane().add(keyPanel,c);
+       this.add(keyPanel,c);
        setCell(0,0,6,1,0.3,0.3,c);
-       this.getContentPane().add(Display,c);
+       this.add(Display,c);
         
     }
+    
+    void setCell(int posX ,int posY ,int w ,int h,double weightx,double weighty,GridBagConstraints c)
+    {
+            c.gridx = posX;
+            c.gridy = posY;
+            c.gridwidth = w;
+            c.gridheight = h;
+            c.weightx = weightx;
+            c.weighty = weighty;
+    }
+    
     private void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
     {
         AllButton.get(inx).setText(name);  

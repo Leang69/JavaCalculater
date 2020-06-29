@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 import Logical.Main;
 import javax.swing.*;
 import java.awt.*;
@@ -39,11 +39,14 @@ public class MyMenuBar extends JMenuBar{
         Programmer.setBorder(null);
         StorageConverter.setBorder(null);
         SetTheory.setBorder(null);
-                
+            
+        Programmer.setEnabled(false);
+        StorageConverter.setEnabled(false);
+        
         this.add(Standard);
+        this.add(SetTheory);
         this.add(Programmer);
         this.add(StorageConverter);
-        this.add(SetTheory);
         
     }
     

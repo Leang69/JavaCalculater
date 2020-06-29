@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package Controller;
+import View.StandardLayer;
 import Logical.Operators;
 import javax.swing.event.*;
 import java.awt.event.*;
-import GUI.*;
 import Model.StandardModel;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -19,7 +19,6 @@ import java.util.*;
  * @author User
  */
 public class StandardController {
-    private Operators oparator = new Operators();
     private StandardLayer layer;
     private final ArrayList<StandardLayer.MyButton> StandardButton;
     private StandardModel model;
@@ -290,7 +289,10 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 StringBuilder bul = new StringBuilder(layer.Display.getText());
+                if(bul.length()-1 > 0)
                 layer.Display.setText(bul.deleteCharAt(bul.length()-1).toString());
+                else
+                layer.Display.setText("0");    
             }
         });
         
@@ -314,6 +316,43 @@ public class StandardController {
                     layer.Display.setText(num.toString());
                 }
 
+            }
+        });
+        
+        StandardButton.get(2).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                  if(layer.Display.getText().equals("0"))
+                {
+
+                    layer.Display.setText("(");
+                    layer.Display.repaint();
+                }
+                else
+                {
+                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
+                    num.append("(");
+                    layer.Display.setText(num.toString());
+                } 
+            }
+        });
+        StandardButton.get(3).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                  if(layer.Display.getText().equals("0"))
+                {
+
+                    layer.Display.setText(")");
+                    layer.Display.repaint();
+                }
+                else
+                {
+                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
+                    num.append(")");
+                    layer.Display.setText(num.toString());
+                } 
             }
         });
     }

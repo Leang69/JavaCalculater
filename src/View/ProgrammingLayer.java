@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
 import java.awt.*;
 import javax.swing.*;
@@ -21,7 +21,7 @@ public class ProgrammingLayer extends JPanel{
         this.setSize(1000, 500);
         buildContendPane();
     }
-    private class MyButton extends JButton 
+    public class MyButton extends JButton 
     {
         MyButton()
         {

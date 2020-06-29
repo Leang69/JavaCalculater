@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
@@ -101,10 +101,7 @@ public class StandardLayer extends JPanel {
         this.setButtonText(StandardButton,35,"=");
        
         
-         for(int i = 0 ; i < 5 ; i++)
-        {
-            StandardButton.get(i).setEnabled(false);
-        }
+        
          for(int i = 6 ; i < 9 ; i++)
         {
             StandardButton.get(i).setEnabled(false);

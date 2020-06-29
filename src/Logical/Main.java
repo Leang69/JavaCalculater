@@ -1,5 +1,5 @@
 package Logical;
-import GUI.*;
+import View.MyFrame;
 import Model.*;
 import java.awt.event.*;
 import javax.swing.event.*;

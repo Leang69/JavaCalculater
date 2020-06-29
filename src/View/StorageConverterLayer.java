@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
 import java.awt.*;
 import javax.swing.*;
@@ -46,10 +46,10 @@ public class StorageConverterLayer extends JPanel{
         Display.setLayout(new GridBagLayout());
         
         //set tpye 
-        String[] StorageType = {"Bits" , "Bytes","Kilobits","Kibibits","Kilobytes","Kibibytes","Megabits","Mebibits","Megabytes", "Mebibytes",
-                                "Gigabits","Gibibits","Gigabytes","Givibytes","Terabits","Tebibits","Terabytes","Tebibytes"};
-        JTextField A = new JTextField("1000");
-        JTextField B = new JTextField("1000");
+        String[] StorageType = {"Bytes","Kilobytes","Kibibytes","Megabytes",
+                                "Gigabytes","Terabytes","Petabyte"};
+        JTextField A = new JTextField("");
+        JTextField B = new JTextField("");
         JComboBox  typeA = new JComboBox (StorageType);
         JComboBox  typeB = new JComboBox(StorageType);
         

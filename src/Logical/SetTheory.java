@@ -3,9 +3,16 @@ package Logical;
 import java.util.*;
 
 public class SetTheory {
+    private String answer = "";
     private ArrayList <String>  setA = new ArrayList<String>();
     private ArrayList <String>  setB = new ArrayList<String>();
     Scanner input = new Scanner(System.in);
+    
+    public String getAnswer()
+    {
+        return answer;
+    }
+    
     interface UnionHelper
     {
         ArrayList<String> unionOperation();
@@ -22,14 +29,12 @@ public class SetTheory {
         void display(ArrayList <String> difference);
     }
 
-    void createSet()
+    void createSet(String a , String b)
     {
         String setStringA , setStringB;
         StringBuilder builder = new StringBuilder();
-        System.out.print("Please input set A : ");
-        setStringA =  input.nextLine();
-        System.out.print("Please input set B : ");
-        setStringB =  input.nextLine();
+        setStringA =  a;
+        setStringB =  b;
         setStringA = setStringA + ",";
         setStringB =  setStringB + ",";
         filterArray(setStringA, builder, setA);
@@ -85,14 +90,25 @@ public class SetTheory {
         }
 
     }
-    void union()
+    public String union(String a , String b)
     {
         SetUnion set_union = new SetUnion();
-        createSet();
-        set_union.display(set_union.unionOperation());
+        createSet(a,b);
+        ArrayList<String> tmp = set_union.unionOperation();
+        
+        answer = "";
+        
+        for (String s : tmp)
+        {
+                answer = answer + s + ",";
+        }
+        if (answer.equals("") || answer.equals(","))
+            answer = "Empty";
+        
+        return answer;
     }
 
-    void intersection()
+    public String intersection(String a , String b)
     {
         class SetIntersection implements IntersectionHelper
         {
@@ -121,11 +137,24 @@ public class SetTheory {
             }
         }
         SetIntersection intersection = new SetIntersection();
-        createSet();
-        intersection.display(intersection.intersectionOperation());
+        createSet(a,b);
+        ArrayList<String> tmp = intersection.intersectionOperation();
+        
+        answer = "";
+        
+        for (String s : tmp)
+        {
+                answer = answer + s + ",";
+        }
+        if (answer.equals("") || answer.equals(","))
+            answer = "Empty";
+        
+        return answer;
     }
-    void setDiff()
+    
+    public String setDiff(String a , String b , int menu)
     {
+        ArrayList<String> tmp = null;
         SetDifferenceHelper SetDifference = new SetDifferenceHelper()
         {
             @Override
@@ -153,38 +182,26 @@ public class SetTheory {
                 System.out.println();
             }
         };
-        int menu;
-        while (true)
+        switch (menu)
         {
-            System.out.println("1 : A - B");
-            System.out.println("2 : B - A");
-            System.out.println("0 : Back to main menu");
-            System.out.println("-----------------------");
-            System.out.print("Input menu : ");
-            menu = input.nextInt();
-            input.nextLine();
-            System.out.println("-----------------------");
-            switch (menu)
-            {
-                case 1:
-                    createSet();
-                    System.out.print("A - B : ");
-                    SetDifference.display(SetDifference.differenceOperation(setA,setB));
+           case 2:
+                    createSet(a,b);
+                    tmp = SetDifference.differenceOperation(setA,setB);
                     break;
-                case 2:
-                    createSet();
-                    System.out.print("B - A : ");
-                    SetDifference.display(SetDifference.differenceOperation(setB,setA));
+            case 3:
+                    createSet(a,b);
+                    tmp = SetDifference.differenceOperation(setB,setA);
                     break;
-                case 0:
-                    break;
-                default:
-                    System.out.println("Please input again");
-            }
-            if (menu == 0)
-            {
-                break;
-            }
         }
+        
+        answer = "";
+        
+        for (String s : tmp)
+        {
+                answer = answer + s + ",";
+        }
+        if (answer.equals("") || answer.equals(","))
+            answer = "Empty";
+        return answer;
     }
 }

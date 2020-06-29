@@ -6,7 +6,7 @@
 package Model;
 
 import java.util.*;
-import GUI.StandardLayer;
+import View.StandardLayer;
 import Logical.*;
 import java.text.DecimalFormat;
 
@@ -32,19 +32,25 @@ public class StandardModel {
     }
             
     
-    Stack<Character> stack = new Stack<>();
-    Queue<String> postFix = new LinkedList<>(); 
+    
     
     
     public void Solve(String expression)
     {
-        infixToPostFix(expression);
+        Queue<String> postFix = new LinkedList<>(); 
+        postFix = infixToPostFix(expression);
         Stack<String> a = new Stack<>();
-        while(!postFix.isEmpty()){
-            if(isNumeric(postFix.peek())){
+        while(!postFix.isEmpty())
+        {   
+            if(isNumeric(postFix.peek()))
+            {
 		a.push(postFix.remove());
-	}
-	else if(postFix.peek().equals("^") || postFix.peek().equals("*") || postFix.peek().equals("/")|| postFix.peek().equals("+") || postFix.peek().equals("-") ){
+            }
+            else if(postFix.peek().equals("^") || postFix.peek().equals("*") || 
+                postFix.peek().equals("/")|| postFix.peek().equals("+") || 
+                postFix.peek().equals("-")
+                    )
+            {
 				Double A = Double.parseDouble(a.pop());
 				Double B = Double.parseDouble(a.pop());
 				String op = postFix.remove();
@@ -62,7 +68,7 @@ public class StandardModel {
     }
     try {
         double d = Double.parseDouble(strNum);
-    } catch (NumberFormatException nfe) {
+    } catch (NumberFormatException e) {
         return false;
     }
     return true;
@@ -99,36 +105,68 @@ public class StandardModel {
     
     public Queue<String> infixToPostFix(String expression){
 
+        Stack<Character> oparator = new Stack<>();
+        Queue<String> postFix = new LinkedList<>(); 
         String tmp = "";
         
-        for (int i = 0; i <expression.length() ; i++) {
+        for (int i = 0; i <expression.length() ; i++) 
+        {
             char c = expression.charAt(i);
-
-            //check if char is operator
-            if(precedence(c)>0){
+            if(precedence(c)>0)
+            {
+                if(!tmp.equals(""))
+                {
+                   postFix.add(tmp);
+                   tmp = ""; 
+                }
+                while(oparator.isEmpty()== false && precedence(oparator.peek())>=precedence(c))
+                {
+                    postFix.add(oparator.pop().toString());
+                }
+                oparator.push(c);
+            }
+            else if(c == ')')
+            {
                 postFix.add(tmp);
                 tmp = "";
-                while(stack.isEmpty()==false && precedence(stack.peek())>=precedence(c)){
-                    postFix.add(stack.pop().toString());
+                while(true)
+                {
+                    if(oparator.peek() != '(')
+                    {
+                        postFix.add(""+oparator.pop()); 
+                    }
+                    else if(oparator.peek() == '(')
+                    {
+                        oparator.pop();
+                        break;
+                    }
+                }  
+            }
+            else if(c == '(')
+            {
+                if(this.isNumeric(tmp))
+                {
+                    postFix.add(tmp);
+                    tmp = ""; 
+                    oparator.push('*');
                 }
-                stack.push(c);
-            }else if(c==')'){
-                char x = stack.pop();
-                while(x!='('){
-                    tmp += x;
-                    x = stack.pop();
-                }
-            }else if(c=='('){
-                stack.push(c);
-            }else{
-                //character is neither operator nor ( 
-                tmp += c;
+                oparator.push(c);
+            }
+            else
+            {
+                tmp = tmp + c;
             }
         }
-        postFix.add(tmp);
-        for (int i = 0; i <=stack.size() ; i++) {
-            postFix.add(stack.pop().toString());
+        if(!tmp.isEmpty())
+        {
+           postFix.add(tmp);
         }
+
+        while(!oparator.isEmpty()) 
+        {
+            postFix.add(oparator.pop().toString());
+        }   
+        System.out.println(postFix.toString());
         return postFix;
     }    
 }

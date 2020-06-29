@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 import Controller.*;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -27,6 +27,7 @@ public class MyFrame extends JFrame {
     private StorageConverterLayer storageConverter = new StorageConverterLayer();
     
     StandardController standardController = new StandardController(standard);
+    Set_TheoryController setTheoryController = new Set_TheoryController(setTheory);
     
     
     public MyFrame()
@@ -34,6 +35,7 @@ public class MyFrame extends JFrame {
         this.iniFrame("Standard", 1000, 500);
         this.add(standard);
         standardController.setButtonAction();
+        setTheoryController.setEven();
     }
     void iniFrame(String title,int height , int weight)
     {

@@ -26,7 +26,7 @@ public class StandardController {
     public StandardController(StandardLayer Mylayer)
     {
         layer = Mylayer;
-        model = new StandardModel(layer);
+        model = new StandardModel();
         StandardButton = layer.getStandardButton();
     }
     
@@ -215,6 +215,28 @@ public class StandardController {
             }
         });
         
+        //num 9
+        StandardButton.get(34).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                
+                if(layer.Display.getText().equals("0"))
+                {
+
+                    layer.Display.setText("9");
+                    layer.Display.repaint();
+                }
+                else
+                {
+                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
+                    num.append(".");
+                    layer.Display.setText(num.toString());
+                }
+
+            }
+        });
+        
         
         /////////////////////////////////////////////// operator ///////////////////////////////////////
         StandardButton.get(11).addActionListener(new ActionListener() {
@@ -255,7 +277,7 @@ public class StandardController {
                 if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '*'))
                 {
                     StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("*");
+                    num.append("×");
                     layer.Display.setText(num.toString());
                 }
 
@@ -269,18 +291,34 @@ public class StandardController {
                 if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '/'))
                 {
                     StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("/");
+                    num.append("÷");
                     layer.Display.setText(num.toString());
                 }
 
             }
         });
         
+        StandardButton.get(30).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '/'))
+                {
+                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
+                    num.append("^");
+                    layer.Display.setText(num.toString());
+                }
+
+            }
+        });
+        
+        
         StandardButton.get(35).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
                 model.Solve(layer.Display.getText());
+                layer.Display.setText(model.getAnswer());
             }
         });
         

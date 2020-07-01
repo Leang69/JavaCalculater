@@ -17,7 +17,7 @@ import java.util.*; // import the ArrayList class
 public class StandardLayer extends JPanel {
     
     private ArrayList<MyButton> StandardButton = new ArrayList();
-    public JLabel Display = new JLabel("0");
+    public JTextField Display = new JTextField("0");
     public ArrayList<MyButton> getStandardButton()
     {
        return  StandardButton;   
@@ -48,6 +48,7 @@ public class StandardLayer extends JPanel {
         
         this.setLayout(new GridBagLayout());
         Display.setFont(new Font("Arial", Font.PLAIN, 25));
+        Display.setEditable(false);
         Display.setHorizontalAlignment(JTextField.RIGHT);
         Display.setBorder(new LineBorder(Color.BLACK));
         Display.setBorder(new LineBorder(Color.BLACK));
@@ -63,7 +64,7 @@ public class StandardLayer extends JPanel {
             keyPanel.add(StandardButton.get(i));
         }
         
-        this.setButtonText(StandardButton,0,"log∎∎");
+        this.setButtonText(StandardButton,0,"<html>log<sub>a</sub>b</html>");
         this.setButtonText(StandardButton,1,"π");
         this.setButtonText(StandardButton,2,"(");
         this.setButtonText(StandardButton,3,")");
@@ -93,35 +94,13 @@ public class StandardLayer extends JPanel {
         this.setButtonText(StandardButton,27,"2");
         this.setButtonText(StandardButton,28,"3");
         this.setButtonText(StandardButton,29,"÷");
-        this.setButtonText(StandardButton,30,"χ∎");
+        this.setButtonText(StandardButton,30,"<html>a<sup>b</sup></html>");
         this.setButtonText(StandardButton,31,"tan");
         this.setButtonText(StandardButton,32,"+/-");
         this.setButtonText(StandardButton,33,"0");
         this.setButtonText(StandardButton,34,".");
         this.setButtonText(StandardButton,35,"=");
        
-        
-        
-         for(int i = 6 ; i < 9 ; i++)
-        {
-            StandardButton.get(i).setEnabled(false);
-        }
-          for(int i = 12 ; i < 14 ; i++)
-        {
-            StandardButton.get(i).setEnabled(false);
-        }
-           for(int i = 18 ; i < 20 ; i++)
-        {
-            StandardButton.get(i).setEnabled(false);
-        }
-            for(int i = 24 ; i < 26 ; i++)
-        {
-            StandardButton.get(i).setEnabled(false);
-        }
-            for(int i = 30 ; i < 32 ; i++)
-        {
-            StandardButton.get(i).setEnabled(false);
-        }
         
         setCell(0,2,3,6,1,1,c);
         this.add(keyPanel,c);

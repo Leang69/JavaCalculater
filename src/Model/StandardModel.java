@@ -6,7 +6,6 @@
 package Model;
 
 import java.util.*;
-import View.StandardLayer;
 import Logical.*;
 import java.text.DecimalFormat;
 
@@ -17,23 +16,20 @@ import java.text.DecimalFormat;
 public class StandardModel {
     
     String expression;
-    StandardLayer view ;
     String answer;
     Operators operators = new Operators();
+    
+    public String getAnswer()
+    {
+        return answer;
+    }
     
     public void setExpression(String input)
     {
         expression = input;
     }
     
-    public StandardModel(StandardLayer Myview)
-    {
-        this.view = Myview;
-    }
-            
-    
-    
-    
+
     
     public void Solve(String expression)
     {
@@ -42,12 +38,12 @@ public class StandardModel {
         Stack<String> a = new Stack<>();
         while(!postFix.isEmpty())
         {   
-            if(isNumeric(postFix.peek()))
+            if(isNumeric(postFix.peek())) 
             {
 		a.push(postFix.remove());
             }
-            else if(postFix.peek().equals("^") || postFix.peek().equals("*") || 
-                postFix.peek().equals("/")|| postFix.peek().equals("+") || 
+            else if(postFix.peek().equals("^") || postFix.peek().equals("÷") || 
+                postFix.peek().equals("×")|| postFix.peek().equals("+") || 
                 postFix.peek().equals("-")
                     )
             {
@@ -58,7 +54,12 @@ public class StandardModel {
             }
 	}
         answer = a.pop();
-	view.Display.setText(answer);
+        if(answer.substring(answer.length()-2).equals(".0"))
+        {
+            StringBuilder s = new StringBuilder(answer);
+            s.setLength(s.length()-2);
+            answer = s.toString();
+        }
         
     }
     
@@ -82,11 +83,17 @@ public class StandardModel {
 		else if(c.equals("-")){
 			ans = operators.minus(b, a);
 		}
-		else if(c.equals("*")){
+		else if(c.equals("×")){
 			ans = operators.multiply(b, a);
 		}
-		else if(c.equals("/")){
+		else if(c.equals("÷")){
 			ans = operators.divide(b, a);
+		}
+                else if(c.equals("^")){
+			ans = operators.pow(b, a);
+		}
+                else if(c.equals("√")){
+			ans = operators.square2(a);
 		}
 		return String.valueOf(ans);
 	}
@@ -96,9 +103,12 @@ public class StandardModel {
             case '+':
             case '-':
                 return 1;
-            case '*':
-            case '/':
+            case '÷':
+            case '×':
                 return 2;
+            case '^':
+            case '√':
+                return 3;    
         }
         return -1;
     }

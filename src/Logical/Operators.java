@@ -150,5 +150,9 @@ public class Operators {
     public double degree2Radian(double degree) {
 	return Math.toRadians(degree);
     }
+    
+    public double pow(double base , double exp) {
+	return Math.pow(base, exp);
+    }
 
 }

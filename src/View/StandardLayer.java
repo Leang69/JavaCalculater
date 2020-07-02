@@ -18,6 +18,7 @@ public class StandardLayer extends JPanel {
     
     private ArrayList<MyButton> StandardButton = new ArrayList();
     public JTextField Display = new JTextField("0");
+    public JTextField Discription = new JTextField("...");
     public ArrayList<MyButton> getStandardButton()
     {
        return  StandardButton;   
@@ -35,7 +36,7 @@ public class StandardLayer extends JPanel {
         {
             this.setBackground(new Color(152, 222, 224));
             this.setBorder(null);
-            this.setFont(new Font("Arial", Font.BOLD, 25));
+            this.setFont(new Font("Cambria Math", Font.BOLD, 25));
         }
     }
     
@@ -50,8 +51,12 @@ public class StandardLayer extends JPanel {
         Display.setFont(new Font("Arial", Font.PLAIN, 25));
         Display.setEditable(false);
         Display.setHorizontalAlignment(JTextField.RIGHT);
-        Display.setBorder(new LineBorder(Color.BLACK));
-        Display.setBorder(new LineBorder(Color.BLACK));
+        Display.setBorder(null);
+        
+        Discription.setFont(new Font("Arial", Font.PLAIN, 20));
+        Discription.setEditable(false);
+        Discription.setHorizontalAlignment(JTextField.RIGHT);
+        Discription.setBorder(null);
         
         JPanel keyPanel = new JPanel();
         keyPanel.setBackground(new Color(172, 240, 241));
@@ -70,9 +75,9 @@ public class StandardLayer extends JPanel {
         this.setButtonText(StandardButton,3,")");
         this.setButtonText(StandardButton,4,"%");
         this.setButtonText(StandardButton,5,"DELETE");
-        this.setButtonText(StandardButton,6,"∜");
+        this.setButtonText(StandardButton,6,"<html>&#8730</html>");
         this.setButtonText(StandardButton,7,"ln");
-        this.setButtonText(StandardButton,8,"mod");
+        this.setButtonText(StandardButton,8,"e");
         this.setButtonText(StandardButton,9,"CE");
         this.setButtonText(StandardButton,10,"C");
         this.setButtonText(StandardButton,11,"+");
@@ -82,13 +87,13 @@ public class StandardLayer extends JPanel {
         this.setButtonText(StandardButton,15,"8");
         this.setButtonText(StandardButton,16,"9");
         this.setButtonText(StandardButton,17,"-");
-        this.setButtonText(StandardButton,18,"∛");
+        this.setButtonText(StandardButton,18,"a root b");
         this.setButtonText(StandardButton,19,"sin");
         this.setButtonText(StandardButton,20,"4");
         this.setButtonText(StandardButton,21,"5");
         this.setButtonText(StandardButton,22,"6");
         this.setButtonText(StandardButton,23,"×");
-        this.setButtonText(StandardButton,24,"√∎");
+        this.setButtonText(StandardButton,24,"<html>a<sup>2</sup></html>");
         this.setButtonText(StandardButton,25,"cos");
         this.setButtonText(StandardButton,26,"1");
         this.setButtonText(StandardButton,27,"2");
@@ -100,14 +105,15 @@ public class StandardLayer extends JPanel {
         this.setButtonText(StandardButton,33,"0");
         this.setButtonText(StandardButton,34,".");
         this.setButtonText(StandardButton,35,"=");
-       
+                       
+        setCell(0,0,6,1,0.2,0.2,c);
+        this.add(Discription , c);  
+        setCell(0,1,6,2,0.3,0.3,c);
+        this.add(Display , c);  
+        setCell(0,3,6,6,1,1,c);
+        this.add(keyPanel , c);
         
-        setCell(0,2,3,6,1,1,c);
-        this.add(keyPanel,c);
-        setCell(0,0,6,1,0.3,0.3,c);
-        this.add(Display,c);   
-    }
-    
+    }    
      void setCell(int posX ,int posY ,int w ,int h,double weightx,double weighty,GridBagConstraints c)
     {
             c.gridx = posX;
@@ -116,12 +122,9 @@ public class StandardLayer extends JPanel {
             c.gridheight = h;
             c.weightx = weightx;
             c.weighty = weighty;
-    }
-    
+    }    
     void setButtonText(ArrayList<MyButton> AllButton,int inx,String name)
     {
-        AllButton.get(inx).setText(name);
-        
-    }
-    
+        AllButton.get(inx).setText(name);        
+    }    
 }

@@ -127,8 +127,8 @@ public class Operators {
      * @param x that x is integer
      * @return x power of 2
      */
-    public double square2(double x) {
-	return (double) Math.pow(x, 2);
+    public double root(double base , double a) {
+	return (double) Math.pow(base, 1/a);
     }
 
 

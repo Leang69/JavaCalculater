@@ -44,7 +44,7 @@ public class StandardModel {
             }
             else if(postFix.peek().equals("^") || postFix.peek().equals("÷") || 
                 postFix.peek().equals("×")|| postFix.peek().equals("+") || 
-                postFix.peek().equals("-")
+                postFix.peek().equals("-") || postFix.peek().equals("s")
                     )
             {
 				Double A = Double.parseDouble(a.pop());
@@ -92,8 +92,8 @@ public class StandardModel {
                 else if(c.equals("^")){
 			ans = operators.pow(b, a);
 		}
-                else if(c.equals("√")){
-			ans = operators.square2(a);
+                else if(c.equals("s")){
+			ans = operators.root(b,a);
 		}
 		return String.valueOf(ans);
 	}
@@ -107,7 +107,7 @@ public class StandardModel {
             case '×':
                 return 2;
             case '^':
-            case '√':
+            case 's':
                 return 3;    
         }
         return -1;
@@ -161,6 +161,18 @@ public class StandardModel {
                     oparator.push('*');
                 }
                 oparator.push(c);
+            }
+            else if (c == 'π')
+            {
+                tmp = "3.14159265359";
+            }
+            else if (c == 'n')
+            {
+                tmp = tmp + "-";
+            }
+            else if (c == 'e')
+            {
+                tmp = "2.718281828459";
             }
             else
             {

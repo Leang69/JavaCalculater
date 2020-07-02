@@ -22,12 +22,40 @@ public class StandardController {
     private StandardLayer layer;
     private final ArrayList<StandardLayer.MyButton> StandardButton;
     private StandardModel model;
+    private String Expression = "";
 
     public StandardController(StandardLayer Mylayer)
     {
         layer = Mylayer;
         model = new StandardModel();
         StandardButton = layer.getStandardButton();
+    }
+    
+    void setDisplayEmp()
+    {
+       layer.Display.setText("");
+    }
+    
+    void setDiscription(String s)
+    {
+        StringBuilder sb = new StringBuilder(layer.Discription.getText());
+        sb.insert(sb.length()-3,s+" ");
+        layer.Discription.setText(sb.toString());
+        
+    }
+    void setExpression(String s)
+    {
+        if(s.charAt(0) == '-')
+        {
+            StringBuilder sb = new StringBuilder(s);
+            sb.deleteCharAt(0);
+            sb.insert(0,"n");
+             Expression = Expression + sb.toString();
+        }
+        else
+        {
+             Expression = Expression + s;
+        }
     }
     
     public void setButtonAction()
@@ -216,7 +244,24 @@ public class StandardController {
         });
         
         //num 9
-        StandardButton.get(34).addActionListener(new ActionListener() {
+        StandardButton.get(34).addActionListener(new ActionListener() 
+        {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                    if(!layer.Display.getText().contains("."))
+                    {
+                        StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
+                        num.append(".");
+                        layer.Display.setText(num.toString());
+                    } 
+            }
+        });
+        
+        
+        
+        //num π
+        StandardButton.get(1).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
@@ -224,31 +269,98 @@ public class StandardController {
                 if(layer.Display.getText().equals("0"))
                 {
 
-                    layer.Display.setText("9");
+                    layer.Display.setText("π");
                     layer.Display.repaint();
                 }
                 else
                 {
                     StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append(".");
+                    num.append("π");
                     layer.Display.setText(num.toString());
                 }
 
             }
         });
-        
-        
-        /////////////////////////////////////////////// operator ///////////////////////////////////////
-        StandardButton.get(11).addActionListener(new ActionListener() {
+        StandardButton.get(8).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '+'))
+                if(layer.Display.getText().equals("0"))
+                {
+
+                    layer.Display.setText("e");
+                    layer.Display.repaint();
+                }
+                else
                 {
                     StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("+");
+                    num.append("e");
                     layer.Display.setText(num.toString());
+                }
+
+            }
+        });
+        StandardButton.get(32).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                
+                if(layer.Display.getText().equals("0"))
+                {
+
+                    layer.Display.setText("-");
+                    layer.Display.repaint();
+                }
+                else
+                {
+                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
+                    num.insert(0,"-");
+                    layer.Display.setText(num.toString());
+                }
+
+            }
+        });
+        /////////////////////////////////////////////// operator ///////////////////////////////////////
+        
+        StandardButton.get(35).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                setExpression(layer.Display.getText());
+                StringBuilder sb = new StringBuilder(layer.Discription.getText());
+                sb.setLength(sb.length()-3);
+                sb.append(layer.Display.getText());
+                model.Solve(Expression);
+                setDiscription(layer.Display.getText() + " =");
+                layer.Display.setText(model.getAnswer());
+                Expression = "";
+            }
+        });
+        
+        StandardButton.get(11).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                if(layer.Discription.getText().contains("="))
+                {
+                    layer.Discription.setText("...");
+                }
+                
+                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '+'))
+                {
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                        setDiscription(layer.Display.getText());
+                        setDiscription("+");
+                        setExpression(layer.Display.getText()+"+");
+                        layer.Display.setText("");
+                    }
+                    else
+                    {
+                        layer.Display.setText(layer.Display.getText() + "+");
+                    }
+                    
                 }
 
             }
@@ -258,12 +370,20 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
+                if(layer.Discription.getText().contains("="))
+                {
+                    layer.Discription.setText("...");
+                }
                 
                 if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '-'))
                 {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("-");
-                    layer.Display.setText(num.toString());
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                    setDiscription(layer.Display.getText());
+                    setDiscription("-");
+                    setExpression(layer.Display.getText()+"-");
+                    layer.Display.setText("");
+                }
                 }
 
             }
@@ -273,12 +393,20 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '*'))
+                if(layer.Discription.getText().contains("="))
                 {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("×");
-                    layer.Display.setText(num.toString());
+                    layer.Discription.setText("...");
+                }
+                
+                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '×'))
+                {
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                    setDiscription(layer.Display.getText());
+                    setDiscription("×");
+                    setExpression(layer.Display.getText()+"×");
+                    layer.Display.setText("");
+                }
                 }
 
             }
@@ -288,11 +416,20 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '/'))
+                if(layer.Discription.getText().contains("="))
                 {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("÷");
-                    layer.Display.setText(num.toString());
+                    layer.Discription.setText("...");
+                }
+                
+                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '÷'))
+                {
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                    setDiscription(layer.Display.getText());
+                    setDiscription("÷");
+                    setExpression(layer.Display.getText()+"÷");
+                    layer.Display.setText("");
+                    }
                 }
 
             }
@@ -302,25 +439,120 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '/'))
+                if(layer.Discription.getText().contains("="))
                 {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("^");
-                    layer.Display.setText(num.toString());
+                    layer.Discription.setText("...");
+                }
+                
+                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '^'))
+                {
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                    setDiscription(layer.Display.getText());
+                    setDiscription("^");
+                    setExpression(layer.Display.getText()+"^");
+                    layer.Display.setText("");
+                    }
+                }
+
+            }
+        });
+        
+        StandardButton.get(24).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                if(layer.Discription.getText().contains("="))
+                {
+                    layer.Discription.setText("...");
+                }
+                
+                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '^'))
+                {
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                    setDiscription(layer.Display.getText());
+                    setDiscription("^ 2");
+                    setExpression(layer.Display.getText()+"^2");
+                    layer.Display.setText("");
+                    }
+                }
+
+            }
+        });
+        
+        StandardButton.get(6).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                if(layer.Discription.getText().contains("="))
+                {
+                    layer.Discription.setText("...");
+                }
+                
+                if(!(layer.Display.getText().equals("0")))
+                {
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                    setExpression(layer.Display.getText()+"s2");
+                    setDiscription("√" + layer.Display.getText());
+                    layer.Display.setText("");
+                    }
+                }
+
+            }
+        });
+        
+        StandardButton.get(12).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                if(layer.Discription.getText().contains("="))
+                {
+                    layer.Discription.setText("...");
+                }
+                
+                if(!(layer.Display.getText().equals("0")))
+                {
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                    setExpression(layer.Display.getText()+"s3");
+                    setDiscription(" cuberoot(" + layer.Display.getText() + ")");
+                    layer.Display.setText("");
+                    }
+                }
+
+            }
+        });
+        
+        StandardButton.get(18).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                if(layer.Discription.getText().contains("="))
+                {
+                    layer.Discription.setText("...");
+                }
+                
+                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '^'))
+                {
+                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
+                    {
+                        
+                    setDiscription(layer.Display.getText());
+                    setDiscription("root");
+                    setExpression(layer.Display.getText()+"s");
+                    layer.Display.setText("");
+                       
+                    }
                 }
 
             }
         });
         
         
-        StandardButton.get(35).addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) 
-            {
-                model.Solve(layer.Display.getText());
-                layer.Display.setText(model.getAnswer());
-            }
-        });
+                
+        
         
         StandardButton.get(5).addActionListener(new ActionListener() {
             @Override
@@ -330,7 +562,7 @@ public class StandardController {
                 if(bul.length()-1 > 0)
                 layer.Display.setText(bul.deleteCharAt(bul.length()-1).toString());
                 else
-                layer.Display.setText("0");    
+                layer.Display.setText("0");       
             }
         });
         
@@ -339,6 +571,8 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 layer.Display.setText("0");
+                layer.Discription.setText("...");
+                Expression = "";
             }
         });
         

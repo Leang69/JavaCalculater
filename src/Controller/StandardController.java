@@ -49,8 +49,10 @@ public class StandardController {
         {
             StringBuilder sb = new StringBuilder(s);
             sb.deleteCharAt(0);
-            sb.insert(0,"n");
-             Expression = Expression + sb.toString();
+            sb.insert(0,"(n1×");
+            sb.append(")");
+            System.out.println(sb);
+            Expression = Expression + sb.toString();
         }
         else
         {
@@ -379,11 +381,16 @@ public class StandardController {
                 {
                     if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
                     {
-                    setDiscription(layer.Display.getText());
-                    setDiscription("-");
-                    setExpression(layer.Display.getText()+"-");
-                    layer.Display.setText("");
-                }
+                        setDiscription(layer.Display.getText());
+                        setDiscription("-");
+                        setExpression(layer.Display.getText()+"-");
+                        layer.Display.setText("");
+                    }
+                    else
+                    {
+                        layer.Display.setText(layer.Display.getText() + "-");
+                    }
+                    
                 }
 
             }
@@ -397,16 +404,21 @@ public class StandardController {
                 {
                     layer.Discription.setText("...");
                 }
-                
+                //×
                 if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '×'))
                 {
                     if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
                     {
-                    setDiscription(layer.Display.getText());
-                    setDiscription("×");
-                    setExpression(layer.Display.getText()+"×");
-                    layer.Display.setText("");
-                }
+                        setDiscription(layer.Display.getText());
+                        setDiscription("×");
+                        setExpression(layer.Display.getText()+"×");
+                        layer.Display.setText("");
+                    }
+                    else
+                    {
+                        layer.Display.setText(layer.Display.getText() + "×");
+                    }
+                    
                 }
 
             }
@@ -420,16 +432,21 @@ public class StandardController {
                 {
                     layer.Discription.setText("...");
                 }
-                
+
                 if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '÷'))
                 {
                     if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
                     {
-                    setDiscription(layer.Display.getText());
-                    setDiscription("÷");
-                    setExpression(layer.Display.getText()+"÷");
-                    layer.Display.setText("");
+                        setDiscription(layer.Display.getText());
+                        setDiscription("÷");
+                        setExpression(layer.Display.getText()+"÷");
+                        layer.Display.setText("");
                     }
+                    else
+                    {
+                        layer.Display.setText(layer.Display.getText() + "÷");
+                    }
+                    
                 }
 
             }
@@ -452,6 +469,10 @@ public class StandardController {
                     setDiscription("^");
                     setExpression(layer.Display.getText()+"^");
                     layer.Display.setText("");
+                    }
+                    else
+                    {
+                        layer.Display.setText(layer.Display.getText() + "^");
                     }
                 }
 
@@ -476,6 +497,10 @@ public class StandardController {
                     setExpression(layer.Display.getText()+"^2");
                     layer.Display.setText("");
                     }
+                    else
+                    {
+                        layer.Display.setText(layer.Display.getText() + "^2");
+                    }
                 }
 
             }
@@ -498,6 +523,10 @@ public class StandardController {
                     setDiscription("√" + layer.Display.getText());
                     layer.Display.setText("");
                     }
+                    else
+                    {
+                        layer.Display.setText(layer.Display.getText() + "√");
+                    }
                 }
 
             }
@@ -519,6 +548,10 @@ public class StandardController {
                     setExpression(layer.Display.getText()+"s3");
                     setDiscription(" cuberoot(" + layer.Display.getText() + ")");
                     layer.Display.setText("");
+                    }
+                    else
+                    {
+                        layer.Display.setText("cuberoot(" + layer.Display.getText() + ")");
                     }
                 }
 
@@ -544,6 +577,10 @@ public class StandardController {
                     setExpression(layer.Display.getText()+"s");
                     layer.Display.setText("");
                        
+                    }
+                    else
+                    {
+                        layer.Display.setText(layer.Display.getText() + "÷");
                     }
                 }
 

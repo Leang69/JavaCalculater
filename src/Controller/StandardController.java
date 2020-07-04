@@ -23,8 +23,8 @@ public class StandardController {
     private final ArrayList<StandardLayer.MyButton> StandardButton;
     private StandardModel model;
     private String Expression = "";
-    private String Ans = "";
-    private String saveAnswer = "";
+    private String number = "";
+    private String saveNum = "";
 
     public StandardController(StandardLayer Mylayer)
     {
@@ -66,10 +66,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("1");
-                Ans = num.toString();
-                view.Display.setText(Ans);                
+                number = num.toString();
+                view.Display.setText(number);                
             }
         });
         
@@ -77,11 +78,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("2");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -90,11 +91,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("3");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -103,11 +104,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("4");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -116,11 +117,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("5");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -129,11 +130,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("6");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -142,11 +143,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("7");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -156,11 +157,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("8");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -170,11 +171,11 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 num.append("9");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -185,7 +186,8 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                StringBuilder num = new StringBuilder(Ans) ;
+                saveNum = "";
+                StringBuilder num = new StringBuilder(number) ;
                 if(num.length() == 0)
                 {
                     num.append("0.");
@@ -194,8 +196,8 @@ public class StandardController {
                 {
                     num.append(".");
                 }
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
             }
         });
         
@@ -207,11 +209,11 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                 StringBuilder num = new StringBuilder(Ans) ;
+                 StringBuilder num = new StringBuilder(number) ;
                 if(!num.toString().contains("."))
                 num.append("π");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -220,11 +222,11 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                 StringBuilder num = new StringBuilder(Ans) ;
+                 StringBuilder num = new StringBuilder(number) ;
                 if(!num.toString().contains("."))
                 num.append("e");
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -233,13 +235,13 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                StringBuilder num = new StringBuilder(Ans) ;
+                StringBuilder num = new StringBuilder(number) ;
                 if(num.charAt(0) != '-')
                 num.insert(0,"-");
                 else
                 num.deleteCharAt(0);
-                Ans = num.toString();
-                view.Display.setText(Ans);  
+                number = num.toString();
+                view.Display.setText(number);  
 
             }
         });
@@ -250,26 +252,26 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 StringBuilder sb = new StringBuilder(view.Discription.getText());
-                if(Ans != "")
+                if(number != "")
                 {
-                setExpression(Ans);
+                setExpression(number);
                 sb.setLength(sb.length()-3);
-                sb.append(Ans);
-                setDiscription(Ans);
+                sb.append(number);
+                setDiscription(number);
                 }
                 else
                 {
-                Ans = view.Display.getText();
-                setExpression(Ans);
+                number = view.Display.getText();
+                setExpression(number);
                 sb.setLength(sb.length()-3);
-                sb.append(Ans);
-                setDiscription(Ans);
+                sb.append(number);
+                setDiscription(number);
                 }
                 setDiscription(" =");
                 model.Solve(Expression);
                 view.Display.setText(model.getAnswer());
                 Expression = "";
-                Ans = model.getAnswer();
+                saveNum = model.getAnswer();
             }
         });
         
@@ -278,23 +280,23 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 String op = "+";
-                if(Ans.equals(""))
+                if(number.equals(""))
                 {
                     setExpression(op); 
                 }
                 else
                 {
-                   setExpression(Ans);
+                   setExpression(number);
                     setExpression(op);     
                  }
                 if(view.Discription.getText().contains("="))
                 {
                     view.Discription.setText("...");
                 }
-                setDiscription(Ans);
+                setDiscription(number);
                 setDiscription(op);
                 
-                Ans = "";
+                number = "";
 
             }
         });
@@ -304,23 +306,23 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 String op = "-";
-                if(Ans.equals(""))
+                if(number.equals(""))
                 {
                     setExpression(op); 
                 }
                 else
                 {
-                   setExpression(Ans);
+                   setExpression(number);
                     setExpression(op);     
                  }
                 if(view.Discription.getText().contains("="))
                 {
                     view.Discription.setText("...");
                 }
-                setDiscription(Ans);
+                setDiscription(number);
                 setDiscription(op);
                 
-                Ans = "";
+                number = "";
 
             }
         });
@@ -330,23 +332,23 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 String op = "×";
-                if(Ans.equals(""))
+                if(number.equals(""))
                 {
                     setExpression(op); 
                 }
                 else
                 {
-                   setExpression(Ans);
+                   setExpression(number);
                     setExpression(op);     
                  }
                 if(view.Discription.getText().contains("="))
                 {
                     view.Discription.setText("...");
                 }
-                setDiscription(Ans);
+                setDiscription(number);
                 setDiscription(op);
                 
-                Ans = "";
+                number = "";
 
             }
         });
@@ -356,23 +358,23 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 String op = "÷";
-                if(Ans.equals(""))
+                if(number.equals(""))
                 {
                     setExpression(op); 
                 }
                 else
                 {
-                   setExpression(Ans);
+                   setExpression(number);
                     setExpression(op);     
                  }
                 if(view.Discription.getText().contains("="))
                 {
                     view.Discription.setText("...");
                 }
-                setDiscription(Ans);
+                setDiscription(number);
                 setDiscription(op);
                 
-                Ans = "";
+                number = "";
 
             }
         });
@@ -382,23 +384,23 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 String op = "^";
-                if(Ans.equals(""))
+                if(number.equals(""))
                 {
                     setExpression(op); 
                 }
                 else
                 {
-                   setExpression(Ans);
+                   setExpression(number);
                     setExpression(op);     
                  }
                 if(view.Discription.getText().contains("="))
                 {
                     view.Discription.setText("...");
                 }
-                setDiscription(Ans);
+                setDiscription(number);
                 setDiscription(op);
                 
-                Ans = "";
+                number = "";
 
             }
         });
@@ -408,23 +410,23 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 String op = "^ 2";
-                if(Ans.equals(""))
+                if(number.equals(""))
                 {
                     setExpression(op); 
                 }
                 else
                 {
-                   setExpression(Ans);
+                   setExpression(number);
                     setExpression(op);     
                  }
                 if(view.Discription.getText().contains("="))
                 {
                     view.Discription.setText("...");
                 }
-                setDiscription(Ans);
+                setDiscription(number);
                 setDiscription(op);
                 
-                Ans = "";
+                number = "";
 
             }
         });
@@ -444,12 +446,12 @@ public class StandardController {
                     {
                     model.Solve(view.Display.getText()+"s2");
                     setExpression(model.getAnswer());
-                    Ans = model.getAnswer();
+                    number = model.getAnswer();
                     setDiscription("√" + view.Display.getText());
-                    view.Display.setText(Ans);
+                    view.Display.setText(number);
                     }
                 }
-                Ans = "";
+                number = "";
 
             }
         });
@@ -509,13 +511,13 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                StringBuilder bul = new StringBuilder(Ans);
+                StringBuilder bul = new StringBuilder(number);
                 if(bul.length()-1 > 0)
                 view.Display.setText(bul.deleteCharAt(bul.length()-1).toString());
                 else
                 view.Display.setText("0");  
                 
-                Ans = bul.toString();
+                number = bul.toString();
             }
         });
         
@@ -526,7 +528,7 @@ public class StandardController {
                 view.Display.setText("0");
                 view.Discription.setText("...");
                 Expression = "";
-                Ans = "";
+                number = "";
             }
         });
         
@@ -536,7 +538,7 @@ public class StandardController {
             {
                 view.Display.setText("0");
                 view.Discription.setText("...");
-                Ans = "";
+                number = "";
             }
         });
         
@@ -572,9 +574,9 @@ public class StandardController {
                 //layer.Display.setText("(");
                     setDiscription(view.Display.getText());
                     setDiscription(")");
-                    setExpression(Ans);
+                    setExpression(number);
                     setExpression(")");
-                    Ans = "";
+                    number = "";
                     view.Display.repaint();
             }
         });

@@ -23,6 +23,7 @@ public class StandardController {
     private final ArrayList<StandardLayer.MyButton> StandardButton;
     private StandardModel model;
     private String Expression = "";
+    private String Ans = "";
 
     public StandardController(StandardLayer Mylayer)
     {
@@ -45,7 +46,7 @@ public class StandardController {
     }
     void setExpression(String s)
     {
-        if(s.charAt(0) == '-')
+        if(s.charAt(0) == '-' && s.length() > 1)
         {
             StringBuilder sb = new StringBuilder(s);
             sb.deleteCharAt(0);
@@ -64,19 +65,10 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                
-                if(layer.Display.getText().equals("0"))
-                {
-                    layer.Display.setText("1");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("1");
-                    layer.Display.setText(num.toString());
-                }
-
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("1");
+                Ans = num.toString();
+                layer.Display.setText(Ans);                
             }
         });
         
@@ -85,17 +77,10 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-                    layer.Display.setText("2");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("2");
-                    layer.Display.setText(num.toString());
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("2");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -105,17 +90,10 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-                    layer.Display.setText("3");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("3");
-                    layer.Display.setText(num.toString());
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("3");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -125,17 +103,10 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-                    layer.Display.setText("4");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("4");
-                    layer.Display.setText(num.toString());
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("4");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -145,17 +116,10 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-                    layer.Display.setText("5");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("5");
-                    layer.Display.setText(num.toString());
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("5");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -165,17 +129,10 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-                    layer.Display.setText("6");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("6");
-                    layer.Display.setText(num.toString());
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("6");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -185,17 +142,10 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-                    layer.Display.setText("7");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("7");
-                    layer.Display.setText(num.toString());
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("7");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -206,17 +156,10 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-                    layer.Display.setText("8");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("8");
-                    layer.Display.setText(num.toString());
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("8");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -227,34 +170,31 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-
-                    layer.Display.setText("9");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("9");
-                    layer.Display.setText(num.toString());
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                num.append("9");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
         
-        //num 9
+        //num .
         StandardButton.get(34).addActionListener(new ActionListener() 
         {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                    if(!layer.Display.getText().contains("."))
-                    {
-                        StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                        num.append(".");
-                        layer.Display.setText(num.toString());
-                    } 
+                StringBuilder num = new StringBuilder(Ans) ;
+                if(num.length() == 0)
+                {
+                    num.append("0.");
+                }
+                if(!num.toString().contains("."))
+                {
+                    num.append(".");
+                }
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
             }
         });
         
@@ -266,18 +206,11 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-
-                    layer.Display.setText("π");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("π");
-                    layer.Display.setText(num.toString());
-                }
+                 StringBuilder num = new StringBuilder(Ans) ;
+                if(!num.toString().contains("."))
+                num.append("π");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -286,18 +219,11 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-
-                    layer.Display.setText("e");
-                    layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("e");
-                    layer.Display.setText(num.toString());
-                }
+                 StringBuilder num = new StringBuilder(Ans) ;
+                if(!num.toString().contains("."))
+                num.append("e");
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -306,18 +232,13 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 
-                if(layer.Display.getText().equals("0"))
-                {
-
-                    layer.Display.setText("-");
-                    layer.Display.repaint();
-                }
+                StringBuilder num = new StringBuilder(Ans) ;
+                if(num.charAt(0) != '-')
+                num.insert(0,"-");
                 else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.insert(0,"-");
-                    layer.Display.setText(num.toString());
-                }
+                num.deleteCharAt(0);
+                Ans = num.toString();
+                layer.Display.setText(Ans);  
 
             }
         });
@@ -327,14 +248,27 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                setExpression(layer.Display.getText());
                 StringBuilder sb = new StringBuilder(layer.Discription.getText());
+                if(Ans != "")
+                {
+                setExpression(Ans);
                 sb.setLength(sb.length()-3);
-                sb.append(layer.Display.getText());
+                sb.append(Ans);
+                setDiscription(Ans);
+                }
+                else
+                {
+                Ans = layer.Display.getText();
+                setExpression(Ans);
+                sb.setLength(sb.length()-3);
+                sb.append(Ans);
+                setDiscription(Ans);
+                }
+                setDiscription(" =");
                 model.Solve(Expression);
-                setDiscription(layer.Display.getText() + " =");
                 layer.Display.setText(model.getAnswer());
                 Expression = "";
+                Ans = model.getAnswer();
             }
         });
         
@@ -342,26 +276,24 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
+                String op = "+";
+                if(Ans.equals(""))
+                {
+                    setExpression(op); 
+                }
+                else
+                {
+                   setExpression(Ans);
+                    setExpression(op);     
+                 }
                 if(layer.Discription.getText().contains("="))
                 {
                     layer.Discription.setText("...");
                 }
+                setDiscription(Ans);
+                setDiscription(op);
                 
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '+'))
-                {
-                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
-                    {
-                        setDiscription(layer.Display.getText());
-                        setDiscription("+");
-                        setExpression(layer.Display.getText()+"+");
-                        layer.Display.setText("");
-                    }
-                    else
-                    {
-                        layer.Display.setText(layer.Display.getText() + "+");
-                    }
-                    
-                }
+                Ans = "";
 
             }
         });
@@ -370,21 +302,24 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
+                String op = "-";
+                if(Ans.equals(""))
+                {
+                    setExpression(op); 
+                }
+                else
+                {
+                   setExpression(Ans);
+                    setExpression(op);     
+                 }
                 if(layer.Discription.getText().contains("="))
                 {
                     layer.Discription.setText("...");
                 }
+                setDiscription(Ans);
+                setDiscription(op);
                 
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '-'))
-                {
-                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
-                    {
-                    setDiscription(layer.Display.getText());
-                    setDiscription("-");
-                    setExpression(layer.Display.getText()+"-");
-                    layer.Display.setText("");
-                }
-                }
+                Ans = "";
 
             }
         });
@@ -393,21 +328,24 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
+                String op = "×";
+                if(Ans.equals(""))
+                {
+                    setExpression(op); 
+                }
+                else
+                {
+                   setExpression(Ans);
+                    setExpression(op);     
+                 }
                 if(layer.Discription.getText().contains("="))
                 {
                     layer.Discription.setText("...");
                 }
+                setDiscription(Ans);
+                setDiscription(op);
                 
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '×'))
-                {
-                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
-                    {
-                    setDiscription(layer.Display.getText());
-                    setDiscription("×");
-                    setExpression(layer.Display.getText()+"×");
-                    layer.Display.setText("");
-                }
-                }
+                Ans = "";
 
             }
         });
@@ -416,21 +354,24 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
+                String op = "÷";
+                if(Ans.equals(""))
+                {
+                    setExpression(op); 
+                }
+                else
+                {
+                   setExpression(Ans);
+                    setExpression(op);     
+                 }
                 if(layer.Discription.getText().contains("="))
                 {
                     layer.Discription.setText("...");
                 }
+                setDiscription(Ans);
+                setDiscription(op);
                 
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '÷'))
-                {
-                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
-                    {
-                    setDiscription(layer.Display.getText());
-                    setDiscription("÷");
-                    setExpression(layer.Display.getText()+"÷");
-                    layer.Display.setText("");
-                    }
-                }
+                Ans = "";
 
             }
         });
@@ -439,21 +380,24 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
+                String op = "^";
+                if(Ans.equals(""))
+                {
+                    setExpression(op); 
+                }
+                else
+                {
+                   setExpression(Ans);
+                    setExpression(op);     
+                 }
                 if(layer.Discription.getText().contains("="))
                 {
                     layer.Discription.setText("...");
                 }
+                setDiscription(Ans);
+                setDiscription(op);
                 
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '^'))
-                {
-                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
-                    {
-                    setDiscription(layer.Display.getText());
-                    setDiscription("^");
-                    setExpression(layer.Display.getText()+"^");
-                    layer.Display.setText("");
-                    }
-                }
+                Ans = "";
 
             }
         });
@@ -462,21 +406,24 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
+                String op = "^ 2";
+                if(Ans.equals(""))
+                {
+                    setExpression(op); 
+                }
+                else
+                {
+                   setExpression(Ans);
+                    setExpression(op);     
+                 }
                 if(layer.Discription.getText().contains("="))
                 {
                     layer.Discription.setText("...");
                 }
+                setDiscription(Ans);
+                setDiscription(op);
                 
-                if(!(layer.Display.getText().equals("0") || (layer.Display.getText().charAt(layer.Display.getText().length()-1)) == '^'))
-                {
-                    if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
-                    {
-                    setDiscription(layer.Display.getText());
-                    setDiscription("^ 2");
-                    setExpression(layer.Display.getText()+"^2");
-                    layer.Display.setText("");
-                    }
-                }
+                Ans = "";
 
             }
         });
@@ -494,11 +441,14 @@ public class StandardController {
                 {
                     if(!(layer.Display.getText().contains("(") ^ layer.Display.getText().contains(")")))
                     {
-                    setExpression(layer.Display.getText()+"s2");
+                    model.Solve(layer.Display.getText()+"s2");
+                    setExpression(model.getAnswer());
+                    Ans = model.getAnswer();
                     setDiscription("√" + layer.Display.getText());
-                    layer.Display.setText("");
+                    layer.Display.setText(Ans);
                     }
                 }
+                Ans = "";
 
             }
         });
@@ -558,11 +508,13 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                StringBuilder bul = new StringBuilder(layer.Display.getText());
+                StringBuilder bul = new StringBuilder(Ans);
                 if(bul.length()-1 > 0)
                 layer.Display.setText(bul.deleteCharAt(bul.length()-1).toString());
                 else
-                layer.Display.setText("0");       
+                layer.Display.setText("0");  
+                
+                Ans = bul.toString();
             }
         });
         
@@ -573,6 +525,17 @@ public class StandardController {
                 layer.Display.setText("0");
                 layer.Discription.setText("...");
                 Expression = "";
+                Ans = "";
+            }
+        });
+        
+        StandardButton.get(9).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                layer.Display.setText("0");
+                layer.Discription.setText("...");
+                Ans = "";
             }
         });
         
@@ -595,36 +558,23 @@ public class StandardController {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                  if(layer.Display.getText().equals("0"))
-                {
-
-                    layer.Display.setText("(");
+               //layer.Display.setText("(");
+                    setDiscription("(");
+                    setExpression("(");
                     layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append("(");
-                    layer.Display.setText(num.toString());
-                } 
             }
         });
         StandardButton.get(3).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                  if(layer.Display.getText().equals("0"))
-                {
-
-                    layer.Display.setText(")");
+                //layer.Display.setText("(");
+                    setDiscription(layer.Display.getText());
+                    setDiscription(")");
+                    setExpression(Ans);
+                    setExpression(")");
+                    Ans = "";
                     layer.Display.repaint();
-                }
-                else
-                {
-                    StringBuilder num = new StringBuilder( layer.Display.getText() ) ;
-                    num.append(")");
-                    layer.Display.setText(num.toString());
-                } 
             }
         });
     }

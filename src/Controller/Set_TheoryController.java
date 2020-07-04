@@ -157,6 +157,7 @@ public class Set_TheoryController {
                     num.deleteCharAt(num.length()-1);
                     selectTextField.setText(num.toString());
                     updateView();
+                    updateView();
                 }
             }
         }
@@ -218,6 +219,7 @@ public class Set_TheoryController {
                 if(selectTextField != null)
                 {
                     selectTextField.setText("");
+                    updateView();
                 }
             }
         }

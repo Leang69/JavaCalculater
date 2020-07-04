@@ -102,7 +102,7 @@ public class StandardController {
                 String a = "0";
                 saveNum = "";
                 StringBuilder num = new StringBuilder(number) ;
-                num.append("a");
+                num.append(a);
                 number = num.toString();
                 view.Display.setText(number);     
                 }
@@ -310,13 +310,16 @@ public class StandardController {
             public void actionPerformed(ActionEvent e) 
             {
                 StringBuilder sb = new StringBuilder(view.Discription.getText());
-                if(number.equals(""))
+                if(number.equals("") && saveNum.length() > 0)
                 {
                 number = saveNum;
                 }
-                setExpression(number);
-                sb.append(number);
-                setDiscription(number);
+                if(!number.equals(""))
+                {
+                   setExpression(number);
+                    sb.append(number);
+                    setDiscription(number); 
+                }
                 sb.setLength(sb.length()-3);
                 setDiscription(" =");
                 model.Solve(Expression);
@@ -397,19 +400,22 @@ public class StandardController {
                 {
                     view.Discription.setText("...");
                 }
-                
+                if(number.equals(""))
+                {
+                number = saveNum;
+                }
                 if(!(view.Display.getText().equals("0")))
                 {
                     if(!(view.Display.getText().contains("(") ^ view.Display.getText().contains(")")))
                     {
                     setDiscription("√" + number);
-                    model.Solve(view.Display.getText()+"s2");
+                    model.Solve(number+"s2");
                     number = model.getAnswer();
-                    setDiscription(view.Discription.getText()+ " =");
+                    setExpression("("+number+"+0)");
                     view.Display.setText(number);
                     }
                 }
-                saveNum = number;
+                saveNum = "";
                 number = "";
 
 
@@ -473,9 +479,16 @@ public class StandardController {
             {
                 StringBuilder bul = new StringBuilder(number);
                 if(bul.length()-1 > 0)
-                view.Display.setText(bul.deleteCharAt(bul.length()-1).toString());
-                else
-                view.Display.setText("0");  
+                {
+                    bul.setLength(bul.length()-1);
+                    
+                }
+                else if (bul.length() == 0)
+                {
+                    bul.append(0);
+                }
+                    
+                view.Display.setText(bul.toString());  
                 
                 number = bul.toString();
             }

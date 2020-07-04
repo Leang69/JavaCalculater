@@ -15,12 +15,41 @@ import java.util.*;
  * @author User
  */
 public class StorageConverterLayer extends JPanel{
+    private JTextField A , B;
+    private JComboBox  typeA ,typeB;
+    ArrayList<MyButton> AllButton;
+    
+    public ArrayList<MyButton> getAllButton()
+    {
+        return AllButton;
+    }
+    
+    public JComboBox getTypeA()
+    {
+        return typeA;
+    }
+    
+    public JComboBox getTypeB()
+    {
+        return typeB;
+    }
+    
+    public JTextField getTxA()
+    {
+        return A;
+    }
+    
+    public JTextField getTxB()
+    {
+        return B;
+    }
+    
     public StorageConverterLayer() {
          this.setSize(1000, 500);
          buildContendPane();
     }
 
-    class MyButton extends JButton 
+    public class MyButton extends JButton 
     {
          MyButton()
          {
@@ -46,12 +75,12 @@ public class StorageConverterLayer extends JPanel{
         Display.setLayout(new GridBagLayout());
         
         //set tpye 
-        String[] StorageType = {"Bytes","Kilobytes","Kibibytes","Megabytes",
+        String[] StorageType = {"Bytes","Kilobytes","Megabytes",
                                 "Gigabytes","Terabytes","Petabyte"};
-        JTextField A = new JTextField("");
-        JTextField B = new JTextField("");
-        JComboBox  typeA = new JComboBox (StorageType);
-        JComboBox  typeB = new JComboBox(StorageType);
+        A = new JTextField("");
+        B = new JTextField("");
+        typeA = new JComboBox (StorageType);
+        typeB = new JComboBox(StorageType);
         
         //Set TextField Style
         A.setFont(new Font("Arial", Font.PLAIN, 25));
@@ -88,7 +117,7 @@ public class StorageConverterLayer extends JPanel{
         
         
         
-        ArrayList<MyButton> AllButton = new ArrayList();
+        AllButton = new ArrayList();
         for(int i = 0 ; i < 12 ; i++)
         {
             AllButton.add(new MyButton());

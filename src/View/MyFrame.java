@@ -28,7 +28,7 @@ public class MyFrame extends JFrame {
     
     StandardController standardController = new StandardController(standard);
     Set_TheoryController setTheoryController = new Set_TheoryController(setTheory);
-    
+    StorageConverterController storageConverterController = new StorageConverterController(storageConverter);
     
     public MyFrame()
     {
@@ -36,6 +36,7 @@ public class MyFrame extends JFrame {
         this.add(standard);
         standardController.setButtonAction();
         setTheoryController.setEven();
+        storageConverterController.setEven();
     }
     void iniFrame(String title,int height , int weight)
     {

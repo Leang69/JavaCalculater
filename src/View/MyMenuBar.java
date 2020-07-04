@@ -41,7 +41,7 @@ public class MyMenuBar extends JMenuBar{
         SetTheory.setBorder(null);
             
         Programmer.setEnabled(false);
-        StorageConverter.setEnabled(false);
+
         
         this.add(Standard);
         this.add(SetTheory);

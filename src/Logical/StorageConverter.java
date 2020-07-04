@@ -18,7 +18,7 @@ public class StorageConverter {
      * @param numByte is long 
      * @return KB
      */
-    double byte2KB(long numByte) {
+    public double byte2KB(double numByte) {
 	return (double)numByte / 1024.0;
     }
 
@@ -28,7 +28,7 @@ public class StorageConverter {
      * @param numByte is long
      * @return MB
      */
-    double byte2MB(long numByte) {
+    public double byte2MB(double numByte) {
 	return byte2KB(numByte) / 1024.0;
     }
 
@@ -38,7 +38,7 @@ public class StorageConverter {
      * 1 GB = 1024 MB = 1024^3 Byte
      * @return GB
      */
-    double byte2GB(long numByte) {
+    public double byte2GB(double numByte) {
 	return byte2MB(numByte) / 1024.0;
     }
 
@@ -48,7 +48,7 @@ public class StorageConverter {
      * 1 TB = 1024 GB = 1024^4 Byte
      * @return TB
      */
-    double byte2TB(long numByte) {
+    public double byte2TB(double numByte) {
 	return byte2GB(numByte) / 1024.0;
     }
 
@@ -58,7 +58,7 @@ public class StorageConverter {
      * 1 PB = 1024 Tb = 1024^5 Byte
      * @return PB
      */
-    double byte2PB(long numByte) {
+    public double byte2PB(double numByte) {
 	return byte2TB(numByte) / 1024.0;
     }
 
@@ -69,7 +69,7 @@ public class StorageConverter {
      * @param kilobyte is long
      * @return byte
      */
-    long kb2Byte(long kilobyte) {
+    public double kb2Byte(double kilobyte) {
 	return kilobyte * 1024;
     }
 
@@ -78,7 +78,7 @@ public class StorageConverter {
      * @param kilobyte is long
      * @return MB
      */
-    double kb2MB(long kilobyte) {
+    public double kb2MB(double kilobyte) {
 	return (double)kilobyte / 1024;
     }
 
@@ -87,7 +87,7 @@ public class StorageConverter {
      * @param kilobyte is long
      * @return GB
      */
-    double kb2GB(long kilobyte) {
+    public double kb2GB(double kilobyte) {
 	return kb2MB(kilobyte) / 1024;
     }
 
@@ -96,7 +96,7 @@ public class StorageConverter {
      * @param kilobyte is long
      * @return TB
      */
-    double kb2TB(long kilobyte) {
+    public double kb2TB(double kilobyte) {
 	return kb2GB(kilobyte) / 1024;
     }
 
@@ -105,7 +105,7 @@ public class StorageConverter {
      * @param kilobyte is long
      * @return PetaByte
      */
-    double kb2PB(long kilobyte) {
+    public double kb2PB(double kilobyte) {
 	return kb2TB(kilobyte) / 1024;
     }
 
@@ -115,7 +115,7 @@ public class StorageConverter {
      * @param megabyte is long
      * @return Byte
      */
-    long mb2Byte(long megabyte) {
+    public double mb2Byte(double megabyte) {
 	return mb2KB(megabyte) * 1024;
     }
     /**
@@ -123,7 +123,7 @@ public class StorageConverter {
      * @param megabyte is long
      * @return Kilobyte
      */
-    long mb2KB(long megabyte) {
+    public double mb2KB(double megabyte) {
 	return megabyte * 1024;
     }
     /**
@@ -131,7 +131,7 @@ public class StorageConverter {
      * @param megabyte is long
      * @return GigaByte
      */
-    double mb2GB(long megabyte) {
+    public double mb2GB(double megabyte) {
 	return (double)megabyte / 1024;
     }
     /**
@@ -139,7 +139,7 @@ public class StorageConverter {
      * @param megabyte is long
      * @return TeraByte
      */
-    double mb2TB(long megabyte) {
+    public double mb2TB(double megabyte) {
 	return mb2GB(megabyte) / 1024;
     }
     /**
@@ -147,7 +147,7 @@ public class StorageConverter {
      * @param megabyte is long
      * @return PeraByte
      */
-    double mb2PB(long megabyte) {
+    public double mb2PB(double megabyte) {
 	return mb2TB(megabyte) / 1024;
     }
 
@@ -157,7 +157,7 @@ public class StorageConverter {
      * @param gigabyte is long
      * @return Byte 
      */
-    long gb2Byte(long gigabyte) {
+    public double gb2Byte(double gigabyte) {
 	return gb2KB(gigabyte) * 1024;
     }
     /**
@@ -165,7 +165,7 @@ public class StorageConverter {
      * @param gigabyte is long
      * @return kiloByte
      */
-    long gb2KB(long gigabyte) {
+    public double gb2KB(double gigabyte) {
 	return gb2MB(gigabyte) * 1024;
     }
     /**
@@ -173,7 +173,7 @@ public class StorageConverter {
      * @param gigabyte is long
      * @return MegaBte
      */
-    long gb2MB(long gigabyte) {
+    public double gb2MB(double gigabyte) {
 	return gigabyte * 1024;
     }
     /**
@@ -181,7 +181,7 @@ public class StorageConverter {
      * @param gigabyte is long
      * @return TeraByte
      */
-    double gb2TB(long gigabyte) {
+    public double gb2TB(double gigabyte) {
 	return (double)gigabyte / 1024;
     }
     /**
@@ -189,7 +189,7 @@ public class StorageConverter {
      * @param gigabyte is long
      * @return PeraByte
      */
-    double gb2PB(long gigabyte) {
+    public double gb2PB(double gigabyte) {
 	return gb2TB(gigabyte) / 1024;
     }
 
@@ -199,7 +199,7 @@ public class StorageConverter {
      * @param terabyte is long
      * @return Byte
      */
-    long tb2Byte(long terabyte) {
+    public double tb2Byte(double terabyte) {
 	return tb2KB(terabyte) * 1024;
     }
     /**
@@ -207,7 +207,7 @@ public class StorageConverter {
      * @param terabyte is long
      * @return KiloByte
      */
-    long tb2KB(long terabyte) {
+    public double tb2KB(double terabyte) {
 	return tb2MB(terabyte) * 1024;
     }
     /**
@@ -215,7 +215,7 @@ public class StorageConverter {
      * @param terabyte is long
      * @return MegaByte
      */
-    long tb2MB(long terabyte) {
+    public double tb2MB(double terabyte) {
 	return tb2GB(terabyte) * 1024;
     }
     /**
@@ -223,7 +223,7 @@ public class StorageConverter {
      * @param terabyte is long
      * @return GigaByte
      */
-    long tb2GB(long terabyte) {
+    public double tb2GB(double terabyte) {
 	return terabyte * 1024;
     }
     /**
@@ -231,7 +231,7 @@ public class StorageConverter {
      * @param terabyte is long
      * @return PeraByte
      */
-    double tb2PB(long terabyte) {
+    public double tb2PB(double terabyte) {
 	return (double)terabyte / 1024;
     }
 
@@ -241,7 +241,7 @@ public class StorageConverter {
      * @param petabyte is long
      * @return Byte
      */
-    long pb2Byte(long petabyte) {
+    public double pb2Byte(double petabyte) {
 	return pb2KB(petabyte) * 1024;
     }
     /**
@@ -250,7 +250,7 @@ public class StorageConverter {
      * @param petabyte is long
      * @return KiloByte
      */
-    long pb2KB(long petabyte) {
+    public double pb2KB(double petabyte) {
 	return pb2MB(petabyte) * 1024;
     }
     /**
@@ -259,7 +259,7 @@ public class StorageConverter {
      * @param petabyte is long
      * @return MegaByet
      */
-    long pb2MB(long petabyte) {
+    public double pb2MB(double petabyte) {
 	return pb2GB(petabyte) * 1024;
     }
     /**
@@ -268,7 +268,7 @@ public class StorageConverter {
      * @param petabyte is long
      * @return GigaByte
      */
-    long pb2GB(long petabyte) {
+    public double pb2GB(double petabyte) {
 	return pb2TB(petabyte) * 1024;
     }
     /**
@@ -276,7 +276,7 @@ public class StorageConverter {
      * @param petabyte is long
      * @return TB
      */
-    long pb2TB(long petabyte) {
+    public double pb2TB(double petabyte) {
 	return petabyte * 1024;
     }
 

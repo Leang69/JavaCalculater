@@ -127,7 +127,6 @@ public class StandardModel {
             {
                 if(!tmp.equals(""))
                 {
-                   if(this.isNumeric(tmp))
                    postFix.add(tmp);
                    tmp = ""; 
                 }
@@ -139,7 +138,6 @@ public class StandardModel {
             }
             else if(c == ')')
             {
-                if(this.isNumeric(tmp))
                 postFix.add(tmp);
                 tmp = "";
                 while(true)
@@ -157,6 +155,12 @@ public class StandardModel {
             }
             else if(c == '(')
             {
+                if(this.isNumeric(tmp))
+                {
+                    postFix.add(tmp);
+                    tmp = ""; 
+                    oparator.push('*');
+                }
                 oparator.push(c);
             }
             else if (c == 'π')

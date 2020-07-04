@@ -7,10 +7,7 @@ package View;
 import Controller.*;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
 import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.event.*;
 
 /**

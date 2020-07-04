@@ -72,7 +72,6 @@ public class StorageConverterController {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                System.out.println("jkfhadskjfshadfs");
                 num.setLength(0);
                 selectTextField.setBorder(new LineBorder(null));
                 selectTextField =  view.getTxA();

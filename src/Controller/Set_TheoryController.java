@@ -5,7 +5,7 @@
  */
 package Controller;
 import View.Set_Theory;
-import Logical.Operators;
+import CoreFucntion.Operators;
 import javax.swing.event.*;
 import java.awt.event.*;
 import Model.setTheoryModel;
@@ -21,27 +21,34 @@ import javax.swing.border.LineBorder;
  * @author User
  */
 public class Set_TheoryController {
-    setTheoryModel SetTheoryModel;
-    Set_Theory setTheoryView;
+    setTheoryModel model;
+    Set_Theory view;
     JTextField selectTextField = null ;
     private final ArrayList<Set_Theory.MyButton> setTheoryButton;
     
     public Set_TheoryController(Set_Theory MysetTheoryView)
     {
-        setTheoryView = MysetTheoryView;
-        SetTheoryModel = new setTheoryModel(setTheoryView);
-        selectTextField = setTheoryView.setA;
-        setTheoryButton = setTheoryView.getSetTheoryButtons();
+        view = MysetTheoryView;
+        model = new setTheoryModel();
+        selectTextField = view.setA;
+        setTheoryButton = view.getSetTheoryButtons();
+    }
+    
+    private void updateView()
+    {
+        view.Answer.setText("");
+        model.Solve(view.setA.getText() , view.setB.getText() , view.setOperators.getSelectedIndex());
+        view.Answer.setText(model.getAnswer());
     }
     
     public void setEven()
     {
-        setTheoryView.setB.addMouseListener(new MouseListener() {
+        view.setB.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e)
             {
                 selectTextField.setBorder(new LineBorder(null));
-                selectTextField = setTheoryView.setB;
+                selectTextField = view.setB;
                 selectTextField.setBorder(new LineBorder(Color.BLACK,4));
             }
             @Override public void mousePressed(MouseEvent e) {}
@@ -51,12 +58,12 @@ public class Set_TheoryController {
             
         });
         
-        setTheoryView.setA.addMouseListener(new MouseListener() {
+        view.setA.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e)
             {
                 selectTextField.setBorder(new LineBorder(null));
-                selectTextField = setTheoryView.setA;
+                selectTextField = view.setA;
                 selectTextField.setBorder(new LineBorder(Color.BLACK,4));
             }
             @Override public void mousePressed(MouseEvent e) {}
@@ -66,6 +73,12 @@ public class Set_TheoryController {
             
         });
         
+        view.setOperators.addItemListener(new ItemListener()
+        {
+            public void itemStateChanged(ItemEvent e) {
+                updateView();
+            }
+        });
         
         /*this.setButtonText(SetTheoryButtons,0,"9");
         this.setButtonText(SetTheoryButtons,1,"8");
@@ -94,6 +107,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("7");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -109,6 +123,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("8");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -124,6 +139,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("9");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -140,6 +156,7 @@ public class Set_TheoryController {
                     if(num.length() > 0)
                     num.deleteCharAt(num.length()-1);
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -155,6 +172,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("4");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -170,6 +188,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("5");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -185,6 +204,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("6");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -213,6 +233,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("1");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -228,6 +249,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("2");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -243,20 +265,21 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("3");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
         );
         
-        setTheoryButton.get(11).addActionListener(
-        new ActionListener()
+        setTheoryButton.get(11).addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(selectTextField != null)
                 {
-                   setTheoryView.Answer.setText("");
-                   SetTheoryModel.Solve(setTheoryView.setA.getText() , setTheoryView.setB.getText() , setTheoryView.setOperators.getSelectedIndex());
+                   view.Answer.setText("");
+                   model.Solve(view.setA.getText() , view.setB.getText() , view.setOperators.getSelectedIndex());
+                   view.Answer.setText(model.getAnswer());
                 }
                 
             }
@@ -273,6 +296,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("9");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }
@@ -288,6 +312,7 @@ public class Set_TheoryController {
                     StringBuilder num = new StringBuilder( selectTextField.getText() ) ;
                     num.append("0");
                     selectTextField.setText(num.toString());
+                    updateView();
                 }
             }
         }

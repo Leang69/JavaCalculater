@@ -1,4 +1,4 @@
-package Logical;
+package CoreFucntion;
 
 import java.util.*;
 
@@ -10,6 +10,16 @@ public class SetTheory {
     
     public String getAnswer()
     {
+        if( answer.length() > 0 && answer.charAt(answer.length()-1) == ',')
+        {
+            StringBuilder n = new StringBuilder(answer);
+            n.deleteCharAt(n.length()-1);
+            answer = n.toString();
+        }
+        if(answer.length() == 0)
+        {
+            answer = "∅";
+        }
         return answer;
     }
     
@@ -102,8 +112,7 @@ public class SetTheory {
         {
                 answer = answer + s + ",";
         }
-        if (answer.equals("") || answer.equals(","))
-            answer = "Empty";
+
         
         return answer;
     }
@@ -146,8 +155,7 @@ public class SetTheory {
         {
                 answer = answer + s + ",";
         }
-        if (answer.equals("") || answer.equals(","))
-            answer = "Empty";
+
         
         return answer;
     }
@@ -200,8 +208,7 @@ public class SetTheory {
         {
                 answer = answer + s + ",";
         }
-        if (answer.equals("") || answer.equals(","))
-            answer = "Empty";
+
         return answer;
     }
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
-import Logical.SetTheory;
+import CoreFucntion.SetTheory;
 import View.Set_Theory;
 
 /**
@@ -12,35 +12,39 @@ import View.Set_Theory;
  * @author User
  */
 public class setTheoryModel {
-    String answer;
+    private String answer;
     SetTheory setTheory = new SetTheory();
-    Set_Theory setTheoryView;
-    //String[] setOperatorsName = {"Intersection" , "Union","Set Difference A-B","Set Difference B-A"};
-    public setTheoryModel(Set_Theory MysetTheory)
+    public setTheoryModel()
     {
-        setTheoryView = MysetTheory;
+        
     }
+    
+    public String getAnswer()
+    {
+        return answer;
+    }
+    
     public void Solve(String setA , String setB , int operator)
     {
         if(operator == 0)
         {
             setTheory.intersection(setA, setB);
-            setTheoryView.Answer.setText(setTheory.getAnswer());
+            answer = setTheory.getAnswer();
         }
         else if (operator == 1)
         {
             setTheory.union(setA, setB);
-            setTheoryView.Answer.setText(setTheory.getAnswer());
+            answer = setTheory.getAnswer();
         }
         else if (operator == 2)
         {
             setTheory.setDiff(setA, setB, operator);
-            setTheoryView.Answer.setText(setTheory.getAnswer());
+            answer = setTheory.getAnswer();
         }
         else if (operator == 3)
         {
             setTheory.setDiff(setA, setB, operator);
-            setTheoryView.Answer.setText(setTheory.getAnswer());
+            answer = setTheory.getAnswer();
         }
     }
 }

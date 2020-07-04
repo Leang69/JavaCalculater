@@ -1,9 +1,9 @@
-package Logical;
+package CoreFucntion;
 
 /**
  * This class is ues for convert number system ( 2 , 8  , 10 , 16) and prevent
  */
-class NumberSystemConversion {
+public class NumberSystemConversion {
 	/**
 	 *  This is instant of class UserInput
 	 */

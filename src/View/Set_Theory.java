@@ -63,18 +63,18 @@ public class Set_Theory extends JPanel{
         
         
         
-        setA.setFont(new Font("Arial", Font.BOLD, 25 ));
-        setB.setFont(new Font("Arial", Font.BOLD, 25 ));
-        Answer.setFont(new Font("Arial", Font.BOLD, 25 ));
+        setA.setFont(new Font("Cambria Math", Font.BOLD, 25 ));
+        setB.setFont(new Font("Cambria Math", Font.BOLD, 25 ));
+        Answer.setFont(new Font("Cambria Math", Font.BOLD, 25 ));
         setA.setEditable(false);
         setB.setEditable(false);
         Answer.setEditable(false);
         
         
-        String[] setOperatorsName = {"Intersection" , "Union","Set Difference A-B","Set Difference B-A"};
+        String[] setOperatorsName = {"Intersection (∩)" , "Union (∪)","Set Difference A-B","Set Difference B-A"};
         setOperators = new JComboBox(setOperatorsName);
         setOperators.setBackground(Color.WHITE);
-        setOperators.setFont(new Font("Arial", Font.BOLD, 25 ));
+        setOperators.setFont(new Font("Cambria Math", Font.BOLD, 25 ));
         
         this.setCell(0, 0, 1, 3, 0.1, 0.1, c);
         Display.add(setALable,c);

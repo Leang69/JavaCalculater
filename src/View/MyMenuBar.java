@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 package View;
-import Logical.Main;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.event.*;
+
 /**
  *
  * @author User
